@@ -1,0 +1,4 @@
+#!/bin/bash
+git --work-tree=/var/www/laravel --git-dir=/var/repo/site.git checkout -f
+
+
