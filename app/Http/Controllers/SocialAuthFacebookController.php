@@ -3,7 +3,8 @@
 // SocialAuthFacebookController.php
 
 namespace App\Http\Controllers;
-
+use App\user;
+use Auth;
 use Illuminate\Http\Request;
 use Socialite;
 use App\Services\SocialFacebookAccountService;
