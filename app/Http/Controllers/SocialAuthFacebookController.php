@@ -13,52 +13,44 @@ use Auth;
 class SocialAuthFacebookController extends Controller
 {
   /**
-   * Create a redirect method to facebook api.
-   *
-   * @return void
-   */
-    public function redirect()
-    {
-        return Socialite::driver('facebook')->redirect();
+ * Create a new controller instance.
+ *
+ * @return void
+ */
+public function redirectToFacebook()
+{
+    return Socialite::driver('facebook')->redirect();
+}
+
+
+/**
+ * Create a new controller instance.
+ *
+ * @return void
+ */
+public function handleFacebookCallback()
+{
+    try {
+        $user = Socialite::driver('facebook')->user();
+        $create['name'] = $user->getName();
+        $create['email'] = $user->getEmail();
+        $create['facebook_id'] = $user->getId();
+
+
+        $userModel = new User;
+        $createdUser = $userModel->addNew($create);
+        Auth::loginUsingId($createdUser->id);
+
+
+        return redirect()->route('home');
+
+
+    } catch (Exception $e) {
+
+
+        return redirect('auth/facebook');
+
+
     }
-
-    /**
-     * Return a callback method from facebook api.
-     *
-     * @return callback URL from facebook
-     */
-    public function callback(SocialFacebookAccountService $service)
-    {
-
-      try {
-          $user = Socialite::driver('facebook')->user();
-          $create['name'] = $user->getName();
-          $create['email'] = $user->getEmail();
-          $create['facebook_id'] = $user->getId();
-
-
-          $userModel = new User;
-          $createdUser = $userModel->addNew($create);
-          Auth::loginUsingId($createdUser->id);
-
-
-          return redirect()->route('home');
-
-
-      } catch (Exception $e) {
-
-
-          return redirect('auth/facebook');
-
-
-      }
-
-
-
-
-        // $user = Socialite::driver('facebook')->user();
-        //
-        // auth()->login($user);
-        // return redirect()->to('/home');
-    }
+  }
 }
