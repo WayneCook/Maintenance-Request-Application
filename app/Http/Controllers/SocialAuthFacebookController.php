@@ -32,6 +32,8 @@ public function callback()
 {
     try {
         $user = Socialite::driver('facebook')->user();
+
+        dd($user);
         $create['name'] = $user->getName();
         $create['email'] = $user->getEmail();
         $create['facebook_id'] = $user->getId();
