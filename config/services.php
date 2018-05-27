@@ -38,7 +38,7 @@ return [
     'facebook' => [
         'client_id' => '221391058450456',
         'client_secret' => 'cb8b97606bb161fc7830cc7547d716cf',
-        'redirect' => 'https://www.whisperingloop.com/callback',
+        'redirect' => 'https://www.whisperingloop.com/login/facebook/callback',
     ],
 
 ];

@@ -36,4 +36,33 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function redirectToProvider()
+    {
+        return Socialite::driver('facebook')->redirect();
+    }
+
+
+
+
+    public function handleProviderCallback(SocialFacebookAccountService $service)
+    {
+
+        $user = Socialite::driver('facebook')->user();
+
+        $userSignup = User::create([
+          'name' => $userSocial->user['name'],
+          'email' => $userSocial->user['email'],
+          'password' => bcrypt('1234'),
+          'avatar' => $userSocial->avatar,
+          'facebook_profile' => $userSocial->user['link'],
+          'gender' => $userSocial->user['gender'],
+        ]);
+
+        if($userSignup){
+          if (Auth::loginUsingId($userSignup->id)) {
+            return redirect()->route('home');
+          }
+        }
+    }
 }

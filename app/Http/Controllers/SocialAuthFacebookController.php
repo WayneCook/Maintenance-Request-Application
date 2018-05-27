@@ -29,7 +29,7 @@ class SocialAuthFacebookController extends Controller
     public function callback(SocialFacebookAccountService $service)
     {
 
-        return Socialite::driver('google')->stateless()->user();
+        $user = Socialite::driver('facebook')->user();
 
         auth()->login($user);
         return redirect()->to('/home');
