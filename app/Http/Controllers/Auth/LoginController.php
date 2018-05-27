@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use App\SocialFacebookAccountService;
+use App\SocialFacebookAccount;
 use Socialite;
 use App\User;
 use Auth;
@@ -49,7 +49,7 @@ class LoginController extends Controller
 
 
 
-    public function handleProviderCallback(SocialFacebookAccountService $service)
+    public function handleProviderCallback(SocialFacebookAccount $service)
     {
 
 
