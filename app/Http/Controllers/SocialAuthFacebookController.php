@@ -17,7 +17,7 @@ class SocialAuthFacebookController extends Controller
  *
  * @return void
  */
-public function redirectToFacebook()
+public function redirect()
 {
     return Socialite::driver('facebook')->redirect();
 }
@@ -28,7 +28,7 @@ public function redirectToFacebook()
  *
  * @return void
  */
-public function handleFacebookCallback()
+public function callback()
 {
     try {
         $user = Socialite::driver('facebook')->user();
