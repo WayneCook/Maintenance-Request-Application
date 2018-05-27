@@ -37,6 +37,7 @@ public function callback()
         $create['name'] = $user->getName();
         $create['email'] = $user->getEmail();
         $create['facebook_id'] = $user->getId();
+        $create['password'] = 'wayne1980';
 
 
         $userModel = new User;
