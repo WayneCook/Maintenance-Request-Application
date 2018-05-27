@@ -56,6 +56,7 @@ class LoginController extends Controller
 
         $userSocial = Socialite::driver('facebook')->stateless()->user();
 
+        dd($userSocial);
 
         $userSignup = User::create([
           'name' => $userSocial->user['name'],
