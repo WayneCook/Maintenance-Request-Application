@@ -69,7 +69,7 @@ class FacebookLoginController extends Controller
 
 
             if($userSignup){
-              if (Auth::loginUsingId($userSignup->id)) {
+              if (Auth::guard('facebookUser')->($userSignup->id)) {
                 return redirect()->route('home');
               }
             }
