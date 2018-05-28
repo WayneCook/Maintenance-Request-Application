@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 use App\FacebookUser;
+use Illuminate\Auth\Middleware;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
