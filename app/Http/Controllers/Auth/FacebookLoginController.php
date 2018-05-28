@@ -51,7 +51,7 @@ class FacebookLoginController extends Controller
 
 
             if ($user) {
-              if (Auth::guard('facebookUser')->login($user);) {
+              if (Auth::guard('facebookUser')->login($user)) {
                 return redirect()->route('home');
               }
             }
