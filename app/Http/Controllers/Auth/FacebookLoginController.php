@@ -55,6 +55,7 @@ class FacebookLoginController extends Controller
                 return redirect()->route('home');
               }
             }
+            dd($userSignup);
 
             $userSignup = Auth::guard('facebookUser')->create([
               'facebook_id' => $userSocial->user['id'],
@@ -64,7 +65,6 @@ class FacebookLoginController extends Controller
               'avatar' => $userSocial->avatar,
             ]);
 
-            dd($userSignup);
 
             if($userSignup){
               if (Auth::guard('facebookUser')->loginUsingId($userSignup->facebook_id)) {
