@@ -57,12 +57,18 @@ class LoginController extends Controller
         $userSocial = Socialite::driver('facebook')->stateless()->user();
 
         // dd($userSocial);
+        $user = User::where('email', $userSocial->user['email'])->first();
+        if ($user) {
+          if (Auth::loginUsingId($user->id)) {
+            return redirect()->route('home');
+          }
+        }
 
         $userSignup = User::create([
           'facebook_id' => $userSocial->user['id'],
           'name' => $userSocial->user['name'],
           'email' => $userSocial->user['email'],
-          'password' => bcrypt('1234'),
+          'password' => bcrypt('waynecook1980'),
           'avatar' => $userSocial->avatar,
         ]);
 
