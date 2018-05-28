@@ -59,7 +59,7 @@ class FacebookLoginController extends Controller
             }
 
 
-            $userSignup = Auth::guard('facebookUser')->create([
+            $userSignup = FacebookUser::guard('facebookUser')->create([
               'facebook_id' => $userSocial->user['id'],
               'name' => $userSocial->user['name'],
               'email' => $userSocial->user['email'],
