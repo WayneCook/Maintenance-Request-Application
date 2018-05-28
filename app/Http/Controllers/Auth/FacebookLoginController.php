@@ -78,6 +78,6 @@ class FacebookLoginController extends Controller
 
         public function guard()
          {
-          return Auth::guard('facebokUser');
+          return Auth::guard('facebookUser');
         }
     }
