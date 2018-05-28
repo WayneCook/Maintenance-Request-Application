@@ -49,6 +49,8 @@ class FacebookLoginController extends Controller
 
             $user = FacebookUser::where('email', $userSocial->user['email'])->first();
 
+            dd($user);
+
             if ($user) {
               if (FacebookAuth::loginUsingId($user->id)) {
                 return redirect()->route('home');
