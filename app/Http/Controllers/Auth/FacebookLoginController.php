@@ -43,10 +43,10 @@ class FacebookLoginController extends Controller
             $userSocial = Socialite::driver('facebook')->stateless()->user();
 
             // dd($userSocial);
-            $user = User::where('email', $userSocial->user['email'])->first();
-            
+            $user = FacebookUser::where('email', $userSocial->user['email'])->first();
+
             if ($user) {
-              if (Auth::loginUsingId($user->id)) {
+              if (FacebookAuth::loginUsingId($user->id)) {
                 return redirect()->route('home');
               }
             }
@@ -60,7 +60,7 @@ class FacebookLoginController extends Controller
             ]);
 
             if($userSignup){
-              if (Auth::loginUsingId($userSignup->id)) {
+              if (FacebookUser::loginUsingId($userSignup->facebook_id)) {
                 return redirect()->route('home');
               }
             }
