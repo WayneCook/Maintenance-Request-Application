@@ -58,7 +58,7 @@ class LoginController extends Controller
         // dd($userSocial);
         $user = User::where('email', $userSocial->user['email'])->first();
         if ($user) {
-          if (Auth::loginUsingId($user->id)) {
+          if (Auth::guard('FacebookUser')->loginUsingId($user->id)) {
             return redirect()->route('home');
           }
         }
@@ -72,7 +72,7 @@ class LoginController extends Controller
         ]);
 
         if($userSignup){
-          if (Auth::loginUsingId($userSignup->id)) {
+          if (Auth::guard('FacebookUser')->loginUsingId($userSignup->id)) {
             return redirect()->route('home');
           }
         }
