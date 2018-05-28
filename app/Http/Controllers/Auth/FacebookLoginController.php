@@ -5,13 +5,12 @@ use App\FacebookUser;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Auth;
 use Socialite;
 
 use Illuminate\Http\Request;
 
-class FacebookLoginController extends Controller extends ServiceProvider
+class FacebookLoginController extends Controller
 {
     use AuthenticatesUsers;
 
@@ -74,5 +73,11 @@ class FacebookLoginController extends Controller extends ServiceProvider
                 return redirect()->route('home');
               }
             }
+        }
+
+
+        public function guard()
+         {
+          return Auth::guard('facebokUser');
         }
     }
