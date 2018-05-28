@@ -64,6 +64,8 @@ class FacebookLoginController extends Controller
               'avatar' => $userSocial->avatar,
             ]);
 
+            dd($userSignup);
+
             if($userSignup){
               if (Auth::guard('facebookUser')->loginUsingId($userSignup->facebook_id)) {
                 return redirect()->route('home');
