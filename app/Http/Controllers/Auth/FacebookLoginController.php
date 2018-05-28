@@ -44,7 +44,7 @@ class FacebookLoginController extends Controller
 
 
             $userSocial = Socialite::driver('facebook')->stateless()->user();
-            dd($userSocial)
+            dd($userSocial);
             // dd($userSocial);
             $user = FacebookUser::where('email', $userSocial->user['email'])->first();
 
