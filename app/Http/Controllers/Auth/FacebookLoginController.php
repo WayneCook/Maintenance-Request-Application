@@ -49,7 +49,7 @@ class FacebookLoginController extends Controller
 
             $user = FacebookUser::where('email', $userSocial->user['email'])->first();
 
-            dd($userSignup);
+            dd($user);
 
             if ($user) {
               if (Auth::guard('facebookUser')->login($user)) {
