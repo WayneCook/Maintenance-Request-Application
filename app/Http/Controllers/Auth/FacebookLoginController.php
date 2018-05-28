@@ -45,7 +45,7 @@ class FacebookLoginController extends Controller
 
 
             $userSocial = Socialite::driver('facebook')->stateless()->user();
-  
+
 
             $user = FacebookUser::where('email', $userSocial->user['email'])->first();
 
@@ -56,7 +56,7 @@ class FacebookLoginController extends Controller
               }
             }
 
-            $userSignup = FacebookUser::create([
+            $userSignup = Auth::guard('FacebookUser')->create([
               'facebook_id' => $userSocial->user['id'],
               'name' => $userSocial->user['name'],
               'email' => $userSocial->user['email'],
