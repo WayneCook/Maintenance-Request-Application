@@ -77,7 +77,7 @@ return [
 
         'facebook_users' => [
             'driver' => 'eloquent',
-            'model'  => App\Facebook_user::class,
+            'model'  => App\FacebookUser::class,
         ],
 
         // 'users' => [
