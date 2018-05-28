@@ -55,7 +55,7 @@ class FacebookLoginController extends Controller
               }
             }
 
-            $userSignup = User::create([
+            $userSignup = FacebookUser::create([
               'facebook_id' => $userSocial->user['id'],
               'name' => $userSocial->user['name'],
               'email' => $userSocial->user['email'],
