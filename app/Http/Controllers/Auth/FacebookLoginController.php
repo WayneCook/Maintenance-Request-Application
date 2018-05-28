@@ -38,7 +38,7 @@ class FacebookLoginController extends Controller
 
 
 
-        public function handleProviderCallback(SocialFacebookAccount $service)
+        public function handleProviderCallback()
         {
 
 
