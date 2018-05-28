@@ -56,7 +56,7 @@ class LoginController extends Controller
 
         $userSocial = Socialite::driver('facebook')->stateless()->user();
 
-        dd($userSocial);
+        // dd($userSocial);
         $user = User::where('email', $userSocial->user['email'])->first();
         if ($user) {
           if (Auth::loginUsingId($user->id)) {
