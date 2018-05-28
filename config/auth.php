@@ -43,7 +43,7 @@ return [
 
         'facebookUser'  => [
            'driver'  => 'session',
-           'provider' => 'Facebook_users',
+           'provider' => 'facebook_users',
         ],
 
         'api' => [
