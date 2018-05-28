@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class FacebookUser extends Authenticatable
 {
 
-  protected $table = 'facebook_users';
+
   protected $fillable = ['facebook_id', 'name', 'email', 'avatar'];
 
 
