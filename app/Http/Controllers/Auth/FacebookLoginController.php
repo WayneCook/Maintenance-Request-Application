@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 use App\FacebookUser;
-
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 use Socialite;
 
-use Illuminate\Http\Request;
 
 class FacebookLoginController extends Controller
 {
@@ -30,6 +29,8 @@ class FacebookLoginController extends Controller
         {
             $this->middleware('guest')->except('logout');
         }
+
+
 
         public function redirectToProvider()
         {
@@ -53,7 +54,7 @@ class FacebookLoginController extends Controller
             // dd($user);
 
             if ($user) {
-              if (Auth::guard('facebookUser')->login($userSocial)) {
+              if (Auth::guard('facebookUser')->login($user->id)) {
                 return redirect()->route('home');
               }
             }
@@ -69,7 +70,7 @@ class FacebookLoginController extends Controller
 
 
             if($userSignup){
-              if (Auth::guard('facebookUser')->loginUsingId($userSignup->facebook_id)) {
+              if (Auth::guard('facebookUser')->loginUsingId($userSignup->id)) {
                 return redirect()->route('home');
               }
             }
