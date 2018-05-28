@@ -1,0 +1,15 @@
+<?php
+
+namespace App\FacebookUser;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
+
+class FacebookUser extends Model
+{
+
+  protected $table = 'facebook_users';
+  protected $fillable = ['facebook_id', 'name', 'email', 'avatar'];
+
+
+}

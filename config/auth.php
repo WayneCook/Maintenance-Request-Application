@@ -41,6 +41,11 @@ return [
             'provider' => 'users',
         ],
 
+        'FacebookUser'  => [
+           'driver'  => 'session',
+           'provider' => 'facebook_users',
+        ],
+
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
@@ -68,6 +73,11 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
+        ],
+
+        'facebook_users' => [
+            'driver' => 'eloquent',
+            'model'  => App\Facebook_user::class,
         ],
 
         // 'users' => [
