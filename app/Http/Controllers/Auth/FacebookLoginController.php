@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
+use App\FacebookUser;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -45,7 +46,7 @@ class FacebookLoginController extends Controller
 
             $userSocial = Socialite::driver('facebook')->stateless()->user();
             // dd($userSocial);
-            // dd($userSocial);
+
             $user = FacebookUser::where('email', $userSocial->user['email'])->first();
 
             if ($user) {
