@@ -18,7 +18,7 @@ class checkUser
 
       if (auth()->check() || auth()->guard('facebookUser')->check())
            {
-             dd(auth()->user);
+             dd(auth()->user());
 
                     return $next($request);
            } else
