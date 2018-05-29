@@ -19,7 +19,7 @@ class checkUser
       $facebookAccount = auth()->guard('facebookUser')->user();
       $userAccount = auth()->user();
 
-      $userEmail = User::whereEmail($facebookAccount)->first();
+      $userEmail = User::whereEmail($facebookAccount->email);
 
       if ($userEmail) {
         return 'email found';
