@@ -18,7 +18,7 @@ class checkUser
 
       if (auth()->check() || auth()->guard('facebookUser')->check())
            {
-             $user = FacebookUser::whereEmail($providerUser->getEmail())->first();
+             $user = FacebookUser::whereEmail(guard('facebookUser')->getEmail())->first();
 
 
                     return $next($request);
