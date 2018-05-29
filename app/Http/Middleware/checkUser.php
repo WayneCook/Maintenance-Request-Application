@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Middleware;
-use App\facebookUser;
+use App\FacebookUser;
 use Closure;
 
 class checkUser
