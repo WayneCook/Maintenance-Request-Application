@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 use App\FacebookUser;
+use App\User;
 use Closure;
 use Auth;
 class checkUser
@@ -15,8 +16,16 @@ class checkUser
      */
     public function handle($request, Closure $next)
     {
+      $facebookAccount = auth()->guard('facebookUser')->user();
+      $userAccount = auth()->user();
 
-        dd(auth()->guard('facebookUser')->user());
+      $userEmail = User::whereEmail($facebookAccount)->first();
+
+      if ($userEmail) {
+        return 'email found';
+      } else {
+        return 'no email found';
+      }
 
       if (auth()->check() || auth()->guard('facebookUser')->check())
            {
