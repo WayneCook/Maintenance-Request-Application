@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Middleware;
-
+use App\facebookUser;
 use Closure;
 
 class checkUser
@@ -18,7 +18,7 @@ class checkUser
 
       if (auth()->check() || auth()->guard('facebookUser')->check())
            {
-             $user = User::guard('facebookUser')->whereEmail($providerUser->getEmail())->first();
+             $user = FacebookUser::whereEmail($providerUser->getEmail())->first();
 
 
                     return $next($request);
