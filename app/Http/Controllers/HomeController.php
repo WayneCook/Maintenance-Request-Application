@@ -14,7 +14,9 @@ class HomeController extends Controller
     public function __construct()
     {
 
-        $this->middleware('auth:facebookUser')->except('auth');
+
+      $this->middleware('checkUser');
+        // $this->middleware('auth:facebookUser')->except('auth');
     }
 
     /**
