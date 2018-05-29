@@ -16,10 +16,10 @@ class checkUser
      */
     public function handle($request, Closure $next)
     {
-      $facebookAccount = auth()->guard('facebookUser')->user();
-      // $userAccount = auth()->user();
+      $facebookAccount = auth()->guard('facebookUser')->user()->email;
+      $userAccount = auth()->user();
 
-      $userEmail = User::whereEmail($facebookAccount->email);
+      $userEmail = User::whereEmail($facebookAccount);
 
       if ($userEmail) {
         return 'email found';
