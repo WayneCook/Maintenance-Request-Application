@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Middleware;
+// use App\Http\Middleware;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
