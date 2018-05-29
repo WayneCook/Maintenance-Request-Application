@@ -39,44 +39,40 @@ class FacebookLoginController extends Controller
         }
 
 
-
-
         public function handleProviderCallback()
         {
-
-
 
             $userSocial = Socialite::driver('facebook')->stateless()->user();
 
 
-            $user = FacebookUser::where('email', $userSocial->user['email'])->first();
-
-            // dd($user);
+            $user = User::where('email', $userSocial->user['email'])->first();
 
             if ($user) {
-              if (Auth::guard('facebookUser')->loginUsingId($user->id)) {
+              if (Auth::loginUsingId($user->id)) {
                 return redirect()->route('home');
               }
             }
 
+            $str = 'abcdefghijklmnop';
+            $ShuffleStr = str_shuffle($str);
+            $password = Hash::make($ShuffleStr);
 
-            $userSignup = FacebookUser::create([
+            $userSignup = User::create([
               'facebook_id' => $userSocial->user['id'],
               'name' => $userSocial->user['name'],
               'email' => $userSocial->user['email'],
-              'password' => bcrypt('waynecook1980'),
+              'password' => $password,
               'avatar' => $userSocial->avatar,
             ]);
 
-
             if($userSignup){
-              if (Auth::guard('facebookUser')->loginUsingId($userSignup->id)) {
+
+              if (Auth::loginUsingId($userSignup->id)) {
 
                 return redirect()->route('home');
               }
             }
         }
-
 
         public function guard()
          {

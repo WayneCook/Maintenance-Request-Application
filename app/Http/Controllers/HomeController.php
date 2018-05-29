@@ -15,7 +15,7 @@ class HomeController extends Controller
     {
 
 
-      $this->middleware('checkUser');
+      $this->middleware('auth');
         // $this->middleware('auth:facebookUser')->except('auth');
     }
 
