@@ -3,7 +3,7 @@
 namespace App\Http\Middleware;
 use App\FacebookUser;
 use Closure;
-
+use Auth;
 class checkUser
 {
     /**
