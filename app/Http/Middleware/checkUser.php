@@ -17,7 +17,7 @@ class checkUser
     public function handle($request, Closure $next)
     {
       $facebookAccount = auth()->guard('facebookUser')->user();
-      $userAccount = auth()->user();
+      // $userAccount = auth()->user();
 
       $userEmail = User::whereEmail($facebookAccount->email);
 
