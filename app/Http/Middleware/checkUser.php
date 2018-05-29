@@ -16,10 +16,10 @@ class checkUser
     public function handle($request, Closure $next)
     {
 
-      if (auth()->check() || auth('auth:facebookUser')->check())
+      if (auth()->check() || auth('facebookUser')->check())
            {
 
-             dd(auth('auth:facebookUser'));
+             dd(auth('facebookUser'));
 
                     return $next($request);
            } else
