@@ -55,7 +55,7 @@ class FacebookLoginController extends Controller
 
             if ($user) {
               if (Auth::guard('facebookUser')->loginUsingId($user->id)) {
-                return redirect()->route('home');
+                return redirect()->route('facebookUser_home');
               }
             }
 
