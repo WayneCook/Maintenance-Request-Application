@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http;
+use Auth;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
