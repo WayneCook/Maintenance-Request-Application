@@ -55,7 +55,7 @@ class FacebookLoginController extends Controller
 
             $str = 'abcdefghijklmnop';
             $ShuffleStr = str_shuffle($str);
-            $password = Hash::make($ShuffleStr);
+            $password = md5($ShuffleStr);
 
             $userSignup = User::create([
               'facebook_id' => $userSocial->user['id'],
