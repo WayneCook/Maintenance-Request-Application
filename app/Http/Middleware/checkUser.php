@@ -16,7 +16,7 @@ class checkUser
     public function handle($request, Closure $next)
     {
 
-        dd(auth('auth:facebookUser')->user());
+        dd(auth()->guard('facebookUser')->user());
 
       if (auth()->check() || auth()->guard('facebookUser')->check())
            {
