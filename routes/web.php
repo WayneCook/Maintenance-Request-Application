@@ -21,4 +21,4 @@ Auth::routes();
 Route::get('login/facebook', 'Auth\FacebookLoginController@redirectToProvider')->name('login.facebook');
 Route::get('login/facebook/callback', 'Auth\FacebookLoginController@handleProviderCallback');
 
-Route::get('/home', 'HomeController@index')->name('facebookUser_home')->middleware('facebookUser');
+Route::get('/home', 'HomeController@index')->name('facebookUser_home')->middleware('auth:facebookUser');
