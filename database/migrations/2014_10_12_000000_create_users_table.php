@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('facebook_id')->nullable();
-            $table->string('avatar')->default('default_avatar');
+            $table->string('avatar')->default('http://infyom.com/images/logo/blue_logo_150x150.jpg');
             $table->rememberToken();
             $table->timestamps();
         });
