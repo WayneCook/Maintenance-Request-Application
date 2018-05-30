@@ -21,6 +21,10 @@ Route::get('login/facebook/callback', 'Auth\FacebookLoginController@handleProvid
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/private-policy', function(){
+  return view('private/privatePolicy');
+});
+
 
 
 Auth::routes();
