@@ -44,13 +44,13 @@
 
             {!! csrf_field() !!}
 
-            <div class="form-group has-feedback{{ $errors->has('name') ? ' has-error' : '' }}">
-                <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Full Name">
+            <div class="form-group has-feedback{{ $errors->has('username') ? ' has-error' : '' }}">
+                <input type="text" class="form-control" name="username" value="{{ old('username') }}" placeholder="Name">
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
 
-                @if ($errors->has('name'))
+                @if ($errors->has('username'))
                     <span class="help-block">
-                        <strong>{{ $errors->first('name') }}</strong>
+                        <strong>{{ $errors->first('username') }}</strong>
                     </span>
                 @endif
             </div>
@@ -62,6 +62,17 @@
                 @if ($errors->has('email'))
                     <span class="help-block">
                         <strong>{{ $errors->first('email') }}</strong>
+                    </span>
+                @endif
+            </div>
+
+            <div class="form-group has-feedback{{ $errors->has('unit_number') ? ' has-error' : '' }}">
+                <input type="text" class="form-control" name="unit_number" value="{{ old('unit_number') }}" placeholder="Apartment number">
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+
+                @if ($errors->has('unit_number'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('unit_number') }}</strong>
                     </span>
                 @endif
             </div>

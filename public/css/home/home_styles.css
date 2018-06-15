@@ -1,0 +1,206 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* End CSS RESET */
+
+body {
+  background-color: black;
+  font-family: 'Montserrat', sans-serif;
+}
+
+nav {
+  background-color: hsla(0, 0%, 99%, 1);
+  height: 65px;
+}
+
+nav p {
+  padding: 25px 12px;
+  text-align: center;
+  display: inline-block;
+  background-color: hsla(184, 96%, 26%, 1);
+  margin-right: 5px;
+  color: white;
+  cursor: pointer;
+  transition: all ease-in-out 200ms;
+}
+
+nav p:hover {
+  background-color: hsla(184, 96%, 20%, 1);
+}
+
+.nav-content {
+  margin: auto;
+  /* width: 100%; */
+  max-width: 1400px;
+  padding: 0px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-content h1 span {
+  font-family: 'Great Vibes', cursive;
+  font-size: 36px;
+  letter-spacing: 1px;
+  color: hsla(185, 13%, 58%, 1);
+}
+
+main {
+
+  position: relative;
+  height: calc(100vh - 65px);
+  width: 100%;
+	display: block;
+}
+
+main:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(195, 17%, 25%, 0.72);
+  z-index: 11;
+}
+
+
+
+.image-slider {
+
+	height: calc(100vh - 65px);
+
+	width: 100%;
+
+}
+
+.slick-slider .slick-track, .slick-slider .slick-list {
+	height: calc(100vh - 65px);
+}
+
+.slide {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: calc(100vh - 65px);
+	width: 100%;
+}
+
+.image-one {
+	background-image: url('../../images/whisper-one.jpg');
+}
+
+.image-two {
+	background-image: url('../../images/whisper-two.jpg');
+}
+
+.image-three {
+	background-image: url('../../images/whisper-three.jpg');
+}
+
+.headline-container {
+	position: absolute;
+	display: block;
+	width: 100%;
+	z-index: 22;
+	top: 47%;
+  transform: translateY(-50%);
+	float: none;
+}
+
+.arrow-container {
+	display: block;
+  width: 100%;
+  position: absolute;
+  z-index: 22;
+  bottom: 12px;
+  text-align: center;
+  color: white;
+  font-size: 62px;
+}
+
+.headline-container h1 {
+  font-size: 48px;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 7px hsla(0, 0%, 0%, 0.4);
+}
+
+.button-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.register-button {
+	text-decoration: none;
+  padding: 15px 28px;
+  background-color: hsla(184, 96%, 26%, 1);
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 1em;
+  border: .1em solid hsla(0, 0%, 99%, 1);
+  color: hsla(0, 0%, 99%, 1);
+  cursor: pointer;
+  transition: all ease-in-out 250ms;
+}
+
+
+.register-button:hover {
+  box-shadow: 0px 21px 18px -15px rgba(0,0,0,0.3);
+  transform: translate(0px, -2px) scale(1.02);
+  background-color: hsla(184, 96%, 20%, 1);
+	color: hsla(0, 0%, 99%, 1);
+	text-decoration: none;
+
+}
+
+footer {
+	height: 174px;
+  background-color: hsla(0, 0%, 99%, 1);
+	text-align: center;
+	padding-top: 79px;
+}

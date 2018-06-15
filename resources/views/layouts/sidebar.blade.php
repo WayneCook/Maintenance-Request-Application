@@ -6,14 +6,14 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="{{ Auth::user()->avatar }}" class="img-circle"
+                <img src="{{Auth::user()->avatar ? Auth::user()->avatar : asset('images/user-icon.jpg') }}" class="img-circle"
                      alt="User Image"/>
             </div>
             <div class="pull-left info">
                 @if (Auth::guest())
                 <p>InfyOm</p>
                 @else
-                    <p>{{ Auth::user()->name}}</p>
+                    <p>{{ Auth::user()->username}}</p>
                 @endif
                 <!-- Status -->
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>

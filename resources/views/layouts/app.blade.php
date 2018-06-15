@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Whispering Loop</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
     <!-- Bootstrap 3.3.7 -->
@@ -21,11 +22,15 @@
     <!-- iCheck -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/skins/square/_all.css">
 
+    <!-- toastr notifications -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css">
 
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     @yield('css')
 </head>
 
@@ -43,7 +48,7 @@
             <!-- Header Navbar -->
             <nav class="navbar navbar-static-top" role="navigation">
                 <!-- Sidebar toggle button-->
-                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
                     <span class="sr-only">Toggle navigation</span>
                 </a>
                 <!-- Navbar Right Menu -->
@@ -54,18 +59,18 @@
                             <!-- Menu Toggle Button -->
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <!-- The user image in the navbar-->
-                                <img src="{{ Auth::user()->avatar }}"
-                                     class="user-image" alt="User Image"/>
+                                <img src="{{Auth::user()->avatar ? Auth::user()->avatar : asset('images/user-icon.jpg') }}"
+                                    class="user-image" alt="User Image"/>
                                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                                <span class="hidden-xs">{!! Auth::user()->name !!}</span>
+                                <span class="hidden-xs">{!! Auth::user()->username !!}</span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- The user image in the menu -->
                                 <li class="user-header">
-                                    <img src="{{ Auth::user()->avatar }}"
+                                    <img src="{{Auth::user()->avatar ? Auth::user()->avatar : asset('images/user-icon.jpg') }}"
                                          class="img-circle" alt="User Image"/>
                                     <p>
-                                        {!! Auth::user()->name !!}
+                                        {!! Auth::user()->username !!}
                                         <small>Member since {!! Auth::user()->created_at->format('M. Y') !!}</small>
                                     </p>
                                 </li>
@@ -95,7 +100,9 @@
         @include('layouts.sidebar')
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
+
             @yield('content')
+            @yield('loader')
         </div>
 
         <!-- Main Footer -->
@@ -144,6 +151,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
+                    @yield('loader')
                     @yield('content')
                 </div>
             </div>
@@ -160,6 +168,10 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/icheck.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+
+    <!-- Toastr notifications -->
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
 
     @yield('scripts')
 </body>

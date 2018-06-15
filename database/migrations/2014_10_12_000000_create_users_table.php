@@ -15,11 +15,14 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->integer('role_id')->default(3);
+            $table->string('username');
+            $table->string('unit_number')->nullable();
             $table->string('email')->unique();
             $table->string('password');
             $table->string('facebook_id')->nullable();
-            $table->string('avatar')->default('http://infyom.com/images/logo/blue_logo_150x150.jpg');
+            $table->string('avatar')->nullable();
+            $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();
         });

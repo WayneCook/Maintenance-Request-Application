@@ -45,14 +45,18 @@
         <form method="post" action="{{ url('/login') }}">
             {!! csrf_field() !!}
 
-            <div class="form-group has-feedback {{ $errors->has('email') ? ' has-error' : '' }}">
-                <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
+            <div class="form-group has-feedback {{ $errors->has('username') || $errors->has('email') ? ' is-invalid' : '' }}">
+
+              <input id="login" type="text"
+                 class="form-control{{ $errors->has('username') || $errors->has('email') ? ' is-invalid' : '' }}"
+                 name="login" value="{{ old('username') ?: old('email') }}" required autofocus>
+
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-                @if ($errors->has('email'))
-                    <span class="help-block">
-                    <strong>{{ $errors->first('email') }}</strong>
-                </span>
-                @endif
+                @if ($errors->has('username') || $errors->has('email'))
+           <span class="invalid-feedback">
+               <p>{{ $errors->first('username') ?: $errors->first('email') }}</p>
+           </span>
+       @endif
             </div>
 
             <div class="form-group has-feedback{{ $errors->has('password') ? ' has-error' : '' }}">
@@ -60,7 +64,7 @@
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 @if ($errors->has('password'))
                     <span class="help-block">
-                    <strong>{{ $errors->first('password') }}</strong>
+                    <p>{{ $errors->first('password') }}</p>
                 </span>
                 @endif
 
