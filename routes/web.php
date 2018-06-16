@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('home');
-})->name('home');
+});
 
 route::post('admin/workOrder/update/{id}', 'OrdersController@update');
 route::post('admin/workOrder/delete/{id}', 'OrdersController@destroy');
