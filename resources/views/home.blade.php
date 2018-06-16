@@ -40,7 +40,7 @@
         <div class="button-container">
 
           {{-- <a class='register-button nounderline' href='{{route('register')}}'><i class="fa fa-user-plus"></i> TENANT REGISTRATION</a> --}}
-          <a class='register-button nounderline' href='{{route('/')}}'><i class="fa fa-user-plus"></i> TENANT REGISTRATION</a>
+          <a class='register-button nounderline' href='{{route('home')}}'><i class="fa fa-user-plus"></i> TENANT REGISTRATION</a>
         </div>
 
       </div>
