@@ -90,10 +90,10 @@
 
 
 
-        <div class="col-12">
+        {{-- <div class="col-12">
         </br>
               <a href="{{ route('login.facebook') }}" class="btn btn-primary btn-block">Login with Facebook</a>
-        </div>
+        </div> --}}
     </div>
     <!-- /.login-box-body -->
 </div>
