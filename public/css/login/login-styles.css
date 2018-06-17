@@ -70,6 +70,12 @@ body.login-page {
   margin: 30px 0px;
 }
 
+.main-container {
+  height: 100vh;
+  min-height: 600px;
+  position: relative;
+}
+
 
 @media screen and (max-width: 450px) {
 

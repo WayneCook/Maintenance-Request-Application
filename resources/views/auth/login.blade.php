@@ -41,6 +41,9 @@
 
 </head>
 <body class="hold-transition login-page">
+
+  <div class="main-container">
+
   <nav>
     <div class='nav-content'>
       <h1><span>Whispering Fountians</span></h1>
@@ -113,6 +116,9 @@
 <footer class="home-footer">
     <p>Copyright © 2018. All rights reserved.</p>
 </footer>
+
+</div>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
