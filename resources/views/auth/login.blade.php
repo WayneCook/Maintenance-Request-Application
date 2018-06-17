@@ -23,6 +23,14 @@
 
     <!-- iCheck -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/skins/square/_all.css">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" type="text/css" href="{{asset('css/home/home_styles.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/login/login-styles.css')}}">
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -33,14 +41,22 @@
 
 </head>
 <body class="hold-transition login-page">
-<div class="login-box">
-    <div class="login-logo">
-        <a href="{{ url('/home') }}">Whispering<b>LOOP</b></a>
+  <nav>
+    <div class='nav-content'>
+      <h1><span>Whispering Fountians</span></h1>
+
     </div>
+  </nav>
+
+
+<div class="login-box">
+    {{-- <div class="login-logo">
+        <a href="{{ url('/home') }}">WHISPERING<b>LOOP</b></a>
+    </div> --}}
 
     <!-- /.login-logo -->
     <div class="login-box-body">
-        <p class="login-box-msg">Sign in to start your session</p>
+        <p class="login-box-msg">LOGIN</p>
 
         <form method="post" action="{{ url('/login') }}">
             {!! csrf_field() !!}
@@ -49,7 +65,7 @@
 
               <input id="login" type="text"
                  class="form-control{{ $errors->has('username') || $errors->has('email') ? ' is-invalid' : '' }}"
-                 name="login" value="{{ old('username') ?: old('email') }}" required autofocus>
+                 name="login" value="{{ old('username') ?: old('email') }}" placeholder="Name or Email" required autofocus>
 
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 @if ($errors->has('username') || $errors->has('email'))
@@ -70,22 +86,22 @@
 
             </div>
             <div class="row">
-                <div class="col-xs-8">
+                <div class="col-sm-8">
                     <div class="checkbox icheck">
-                        <label>
+                        {{-- <label>
                             <input type="checkbox" name="remember"> Remember Me
-                        </label>
+                        </label> --}}
                     </div>
                 </div>
                 <!-- /.col -->
-                <div class="col-xs-4">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                <div class="col-sm-4">
+                    <button type="submit" class="btn btn-primary btn-block btn-flat btn-custom">Sign In</button>
                 </div>
                 <!-- /.col -->
             </div>
         </form>
 
-        <a href="{{ url('/password/reset') }}">I forgot my password</a><br>
+        {{-- <a href="{{ url('/password/reset') }}">I forgot my password</a><br> --}}
         {{-- <a href="{{ url('/register') }}" class="text-center">Register a new membership</a> --}}
 
 
@@ -98,6 +114,10 @@
     <!-- /.login-box-body -->
 </div>
 <!-- /.login-box -->
+
+<footer class="home-footer">
+    <p>Copyright © 2018 Whispering Loop. All rights reserved.</p>
+</footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

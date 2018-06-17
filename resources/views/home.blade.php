@@ -5,6 +5,7 @@
     <title>Home</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
     <link rel="stylesheet" type="text/css" href="{{asset('css/grid/bootstrap.css')}}">
     <script src="{{ asset('js/app.js') }}"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -14,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/home/section-styles.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/home/home_styles.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/home/home-responsive.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/home/login-styles.css')}}">
 
   </head>
   <body>
@@ -27,7 +29,7 @@
       </div>
     </nav>
 
-    <main>
+  <main>
 
       <div class="image-slider">
         <div class="image-one slide"></div>

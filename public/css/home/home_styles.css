@@ -203,4 +203,6 @@ footer {
   background-color: hsla(0, 0%, 99%, 1);
 	text-align: center;
 	padding-top: 79px;
+	color: hsla(185, 13%, 58%, 1);
+	font-size: 14px;
 }
