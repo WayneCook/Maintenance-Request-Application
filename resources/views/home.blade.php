@@ -91,7 +91,7 @@
     </section>
 
     <footer class="home-footer">
-        <strong>Copyright © 2018 <a href="{{ route('home') }}">Whispering Loop</a>.</strong> All rights reserved.
+        <strong>Copyright © 2018. All rights reserved.
     </footer>
 
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
