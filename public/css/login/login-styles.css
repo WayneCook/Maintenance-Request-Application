@@ -19,12 +19,14 @@ body.login-page {
 
 .btn-custom {
   background-color: hsla(184, 96%, 26%, 1);
+  margin-bottom: 12px;
 }
 
 .login-box-msg, .register-box-msg {
 
-  color: hsla(185, 13%, 58%, 1);
-  font-size: 22px;
+  color: hsl(0, 0%, 47%);
+  font-size: 26px;
+  margin: 12px;
 }
 
 .form-control {

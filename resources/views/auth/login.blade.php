@@ -111,7 +111,7 @@
 <!-- /.login-box -->
 
 <footer class="home-footer">
-    <p>Copyright © 2018 Whispering Loop. All rights reserved.</p>
+    <p>Copyright © 2018. All rights reserved.</p>
 </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
