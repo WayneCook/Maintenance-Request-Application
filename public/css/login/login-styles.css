@@ -59,6 +59,14 @@ body.login-page {
   font-size: 14px;
 }
 
+.register-link {
+  font-size: 14px;
+  text-align: left;
+  text-decoration: underline;
+  display: block;
+  margin-bottom: 15px;
+}
+
 
 @media screen and (max-width: 450px) {
 

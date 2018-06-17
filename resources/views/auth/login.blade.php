@@ -64,7 +64,7 @@
             <div class="form-group has-feedback {{ $errors->has('username') || $errors->has('email') ? ' is-invalid' : '' }}">
 
               <input id="login" type="text"
-                 class="form-control{{ $errors->has('username') || $errors->has('email') ? ' is-invalid' : '' }}"
+                 class="input-lg form-control{{ $errors->has('username') || $errors->has('email') ? ' is-invalid' : '' }}"
                  name="login" value="{{ old('username') ?: old('email') }}" placeholder="Name or Email" required autofocus>
 
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -76,7 +76,7 @@
             </div>
 
             <div class="form-group has-feedback{{ $errors->has('password') ? ' has-error' : '' }}">
-                <input type="password" class="form-control" placeholder="Password" name="password">
+                <input type="password" class="form-control input-lg" placeholder="Password" name="password">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 @if ($errors->has('password'))
                     <span class="help-block">
@@ -85,24 +85,19 @@
                 @endif
 
             </div>
-            <div class="row">
-                <div class="col-sm-8">
-                    <div class="checkbox icheck">
-                        {{-- <label>
-                            <input type="checkbox" name="remember"> Remember Me
-                        </label> --}}
-                    </div>
-                </div>
-                <!-- /.col -->
-                <div class="col-sm-4">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat btn-custom">Sign In</button>
-                </div>
-                <!-- /.col -->
-            </div>
+
+              <div class="col">
+                  {{-- <a href="{{ url('/register') }}" class="text-center register-link">Register a new membership</a> --}}
+                  <a href="#" class="text-center register-link">Register a new membership</a>
+              </div>
+
+              <div class="col">
+                  <button type="submit" class="btn btn-primary btn-block btn-lg btn-flat btn-custom">Sign In</button>
+              </div>
         </form>
 
+
         {{-- <a href="{{ url('/password/reset') }}">I forgot my password</a><br> --}}
-        {{-- <a href="{{ url('/register') }}" class="text-center">Register a new membership</a> --}}
 
 
 
