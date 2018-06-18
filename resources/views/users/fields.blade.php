@@ -1,7 +1,7 @@
 <!-- Name Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('name', 'Name:') !!}
-    {!! Form::text('name', null, ['class' => 'form-control']) !!}
+    {!! Form::label('username', 'Name:') !!}
+    {!! Form::text('username', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Email Field -->
@@ -10,28 +10,16 @@
     {!! Form::email('email', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Password Field -->
+<!-- Unit Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('password', 'Password:') !!}
-    {!! Form::password('password', ['class' => 'form-control']) !!}
+    {!! Form::label('unit_number', 'Unit Number:') !!}
+    {!! Form::text('unit_number', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Facebook Id Field -->
+<!-- Role -->
 <div class="form-group col-sm-6">
-    {!! Form::label('facebook_id', 'Facebook Id:') !!}
-    {!! Form::text('facebook_id', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Avatar Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('avatar', 'Avatar:') !!}
-    {!! Form::text('avatar', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Remember Token Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('remember_token', 'Remember Token:') !!}
-    {!! Form::text('remember_token', null, ['class' => 'form-control']) !!}
+    {!! Form::label('role_id', 'User Role:') !!}
+    {!! Form::text('role_id', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->

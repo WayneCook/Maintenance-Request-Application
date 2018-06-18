@@ -1,28 +1,13 @@
-<table class="display nowrap table table-striped table-hover" id="workOrders-table" style="width: 100%">
+
+<table class="display nowrap table table-striped table-hover" id="users-table" style="width: 100%">
     <thead>
         <tr>
           <th>Name</th>
-          <th>Unit Number</th>
-          <th>Submitted on</th>
-          <th>Status</th>
+          <th>Email</th>
+          <th>Unit</th>
+          <th>Role</th>
+          <th>Registered on</th>
           <th>Action</th>
-        </tr>
-    </thead>
-</table>
-
-
-
-
-<table class="table table-responsive" id="users-table">
-    <thead>
-        <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Password</th>
-        <th>Facebook Id</th>
-        <th>Avatar</th>
-        <th>Remember Token</th>
-            <th colspan="3">Action</th>
         </tr>
     </thead>
     <tbody>
@@ -30,10 +15,10 @@
         <tr>
             <td>{!! $user->username !!}</td>
             <td>{!! $user->email !!}</td>
-            <td>{!! $user->password !!}</td>
-            <td>{!! $user->facebook_id !!}</td>
-            <td>{!! $user->avatar !!}</td>
-            <td>{!! $user->remember_token !!}</td>
+            <td>{!! $user->unit_number !!}</td>
+            <td>{!! $user->role_id !!}</td>
+            <td>{!! $user->created_at !!}</td>
+
             <td>
                 {!! Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>

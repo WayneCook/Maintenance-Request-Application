@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/home/section-styles.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/home/home_styles.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/home/home-responsive.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/home/login-styles.css')}}">
+    {{-- <link rel="stylesheet" type="text/css" href="{{asset('css/home/login-styles.css')}}"> --}}
 
   </head>
   <body>

@@ -23,6 +23,10 @@
 
     <!-- iCheck -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/skins/square/_all.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/home/home_styles.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/login/login-styles.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -31,21 +35,29 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body class="hold-transition register-page">
-<div class="register-box">
-    <div class="register-logo">
-        <a href="{{ url('/home') }}"><b>InfyOm </b>Generator</a>
+<body class="hold-transition register-page login-page">
+
+<div class="main-container">
+  <nav>
+    <div class='nav-content'>
+      <h1><span>Whispering Fountians</span></h1>
+
     </div>
+  </nav>
+
+<div class="register-box">
+
+
 
     <div class="register-box-body">
-        <p class="login-box-msg">Register a new membership</p>
+        <p class="login-box-msg">REGISTRATION</p>
 
         <form method="post" action="{{ url('/register') }}">
 
             {!! csrf_field() !!}
 
             <div class="form-group has-feedback{{ $errors->has('username') ? ' has-error' : '' }}">
-                <input type="text" class="form-control" name="username" value="{{ old('username') }}" placeholder="Name">
+                <input type="text" class="form-control input-lg" name="username" value="{{ old('username') }}" placeholder="Name">
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
 
                 @if ($errors->has('username'))
@@ -56,7 +68,7 @@
             </div>
 
             <div class="form-group has-feedback{{ $errors->has('email') ? ' has-error' : '' }}">
-                <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
+                <input type="email" class="form-control input-lg" name="email" value="{{ old('email') }}" placeholder="Email">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
 
                 @if ($errors->has('email'))
@@ -67,7 +79,7 @@
             </div>
 
             <div class="form-group has-feedback{{ $errors->has('unit_number') ? ' has-error' : '' }}">
-                <input type="text" class="form-control" name="unit_number" value="{{ old('unit_number') }}" placeholder="Apartment number">
+                <input type="text" class="form-control input-lg" name="unit_number" value="{{ old('unit_number') }}" placeholder="Apartment number">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
 
                 @if ($errors->has('unit_number'))
@@ -78,7 +90,7 @@
             </div>
 
             <div class="form-group has-feedback{{ $errors->has('password') ? ' has-error' : '' }}">
-                <input type="password" class="form-control" name="password" placeholder="Password">
+                <input type="password" class="form-control input-lg" name="password" placeholder="Password">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
 
                 @if ($errors->has('password'))
@@ -89,7 +101,7 @@
             </div>
 
             <div class="form-group has-feedback{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm password">
+                <input type="password" name="password_confirmation" class="form-control input-lg" placeholder="Confirm password">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
 
                 @if ($errors->has('password_confirmation'))
@@ -99,27 +111,30 @@
                 @endif
             </div>
 
-            <div class="row">
-                <div class="col-xs-8">
+
+                <div class="col">
                     <div class="checkbox icheck">
-                        <label>
-                            <input type="checkbox"> I agree to the <a href="#">terms</a>
-                        </label>
+                        <a href="{{ url('/login') }}" class="text-center login-link">I already have a membership</a>
                     </div>
                 </div>
                 <!-- /.col -->
-                <div class="col-xs-4">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
+                <div class="col">
+                    <button type="submit" class="btn btn-primary btn-block btn-lg btn-flat btn-custom">Register</button>
                 </div>
                 <!-- /.col -->
-            </div>
+
         </form>
 
-        <a href="{{ url('/login') }}" class="text-center">I already have a membership</a>
+
     </div>
     <!-- /.form-box -->
 </div>
 <!-- /.register-box -->
+  <footer class="home-footer">
+      <p>Copyright © 2018. All rights reserved.</p>
+  </footer>
+</div>
+{{-- End main container --}}
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

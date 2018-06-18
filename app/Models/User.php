@@ -22,7 +22,7 @@ class User extends Model
     use SoftDeletes;
 
     public $table = 'users';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -31,8 +31,9 @@ class User extends Model
 
 
     public $fillable = [
-        'name',
+        'username',
         'email',
+        'unit_number',
         'password',
         'facebook_id',
         'avatar',
@@ -60,8 +61,8 @@ class User extends Model
      * @var array
      */
     public static $rules = [
-        
+
     ];
 
-    
+
 }
