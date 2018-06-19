@@ -8,6 +8,7 @@
 
     <!-- Bootstrap 3.3.7 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
     {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
 
     <!-- Font Awesome -->
@@ -48,7 +49,22 @@
 
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+
+
     @yield('css')
+    <style>
+
+    body p, a, h1, h2, h3, h4, footer{
+      font-family: 'Montserrat', sans-serif;
+    }
+
+   .logo {
+      font-family: 'Montserrat', sans-serif!important;
+      font-size: 17px!important;
+    }
+
+    </style>
 </head>
 
 <body class="skin-blue sidebar-mini">
