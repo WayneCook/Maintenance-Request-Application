@@ -53,7 +53,7 @@
 
     <section class="container-fluid section-container" id="scroll-point">
       <article class="section-details">
-        <p>Stay Connected! Registration for Whispering Fountains at Monrovia Now open. Registered tenants will gain access to services requests, event signups and much more.</p>
+        <p>Stay Connected! Registration for Whispering Fountains at Monrovia is now open. Registered tenants will gain access to services requests, event signups and much more.</p>
       </article>
       <div class="row box-row">
 

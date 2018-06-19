@@ -7,7 +7,7 @@ body.login-page {
 
 .nav-content h1 span {
   display: block;
-  padding-top: 14px;
+  padding-top: 17px;
 }
 
 .login-box-body, .register-box-body {
@@ -72,7 +72,7 @@ body.login-page {
 
 .main-container {
   height: 100vh;
-  min-height: 600px;
+  min-height: 700px;
   position: relative;
 }
 

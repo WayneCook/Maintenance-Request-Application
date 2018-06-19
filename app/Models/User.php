@@ -34,6 +34,7 @@ class User extends Model
         'username',
         'email',
         'unit_number',
+        'role_id',
         'password',
         'facebook_id',
         'avatar',

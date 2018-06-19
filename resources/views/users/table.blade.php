@@ -13,21 +13,33 @@
     <tbody>
     @foreach($users as $user)
         <tr>
-            <td>{!! $user->username !!}</td>
-            <td>{!! $user->email !!}</td>
-            <td>{!! $user->unit_number !!}</td>
-            <td>{!! $user->role_id !!}</td>
-            <td>{!! $user->created_at !!}</td>
+          <td>{!! $user->username !!}</td>
+          <td>{!! $user->email !!}</td>
+          <td>{!! $user->unit_number !!}</td>
 
-            <td>
-                {!! Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete']) !!}
-                <div class='btn-group'>
-                    <a href="{!! route('users.show', [$user->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
-                    <a href="{!! route('users.edit', [$user->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
-                    {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
-                </div>
-                {!! Form::close() !!}
-            </td>
+            @switch($user->role_id)
+                @case(1)
+                    <td>Admin</td>
+                    @break
+
+                @case(2)
+                    <td>Maintanence</td>
+                    @break
+
+                @default
+                    <td>Basic</td>
+            @endswitch
+
+          <td>{!! $user->created_at !!}</td>
+          <td>
+              {!! Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete']) !!}
+
+                  <a href="{!! route('users.show', [$user->id]) !!}" class='btn btn-default btn-sm'><i class="glyphicon glyphicon-eye-open"></i></a>
+                  <a href="{!! route('users.edit', [$user->id]) !!}" class='btn btn-default btn-sm'><i class="glyphicon glyphicon-edit"></i></a>
+                  {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-sm', 'onclick' => "return confirm('Are you sure?')"]) !!}
+
+              {!! Form::close() !!}
+          </td>
         </tr>
     @endforeach
     </tbody>
