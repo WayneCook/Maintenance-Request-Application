@@ -36,7 +36,15 @@
                       <div class="col">
                         <div class="form-group col-sm-6">
                           <label class="control-label" for="title">Apartment number:</label>
-                          <input type="text" name="unit_number" class="form-control show-order-data" id="unit_number" autocomplete="off">
+                          <select type="text" name="unit_number" class="form-control show-order-data" id="unit_number" autocomplete="off">
+
+                          @foreach ($storeNumbers as $store)
+
+                            <option value="{{$store}}">{{$store}}</option>
+                            
+                          @endforeach
+
+                          </select>
                           <small class="text-danger" name="unit_number"></small>
                         </div>
                       </div>
@@ -194,6 +202,17 @@
                         <div class="form-group col-sm-6">
                           <label class="control-label" for="title">Apartment number:</label>
                           <input type="text" name="unit_number" class="form-control show-order-data" id="unit_number" autocomplete="off">
+
+                          <select type="text" name="unit_number" class="form-control show-order-data" id="unit_number" autocomplete="off">
+
+                          @foreach ($storeNumbers as $store)
+
+                            <option value="{{$store}}">{{$store}}</option>
+
+                          @endforeach
+
+                          </select>
+
                           <small class="text-danger" name="unit_number"></small>
                         </div>
                       </div>

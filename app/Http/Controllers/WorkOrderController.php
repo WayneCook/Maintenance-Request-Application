@@ -16,6 +16,8 @@ class workOrderController extends AppBaseController
     /** @var  workOrderRepository */
     private $workOrderRepository;
 
+    private $storeNumbers = array('602','603','604','605','606','607','608','609');
+
     public function __construct(workOrderRepository $workOrderRepo)
     {
         $this->workOrderRepository = $workOrderRepo;
@@ -33,7 +35,7 @@ class workOrderController extends AppBaseController
         $workOrders = $this->workOrderRepository->all();
 
         return view('work_orders.index')
-            ->with('workOrders', $workOrders);
+            ->with(['workOrders' => $workOrders, 'storeNumbers' => $this->storeNumbers]);
     }
 
     public function initial()
@@ -42,7 +44,7 @@ class workOrderController extends AppBaseController
         $workOrders = $this->workOrderRepository->all();
 
         return view('work_orders.index')
-            ->with('workOrders', $workOrders);
+            ->with(['workOrders' => $workOrders, 'storeNumbers' => $this->storeNumbers]);
     }
 
 
