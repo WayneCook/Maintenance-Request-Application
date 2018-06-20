@@ -11,7 +11,7 @@
     <nav>
         <ol class="breadcrumb breadcrumb-arrow">
 
-        <li><a href="#">Admin</a></li>
+        <li><a href="{{ route('admin') }}">Admin</a></li>
 
       </ol>
     </nav>
@@ -43,11 +43,11 @@
 
 
 
-      <a href="{{route('login')}}">
+      <a href="{{ route('users.index') }}">
       <div class="content-box col-md-4">
         <div class="box-container">
             <i class="fa fa-envelope section-icons"></i>
-            <h2>Contact Us</h2>
+            <h2>User Management</h2>
             <span class="bottom-line"></span>
         </div>
       </div>

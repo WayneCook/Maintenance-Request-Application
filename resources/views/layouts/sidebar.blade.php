@@ -5,10 +5,12 @@
 
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel">
-            <div class="pull-left image">
-                <img src="{{Auth::user()->avatar ? Auth::user()->avatar : asset('images/user-icon.jpg') }}" class="img-circle"
-                     alt="User Image"/>
+
+            <div class="user-avatar" style="background-image: url('{{ Auth::user()->avatar ? asset('images/user_images') .'/'. Auth::user()->avatar : asset('images/user-icon.jpg') }}')">
+                {{-- <img src="" class="img-circle"
+                     alt="User Image"/> --}}
             </div>
+
             <div class="pull-left info">
                 @if (Auth::guest())
                 <p>InfyOm</p>

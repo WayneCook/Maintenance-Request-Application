@@ -34,7 +34,9 @@ Route::get('/private-policy', function(){
   return view('private/privatePolicy');
 });
 
+Route::get('image-upload',['as'=>'image.upload','uses'=>'ImageUploadController@imageUpload']);
 
+Route::post('image-upload',['as'=>'image.upload.post','uses'=>'ImageUploadController@imageUploadPost']);
 
 Auth::routes();
 

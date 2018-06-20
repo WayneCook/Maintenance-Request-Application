@@ -85,10 +85,10 @@
                   </form>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-success add" id="create-order-btn">
+                  <button type="button" class="btn btn-primary add" id="create-order-btn">
                     <span class='glyphicon glyphicon-check'></span> Add
                   </button>
-                  <button type="button" class="btn btn-warning" data-dismiss="modal">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">
                     <span class='glyphicon glyphicon-remove'></span> Close
                   </button>
                 </div>
@@ -158,7 +158,7 @@
                     </form>
                   </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-warning" data-dismiss="modal">
+                      <button type="button" class="btn btn-primary" data-dismiss="modal">
                         <span class='glyphicon glyphicon-remove'></span> Close
                       </button>
                     </div>
@@ -253,7 +253,7 @@
                       <button type="button" class="btn btn-primary edit" data-dismiss="modal">
                           <span class='glyphicon glyphicon-check'></span> Edit
                       </button>
-                      <button type="button" class="btn btn-warning" data-dismiss="modal">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">
                           <span class='glyphicon glyphicon-remove'></span> Close
                       </button>
                   </div>
@@ -326,7 +326,7 @@
                     <button type="button" class="btn btn-danger delete" data-dismiss="modal">
                         <span id="" class='glyphicon glyphicon-trash'></span> Delete
                     </button>
-                    <button type="button" class="btn btn-warning" data-dismiss="modal">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
                         <span class='glyphicon glyphicon-remove'></span> Close
                     </button>
                   </div>

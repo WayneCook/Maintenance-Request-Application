@@ -49,6 +49,7 @@
 
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{asset('css\layout\custom-layout.css')}}">
 
 
 
@@ -92,15 +93,19 @@
                             <!-- Menu Toggle Button -->
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <!-- The user image in the navbar-->
-                                <img src="{{Auth::user()->avatar ? Auth::user()->avatar : asset('images/user-icon.jpg') }}"
-                                    class="user-image" alt="User Image"/>
+
+                                <div class="right-avatar" style="background-image: url('{{ Auth::user()->avatar ? asset('images/user_images') .'/'. Auth::user()->avatar : asset('images/user-icon.jpg') }}')">
+
+                                </div>
+                                {{-- <img src="{{Auth::user()->avatar ? Auth::user()->avatar : asset('images/user-icon.jpg') }}"
+                                    class="user-image" alt="User Image"/> --}}
                                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
                                 <span class="hidden-xs">{!! Auth::user()->username !!}</span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- The user image in the menu -->
                                 <li class="user-header">
-                                    <img src="{{Auth::user()->avatar ? Auth::user()->avatar : asset('images/user-icon.jpg') }}"
+                                    <img src="{{ Auth::user()->avatar ? asset('images/user_images') . '/' . Auth::user()->avatar : asset('images/user-icon.jpg') }}"
                                          class="img-circle" alt="User Image"/>
                                     <p>
                                         {!! Auth::user()->username !!}

@@ -21,7 +21,7 @@
 }
 
 .content-box i {
-  font-size: 40px;
+  font-size: 32px;
   color: #3c8dbc;
   transition:  all cubic-bezier(0.51, 0, 0, 1.01) 550ms;
 }

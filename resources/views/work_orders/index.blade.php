@@ -54,4 +54,5 @@
 @section('scripts')
   @include('layouts.datatables_js')
   <script type="text/javascript" src="{{asset('js/work_orders/order_ajax.js')}}"></script>
+
 @endsection
