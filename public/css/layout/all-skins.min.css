@@ -29,12 +29,7 @@
     color: #fff
 }
 
-.skin-blue .main-header .navbar .sidebar-toggle {
 
-  font-size: 21px;
-  position: absolute;
-  bottom: -5px;
-}
 
 
 @media (max-width:767px) {
