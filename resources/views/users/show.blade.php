@@ -19,14 +19,14 @@
   </section>
 
   <div class="content">
-    <div class="panel panel-default panel-custom">
+    <div class="panel panel-default panel-custom profile-panel">
       <div class="panel-heading"><h4 style="display: inline-block">User Profile</h4></div>
       <div class="panel-body">
 
         <div class="row user-container">
 
-          <div class="col-sm-6">
-            <div class="image-holder" style="background-image: url( {{ Auth::user()->avatar ? asset('images/user_images') .'/'. Auth::user()->avatar : asset('images/user-icon.jpg') }} )">
+          <div class="col-sm-6 avatar-container">
+            <div class="image-holder" style="background-image: url( {{ $user->avatar ? asset('images/user_images') .'/'. $user->avatar : asset('images/user-icon.jpg') }} )">
             </div>
           </div>
 
@@ -80,44 +80,64 @@
 
                 @endif
 
-
-
                 {!! Form::open(array('route' => 'image.upload.post','files'=>true)) !!}
 
-                    <div class="row">
+                <div class="buttons-container">
 
-                        <div class="col-md-6">
+                <div class="input-group file-button">
+                    <label class="input-group-btn">
+                        <span class="btn btn-primary">
+                            Browse&hellip; <input type="file" name="image" style="display: none;">
+                        </span>
+                    </label>
+                    <input type="text" class="form-control" readonly>
+                </div>
 
-                            {!! Form::file('image', array('class' => 'form-control')) !!}
+                    <button type="submit" class="btn btn-success btn-block upload-btn">Upload</button>
+                    <a href="{!! route('users.index') !!}" class="btn btn-default">Back</a>
 
-                        </div>
-
-                        <div class="col-md-6">
-
-                            <button type="submit" class="btn btn-success">Upload</button>
-
-                        </div>
-
-                    </div>
-
+                  </div>
+                </div>
                 {!! Form::close() !!}
 
-
-
-
-      <div class="box box-primary">
-          <div class="box-body">
-
-          </div>
-      </div>
-      <a href="{!! route('users.index') !!}" class="btn btn-default">Back</a>
 
   </div>
 
 </div>
 </div>
 
+@endsection
 
+@section('scripts')
+  <script type="text/javascript">
 
+  $(function() {
 
+    // We can attach the `fileselect` event to all file inputs on the page
+    $(document).on('change', ':file', function() {
+      var input = $(this),
+          numFiles = input.get(0).files ? input.get(0).files.length : 1,
+          label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+      input.trigger('fileselect', [numFiles, label]);
+    });
+
+    // We can watch for our custom `fileselect` event like this
+    $(document).ready( function() {
+        $(':file').on('fileselect', function(event, numFiles, label) {
+
+            var input = $(this).parents('.input-group').find(':text'),
+                log = numFiles > 1 ? numFiles + ' files selected' : label;
+
+            if( input.length ) {
+                input.val(log);
+            } else {
+                if( log ) alert(log);
+            }
+
+        });
+    });
+
+  });
+
+  </script>
 @endsection

@@ -46,7 +46,7 @@
 
   <script type="text/javascript">
   orderTable = $('#users-table').DataTable({
-       // ajax: "admin/workOrders",
+    
        rowReorder: {
            selector: 'td:nth-child(2)'
        },
