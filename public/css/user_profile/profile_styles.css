@@ -46,6 +46,12 @@
   margin-bottom: 5px;
 }
 
+a.btn-xs.btn.btn-default.right-float.delete-btn {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+
 
 
 @media screen and (min-width: 768px) {

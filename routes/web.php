@@ -36,7 +36,9 @@ Route::get('/private-policy', function(){
 
 Route::get('image-upload',['as'=>'image.upload','uses'=>'ImageUploadController@imageUpload']);
 
-Route::post('image-upload',['as'=>'image.upload.post','uses'=>'ImageUploadController@imageUploadPost']);
+Route::post('image-upload',['as'=>'image.admin.post','uses'=>'ImageUploadController@adminImageUploadPost']);
+Route::get('image-upload',['as'=>'image.admin.delete','uses'=>'ImageUploadController@imageDelete']);
+// Route::get('image-upload',['as'=>'image.admin.delete','uses'=>'ImageUploadController@imageDelete']);
 
 Auth::routes();
 

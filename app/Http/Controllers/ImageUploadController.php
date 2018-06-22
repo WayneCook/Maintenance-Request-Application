@@ -12,15 +12,7 @@ class ImageUploadController extends Controller
 
 {
 
-    /**
 
-     * Display a listing of the resource.
-
-     *
-
-     * @return \Illuminate\Http\Response
-
-     */
 
     public function imageUpload()
 
@@ -31,16 +23,6 @@ class ImageUploadController extends Controller
     }
 
 
-
-    /**
-
-     * Display a listing of the resource.
-
-     *
-
-     * @return \Illuminate\Http\Response
-
-     */
 
     public function imageUploadPost()
 
@@ -73,4 +55,54 @@ class ImageUploadController extends Controller
 
     }
 
+    public function adminImageUploadPost(Request $request)
+
+    {
+
+        request()->validate([
+
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
+        ]);
+
+        // dd($request);
+
+        // $user = $request;
+        $profile = User::find($request->userID);
+
+        $imageName = str_replace(' ', '', trim($profile->username) .'_'. time().'_'.request()->image->getClientOriginalName());
+
+
+
+        $profile->avatar = $imageName;
+
+        $profile->save();
+
+
+        request()->image->move(public_path('images/user_images'), $imageName);
+
+        return back()
+
+            ->with('success','You have successfully upload image.')
+
+            ->with('image',$imageName);
+
+    }
+
+
+    public function imageDelete(Request $request)
+
+    {
+
+      $profile = User::find($request->userID);
+
+      $profile->avatar = null;
+
+      $profile->save();
+
+      return back()
+
+      ->with('success','You have successfully deleted image.');
+
+    }
 }

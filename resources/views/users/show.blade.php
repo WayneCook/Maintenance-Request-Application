@@ -4,6 +4,7 @@
     @include('layouts.datatables_css')
     <link rel="stylesheet" type="text/css" href="{{asset('css/work_order/work_order_content.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/user_profile/profile_styles.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
 
 @endsection
 
@@ -27,6 +28,8 @@
 
           <div class="col-sm-6 avatar-container">
             <div class="image-holder" style="background-image: url( {{ $user->avatar ? asset('images/user_images') .'/'. $user->avatar : asset('images/user-icon.jpg') }} )">
+              <a type="submit" class="btn-xs btn btn-default right-float delete-btn" href="{{ route('image.admin.delete',['userID' => $user->id]) }}">Remove</a>
+
             </div>
           </div>
 
@@ -80,7 +83,7 @@
 
                 @endif
 
-                {!! Form::open(array('route' => 'image.upload.post','files'=>true)) !!}
+                {!! Form::open(array('route' => 'image.admin.post','files' => true)) !!}
 
                 <div class="buttons-container">
 
@@ -95,11 +98,10 @@
 
                     <button type="submit" class="btn btn-success btn-block upload-btn">Upload</button>
                     <a href="{!! route('users.index') !!}" class="btn btn-default">Back</a>
-
+                    <input type="hidden" name="userID" value="{{ $user->id }}">
                   </div>
                 </div>
                 {!! Form::close() !!}
-
 
   </div>
 
@@ -109,6 +111,8 @@
 @endsection
 
 @section('scripts')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+
   <script type="text/javascript">
 
   $(function() {
@@ -138,6 +142,30 @@
     });
 
   });
+
+
+  $('.delete-btn').click(function(e) {
+    e.preventDefault();
+
+    swal({
+    		title : "",
+    		text : "Would you like to log out from the system?",
+            type : "warning",
+            showCancelButton: true,
+            confirmButtonText: "Yes",
+       },
+    function(isConfirm){
+      if (isConfirm) {
+          window.location="{{ route('image.admin.delete',['userID' => $user->id]) }}"; // if you need redirect page
+
+      } else {
+
+      }
+        })
+
+
+
+  })
 
   </script>
 @endsection
