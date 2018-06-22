@@ -38,7 +38,6 @@ Route::get('image-upload',['as'=>'image.upload','uses'=>'ImageUploadController@i
 
 Route::post('image-upload',['as'=>'image.admin.post','uses'=>'ImageUploadController@adminImageUploadPost']);
 Route::get('image-upload',['as'=>'image.admin.delete','uses'=>'ImageUploadController@imageDelete']);
-// Route::get('image-upload',['as'=>'image.admin.delete','uses'=>'ImageUploadController@imageDelete']);
 
 Auth::routes();
 
