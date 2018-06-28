@@ -11,7 +11,7 @@
 <section class="content-header">
   <nav>
       <ol class="breadcrumb breadcrumb-arrow">
-      <li><a href="{{ route('admin') }}">Admin</a></li>
+      <li><a href="{{ route('admin') }}">Dashboard</a></li>
       <li class="active"><span>Work Orders</span></li>
     </ol>
   </nav>
@@ -92,6 +92,7 @@
                   <button type="button" class="btn btn-primary add pull-left" id="create-order-btn">
                     <span class='glyphicon glyphicon-check'></span> Submit
                   </button>
+                  <a href="{{ route('admin') }}" class="btn btn-default" style="margin-left: 5px">Back</a>
                 </div>
               </div>
             </div>

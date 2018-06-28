@@ -10,6 +10,7 @@ use Yajra\DataTables\Facades\DataTables;
 
 use Illuminate\Support\Facades\Validator;
 
+
 use App\workOrder;
 
 class OrdersController extends Controller
@@ -19,7 +20,7 @@ class OrdersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-     
+
      public function __construct()
      {
          $this->middleware('auth');
@@ -65,29 +66,25 @@ class OrdersController extends Controller
 
 
       $validator = Validator::make($request->all(), [
-        'order_status' => 'required',
         'name' => 'required',
         'unit_number' => 'required',
         'category' => 'required',
         'description' => 'required',
-        'comments' => 'required',
         'permission_to_enter' => 'required',
       ]);
 
       if ($validator->passes()) {
 
           $order = new workOrder;
-
-          $order->order_status = $request->order_status;
           $order->name = $request->name;
           $order->unit_number = $request->unit_number;
           $order->category = $request->category;
           $order->description = $request->description;
-          $order->comments = $request->comments;
           $order->permission_to_enter = $request->permission_to_enter;
           $order->created_at = NOW();
 
           $order->save();
+
           return response()->json(['success'=>'Added new records.']);
 
       } else {

@@ -18,7 +18,6 @@
 
   </section>
 
-
     <div class="row box-row">
 
       <a href="{{route('workOrders.index')}}">
@@ -41,8 +40,6 @@
       </div>
     </a>
 
-
-
       <a href="{{ route('users.index') }}">
       <div class="content-box col-md-4">
         <div class="box-container">
@@ -53,10 +50,5 @@
       </div>
     </div>
   </a>
-
-
-
-
-
 </div>
 @endsection

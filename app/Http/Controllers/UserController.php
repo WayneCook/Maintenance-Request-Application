@@ -105,7 +105,7 @@ class UserController extends AppBaseController
         return view('users.edit')->with('user', $user);
     }
 
-  
+
     public function update($id, UpdateUserRequest $request)
     {
         $user = $this->userRepository->findWithoutFail($id);

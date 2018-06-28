@@ -8,7 +8,6 @@ $('.submit-button').on('click', '#create-order-btn', function(){
     formDataObj[val.name] = val.value;
   })
 
-  console.log(formDataObj);
   $.ajaxSetup({
     headers: {
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -28,7 +27,12 @@ $('.submit-button').on('click', '#create-order-btn', function(){
           title: 'Thank you!',
           text: 'Your maintenance request has successfully been Submitted, Please contact us for any additional questions you may have.',
           confirmButtonColor: '#337ab7'
-         })
+        },
+        function(isConfirm){
+
+          window.location.replace("../dashboard");
+
+        })
 
        } else {
          toastr.error('Please check for errors in your submission', 'Error Alert', {timeOut: 5000});
