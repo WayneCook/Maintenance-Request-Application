@@ -78,4 +78,4 @@ Route::get('send_test_email', function(){
 
 route::get('events', function(){
   return view('events');
-});
+})->name('events');

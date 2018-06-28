@@ -28,7 +28,7 @@
         </div>
       </a>
 
-      <a href="{{route('login')}}">
+      <a href="{{route('events')}}">
       <div class="content-box col-md-4">
         <div class="box-container">
             <i class="fa fa-calendar section-icons"></i>

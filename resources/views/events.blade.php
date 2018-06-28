@@ -26,56 +26,50 @@
     </nav>
 </div>
 
-<div class="container box-row-container">
-  <div class="row box-row">
-
-    <div class="card col-lg-4 col-md-4 col">
-      <div class="card-content">
-        <span class="date-banner">12/12/18 3:00pm</span>
-        <span class="card-img-cont" style="background-image: url('https://static1.gamepoint.net/gpinternational/rc/blog/gpinternational/1497535613/blogimage_2017_marathon_fri16/default/en')" alt="Card image cap"></span>
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <div class="button-group">
-
-          <a href="#" class="btn btn-primary">Sign up</a>
-          <a href="#" class="btn btn-default pull-right">Details</a>
+  <div class="container box-row-container">
+    <div class="row box-row">
+      <div class="card col-lg-4 col-md-4 col">
+        <div class="card-content">
+          <span class="date-banner">12/12/18 3:00pm</span>
+          <span class="card-img-cont" style="background-image: url('https://static1.gamepoint.net/gpinternational/rc/blog/gpinternational/1497535613/blogimage_2017_marathon_fri16/default/en')" alt="Card image cap"></span>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div class="button-group">
+            <a href="#" class="btn btn-primary">Sign up</a>
+            <a href="#" class="btn btn-default pull-right">Details</a>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <div class="card col-lg-4 col-md-4 col">
+        <div class="card-content">
+          <span class="date-banner">12/12/18 3:00pm</span>
+          <span class="card-img-cont" style="background-image: url('https://3.bp.blogspot.com/-_fPfH4JNqBI/VsZmEcKUSAI/AAAAAAAAAAg/Lra2WVlqsXU/s1600/Education-Key-Wide.jpg')" alt="Card image cap"></span>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Sign up</a>
+            <a href="#" class="btn btn-default pull-right">Details</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card col-lg-4 col-md-4 col">
+        <div class="card-content">
+          <span class="date-banner">12/12/18 3:00pm</span>
+          <span class="card-img-cont" style="background-image: url('https://www.lmfa.org/wp-content/uploads/2018/02/Movie-Night.jpg')" alt="Card image cap"></span>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Sign up</a>
+            <a href="#" class="btn btn-default pull-right">Details</a>
+          </div>
         </div>
       </div>
     </div>
-
-    <div class="card col-lg-4 col-md-4 col">
-      <div class="card-content">
-      <span class="date-banner">12/12/18 3:00pm</span>
-      <span class="card-img-cont" style="background-image: url('https://static1.gamepoint.net/gpinternational/rc/blog/gpinternational/1497535613/blogimage_2017_marathon_fri16/default/en')" alt="Card image cap"></span>
-
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Sign up</a>
-        <a href="#" class="btn btn-default pull-right">Details</a>
-      </div>
-    </div>
   </div>
-
-
-    <div class="card col-lg-4 col-md-4 col">
-      <div class="card-content">
-      <span class="date-banner">12/12/18 3:00pm</span>
-      <span class="card-img-cont" style="background-image: url('https://static1.gamepoint.net/gpinternational/rc/blog/gpinternational/1497535613/blogimage_2017_marathon_fri16/default/en')" alt="Card image cap"></span>
-
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Sign up</a>
-        <a href="#" class="btn btn-default pull-right">Details</a>
-      </div>
-    </div>
-  </div>
-
-  </div>
-</div>
 
 </div>
 @endsection
