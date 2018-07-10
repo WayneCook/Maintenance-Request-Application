@@ -45,8 +45,14 @@
 
 
   <script type="text/javascript">
+
+  $(document).ready(function(){
+    $('html').tooltip({selector: '[data-toggle="tooltip"]'});
+  });
+
+
   orderTable = $('#users-table').DataTable({
-    
+
        rowReorder: {
            selector: 'td:nth-child(2)'
        },

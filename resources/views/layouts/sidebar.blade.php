@@ -6,7 +6,7 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel">
 
-            <div class="user-avatar" style="background-image: url('{{ Auth::user()->avatar ? asset('images/user_images') .'/'. Auth::user()->avatar : asset('images/user-icon.jpg') }}')">
+            <div class="user-avatar" style="background-image: url('{{ Auth::user()->avatar ? asset('storage/user_images') .'/'. Auth::user()->avatar : asset('storage/user_images/user-icon.jpg') }}')">
                 {{-- <img src="" class="img-circle"
                      alt="User Image"/> --}}
             </div>

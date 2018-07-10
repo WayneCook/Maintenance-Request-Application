@@ -76,6 +76,6 @@ Route::get('send_test_email', function(){
 	});
 });
 
-route::get('events', function(){
-  return view('events');
-})->name('events');
+
+route::get('user/events', 'EventController@userIndex')->name('showEvents');
+Route::resource('events', 'EventController');

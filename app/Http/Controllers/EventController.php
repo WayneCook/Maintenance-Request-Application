@@ -2,84 +2,201 @@
 
 namespace App\Http\Controllers;
 
-use App\Event;
+use Prettus\Repository\Criteria\RequestCriteria;
+use App\Http\Controllers\AppBaseController;
+use App\Http\Requests\CreateEventRequest;
+use App\Http\Requests\UpdateEventRequest;
+use Illuminate\Support\Facades\Storage;
+use App\Repositories\EventRepository;
 use Illuminate\Http\Request;
+// use App\Event;
+use Response;
+use Flash;
 
-class EventController extends Controller
+class EventController extends AppBaseController
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+
+    private $eventRepository;
+
+    public function __construct(EventRepository $eventRepo)
     {
-        
+        $this->eventRepository = $eventRepo;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+    public function index(Request $request)
+    {
+        $this->eventRepository->pushCriteria(new RequestCriteria($request));
+        $events = $this->eventRepository->all();
+
+        return view('events.index')->with('events', $events);
+    }
+
+
+    public function userIndex() {
+
+      $events = $this->eventRepository->all();
+
+      return view('events.user_index')
+          ->with('events', $events);
+
+    }
+
+
     public function create()
     {
-        //
+        return view('events.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+
+    public function store(CreateEventRequest $request)
     {
-        //
+      $input = $request->all();
+
+      // Validation
+      request()->validate([
+
+        'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'title' => 'required|max:15',
+        'start_date' => 'required',
+        'end_date' => 'required',
+        'description' => 'required|max:250',
+        'details' => 'max:1000'
+
+      ]);
+
+
+      // Handle image
+      if (isset(request()->image)) { //If new image file is submitted
+
+        $imageName = rand(1000, 9999) . str_replace(' ', '_', trim(request()->image->getClientOriginalName()));
+        $request->image->storeAs('public/event_images',$imageName);
+
+        $input['image'] = $imageName;
+
+      }
+
+      //format date
+      $start_date = $input['start_date'];
+      $end_date = $input['end_date'];
+
+      $input['start_date'] = date("Y-m-d H:i:s", strtotime($start_date));
+      $input['end_date'] = date("Y-m-d H:i:s", strtotime($end_date));
+
+      $input['image'] = 'default_event_image.jpg';
+
+      $event = $this->eventRepository->create($input);
+
+      Flash::success('Event saved successfully.');
+
+      return redirect(route('events.index'));
+
+
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Event  $event
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Event $event)
+
+    public function show($id)
     {
-        //
+        $event = $this->eventRepository->findWithoutFail($id);
+
+        if (empty($event)) {
+            Flash::error('Event not found');
+
+            return redirect(route('events.index'));
+        }
+
+        return view('events.show')->with('event', $event);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Event  $event
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Event $event)
+
+    public function edit($id)
     {
-        //
+        $event = $this->eventRepository->findWithoutFail($id);
+
+        if (empty($event)) {
+            Flash::error('Event not found');
+
+            return redirect(route('events.index'));
+        }
+
+        return view('events.edit')->with('event', $event);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Event  $event
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Event $event)
+
+    public function update($id, UpdateEventRequest $request)
     {
-        //
+
+      // Validation
+      request()->validate([
+
+        'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'title' => 'required|max:15',
+        'start_date' => 'required',
+        'end_date' => 'required',
+        'description' => 'required|max:250',
+        'details' => 'max:1000'
+
+      ]);
+
+        $event = $this->eventRepository->findWithoutFail($id);
+
+        if (empty($event)) {
+            Flash::error('Event not found');
+
+            return redirect(route('events.index'));
+        }
+
+        $input = $request->all();
+        //format date
+        $start_date = $input['start_date'];
+        $end_date = $input['end_date'];
+
+        $input['start_date'] = date("Y-m-d H:i:s", strtotime($start_date));
+        $input['end_date'] = date("Y-m-d H:i:s", strtotime($end_date));
+
+
+        // Image handling
+        if (isset(request()->image)) { //If new image file is submitted
+
+        if ($event->image != 'default_event_image.jpg') {
+
+          Storage::delete('public/event_images/' . $event->image);
+        }
+
+          $imageName = rand(1000, 9999) . str_replace(' ', '_', trim(request()->image->getClientOriginalName()));
+
+          $request->image->storeAs('public/event_images',$imageName);
+          $input['image'] = $imageName;
+
+          $event = $this->eventRepository->update($input, $id);
+          Flash::success('Event updated successfully.');
+          return redirect(route('events.index'));
+        }
+
+        //If image file is not changed
+
+        $event = $this->eventRepository->update($input, $id);
+        Flash::success('Event updated successfully.');
+        return redirect(route('events.index'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Event  $event
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Event $event)
+
+    public function destroy($id)
     {
-        //
+        $event = $this->eventRepository->findWithoutFail($id);
+
+        if (empty($event)) {
+            Flash::error('Event not found');
+
+            return redirect(route('events.index'));
+        }
+
+
+        Storage::delete('public/event_images/' . $event->image);
+        $this->eventRepository->delete($id);
+
+        Flash::success('Event deleted successfully.');
+
+        return redirect(route('events.index'));
     }
 }

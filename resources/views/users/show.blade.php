@@ -27,15 +27,19 @@
         <div class="row user-container">
 
           <div class="col-sm-6 avatar-container">
-            <div class="image-holder" style="background-image: url( {{ $user->avatar ? asset('images/user_images') .'/'. $user->avatar : asset('images/user-icon.jpg') }} )">
+            <div class="image-holder" style="background-image: url( {{ $user->avatar ? asset('storage/user_images') .'/'. $user->avatar : asset('storage/user_images/user-icon.jpg') }} )">
+            {{-- <div class="image-holder" style="background-image: url('{{ asset('storage/user_images/' . $user->avatar) }}')"> --}}
               <a type="submit" class="btn-xs btn btn-default right-float delete-btn" href="{{ route('image.admin.delete',['userID' => $user->id]) }}">Remove</a>
 
             </div>
           </div>
 
+
+
           <div class="col-sm-6">
 
                 <div class="box box-primary">
+          
                     <div class="box-body">
                         <div class="row user-details" style="padding-left: 20px">
                             @include('users.show_fields')
@@ -56,8 +60,6 @@
                         <strong>{{ $message }}</strong>
 
                 </div>
-
-                <img src="images/{{ Session::get('image') }}">
 
                 @endif
 
@@ -83,11 +85,14 @@
 
                 @endif
 
+
+                  <label class="scheduler-border">Image upload</label>
                 {!! Form::open(array('route' => 'image.admin.post','files' => true)) !!}
 
-                <div class="buttons-container">
+
 
                 <div class="input-group file-button">
+
                     <label class="input-group-btn">
                         <span class="btn btn-primary">
                             Browse&hellip; <input type="file" name="image" style="display: none;">
@@ -95,14 +100,15 @@
                     </label>
                     <input type="text" class="form-control" readonly>
                 </div>
+                <button type="submit" class="btn btn-success btn-block upload-btn">Upload</button>
 
-                    <button type="submit" class="btn btn-success btn-block upload-btn">Upload</button>
-                    <a href="{!! route('users.index') !!}" class="btn btn-default">Back</a>
                     <input type="hidden" name="userID" value="{{ $user->id }}">
-                  </div>
+
+                </div>
                 </div>
                 {!! Form::close() !!}
 
+                <a href="{!! route('users.index') !!}" class="btn btn-default">Back</a>
   </div>
 
 </div>
@@ -114,6 +120,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 
   <script type="text/javascript">
+
 
   $(function() {
 

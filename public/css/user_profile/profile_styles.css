@@ -3,6 +3,7 @@
 }
 
 .image-holder {
+  position: relative;
   background-position: center;
   margin: auto;
   background-repeat: no-repeat;
@@ -31,11 +32,16 @@
 }
 
 .profile-panel {
-    max-width: 500px;
+    max-width: 365px;
+}
+
+body p {
+
+    word-wrap: break-word;
 }
 
 .buttons-container {
-    width: 229px;
+    /* width: 229px; */
 }
 
 .file-button {
@@ -48,11 +54,9 @@
 
 a.btn-xs.btn.btn-default.right-float.delete-btn {
   position: absolute;
-  right: 0px;
-  bottom: 0px;
+  right: 48px;
+  bottom: 11px;
 }
-
-
 
 @media screen and (min-width: 768px) {
 

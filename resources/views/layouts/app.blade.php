@@ -94,7 +94,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <!-- The user image in the navbar-->
 
-                                <div class="right-avatar" style="background-image: url('{{ Auth::user()->avatar ? asset('images/user_images') .'/'. Auth::user()->avatar : asset('images/user-icon.jpg') }}')">
+                                <div class="right-avatar" style="background-image: url('{{ Auth::user()->avatar ? asset('storage/user_images') .'/'. Auth::user()->avatar : asset('storage/user_images/user-icon.jpg') }}')">
 
                                 </div>
                                 {{-- <img src="{{Auth::user()->avatar ? Auth::user()->avatar : asset('images/user-icon.jpg') }}"
@@ -105,7 +105,7 @@
                             <ul class="dropdown-menu">
                                 <!-- The user image in the menu -->
                                 <li class="user-header">
-                                    <img src="{{ Auth::user()->avatar ? asset('images/user_images') . '/' . Auth::user()->avatar : asset('images/user-icon.jpg') }}"
+                                    <img src="{{ Auth::user()->avatar ? asset('storage/user_images') . '/' . Auth::user()->avatar : asset('storage/user_images/user-icon.jpg') }}"
                                          class="img-circle" alt="User Image"/>
                                     <p>
                                         {!! Auth::user()->username !!}
@@ -209,7 +209,6 @@
 
     <!-- Toastr notifications -->
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-
 
     @yield('scripts')
 </body>

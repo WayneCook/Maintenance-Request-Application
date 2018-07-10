@@ -10,15 +10,13 @@
   <section class="content-header">
     <nav>
         <ol class="breadcrumb breadcrumb-arrow">
-
         <li><a href="{{ route('dash') }}">Dashboard</a></li>
-
       </ol>
     </nav>
   </section>
 
     <div class="row box-row">
-      <a href="{{route('user_work_order')}}">
+      <a href="{{ route('user_work_order') }}">
         <div class="content-box col-md-4">
           <div class="box-container">
               <i class="fa fa-wrench section-icons"></i>
@@ -28,7 +26,7 @@
         </div>
       </a>
 
-      <a href="{{route('events')}}">
+      <a href="{{ route('showEvents') }}">
       <div class="content-box col-md-4">
         <div class="box-container">
             <i class="fa fa-calendar section-icons"></i>
