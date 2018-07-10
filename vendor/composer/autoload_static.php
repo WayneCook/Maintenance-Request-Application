@@ -29,10 +29,6 @@ class ComposerStaticInitecdaa8e088368d64b7c2160146829f9d
     );
 
     public static $prefixLengthsPsr4 = array (
-        'k' => 
-        array (
-            'kartik\\plugins\\fileinput\\' => 25,
-        ),
         'Y' => 
         array (
             'Yajra\\DataTables\\' => 17,
@@ -48,6 +44,7 @@ class ComposerStaticInitecdaa8e088368d64b7c2160146829f9d
         'T' => 
         array (
             'TijsVerkoyen\\CssToInlineStyles\\' => 31,
+            'Tests\\' => 6,
         ),
         'S' => 
         array (
@@ -139,10 +136,6 @@ class ComposerStaticInitecdaa8e088368d64b7c2160146829f9d
     );
 
     public static $prefixDirsPsr4 = array (
-        'kartik\\plugins\\fileinput\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/kartik-v/bootstrap-fileinput',
-        ),
         'Yajra\\DataTables\\' => 
         array (
             0 => __DIR__ . '/..' . '/yajra/laravel-datatables-buttons/src',
@@ -161,6 +154,10 @@ class ComposerStaticInitecdaa8e088368d64b7c2160146829f9d
         'TijsVerkoyen\\CssToInlineStyles\\' => 
         array (
             0 => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src',
+        ),
+        'Tests\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/tests',
         ),
         'Symfony\\Polyfill\\Util\\' => 
         array (
@@ -3404,6 +3401,10 @@ class ComposerStaticInitecdaa8e088368d64b7c2160146829f9d
         'Symfony\\Polyfill\\Util\\LegacyTestListener' => __DIR__ . '/..' . '/symfony/polyfill-util/LegacyTestListener.php',
         'Symfony\\Polyfill\\Util\\TestListener' => __DIR__ . '/..' . '/symfony/polyfill-util/TestListener.php',
         'Symfony\\Polyfill\\Util\\TestListenerTrait' => __DIR__ . '/..' . '/symfony/polyfill-util/TestListenerTrait.php',
+        'Tests\\CreatesApplication' => __DIR__ . '/../..' . '/tests/CreatesApplication.php',
+        'Tests\\Feature\\ExampleTest' => __DIR__ . '/../..' . '/tests/Feature/ExampleTest.php',
+        'Tests\\TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
+        'Tests\\Unit\\ExampleTest' => __DIR__ . '/../..' . '/tests/Unit/ExampleTest.php',
         'TijsVerkoyen\\CssToInlineStyles\\CssToInlineStyles' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/CssToInlineStyles.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Processor.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Property\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Property/Processor.php',

@@ -6,11 +6,11 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'kartik\\plugins\\fileinput\\' => array($vendorDir . '/kartik-v/bootstrap-fileinput'),
     'Yajra\\DataTables\\' => array($vendorDir . '/yajra/laravel-datatables-buttons/src', $vendorDir . '/yajra/laravel-datatables-fractal/src', $vendorDir . '/yajra/laravel-datatables-oracle/src', $vendorDir . '/yajra/laravel-datatables-html/src'),
     'XdgBaseDir\\' => array($vendorDir . '/dnoegel/php-xdg-base-dir/src'),
     'UxWeb\\SweetAlert\\' => array($vendorDir . '/uxweb/sweet-alert/src/SweetAlert'),
     'TijsVerkoyen\\CssToInlineStyles\\' => array($vendorDir . '/tijsverkoyen/css-to-inline-styles/src'),
+    'Tests\\' => array($baseDir . '/tests'),
     'Symfony\\Polyfill\\Util\\' => array($vendorDir . '/symfony/polyfill-util'),
     'Symfony\\Polyfill\\Php72\\' => array($vendorDir . '/symfony/polyfill-php72'),
     'Symfony\\Polyfill\\Php56\\' => array($vendorDir . '/symfony/polyfill-php56'),
