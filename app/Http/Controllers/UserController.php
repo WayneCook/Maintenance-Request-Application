@@ -6,6 +6,7 @@ use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Repositories\UserRepository;
 use App\Http\Controllers\AppBaseController;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
@@ -133,6 +134,11 @@ class UserController extends AppBaseController
     public function destroy($id)
     {
         $user = $this->userRepository->findWithoutFail($id);
+
+
+        if (isset($user->avatar)) {
+          Storage::delete('public/user_images/' . $user->avatar);
+        }
 
         if (empty($user)) {
             Flash::error('User not found');

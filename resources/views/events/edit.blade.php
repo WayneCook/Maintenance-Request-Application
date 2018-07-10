@@ -2,15 +2,27 @@
 @section('css')
   <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet"/>
   <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css" rel="stylesheet"/>
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/events/event_show.css') }}">
 @endsection
 
 @section('content')
-    <section class="content-header">
-        <h1>
-            Event
-        </h1>
-   </section>
+
+  <section class="content-header">
+    <nav>
+        <ol class="breadcrumb breadcrumb-arrow">
+        <li><a href="{{ route('admin') }}">Admin</a></li>
+        <li class="active"><span>Events</span></li>
+      </ol>
+    </nav>
+  </section>
+
    <div class="content">
+
+     <div class="panel panel-default panel-custom">
+       <div class="panel-heading"><h4 class="panel-head" style="display: inline-block">Event</h4></div>
+
+       <div class="panel-body">
+
        @include('adminlte-templates::common.errors')
        <div class="box box-primary">
            <div class="box-body">
@@ -22,8 +34,12 @@
                    {!! Form::close() !!}
                </div>
            </div>
+         </div>
        </div>
-   </div>
+     </div>
+     <a href="{!! route('users.index') !!}" class="btn btn-default">Back</a>
+       </div>
+
 @endsection
 
 @section('scripts')

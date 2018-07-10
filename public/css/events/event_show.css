@@ -12,6 +12,10 @@ img {
   margin: auto;
 }
 
+h4.panel-head {
+  margin: 15px 0px;
+}
+
 .loader-wrapper {
   width: 100%;
   height: calc(100vh - 169px);
