@@ -39,7 +39,7 @@
           <div class="col-sm-6">
 
                 <div class="box box-primary">
-          
+
                     <div class="box-body">
                         <div class="row user-details" style="padding-left: 20px">
                             @include('users.show_fields')
@@ -86,7 +86,7 @@
                 @endif
 
 
-                  <label class="scheduler-border">Image upload</label>
+                  <label class="scheduler-border">Image Upload</label>
                 {!! Form::open(array('route' => 'image.admin.post','files' => true)) !!}
 
 
