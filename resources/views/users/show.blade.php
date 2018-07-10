@@ -84,7 +84,7 @@
                 @endif
 
 
-                  <label class="scheduler-border">Image Upload</label>
+                  <label class="scheduler-border">Image upload</label>
                 {!! Form::open(array('route' => 'image.admin.post','files' => true)) !!}
 
 
