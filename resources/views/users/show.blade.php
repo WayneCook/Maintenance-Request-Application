@@ -37,7 +37,6 @@
 
 
           <div class="col-sm-6">
-
                 <div class="box box-primary">
 
                     <div class="box-body">
@@ -46,7 +45,6 @@
                         </div>
                     </div>
                 </div>
-
           </div>
         </div>
 
