@@ -19,7 +19,9 @@
 
   <div class="content">
     <div class="panel panel-default panel-custom">
-      <div class="panel-heading"><h4 style="display: inline-block">User Management</h4></div>
+      <div class="panel-heading"><h4 style="display: inline-block">User Management</h4>
+      <a class="btn btn-primary pull-right" style="margin-bottom: 5px" href="{!! route('users.create') !!}">New User</a>
+      </div>
       <div class="panel-body">
       <div class="clearfix"></div>
 

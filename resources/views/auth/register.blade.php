@@ -27,13 +27,6 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/login/login-styles.css')}}">
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 <body class="hold-transition register-page login-page">
 
@@ -46,8 +39,6 @@
   </nav>
 
 <div class="register-box">
-
-
 
     <div class="register-box-body">
         <p class="login-box-msg">REGISTRATION</p>

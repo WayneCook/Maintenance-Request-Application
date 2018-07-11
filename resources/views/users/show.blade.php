@@ -28,13 +28,10 @@
 
           <div class="col-sm-6 avatar-container">
             <div class="image-holder" style="background-image: url( {{ $user->avatar ? asset('storage/user_images') .'/'. $user->avatar : asset('storage/user_images/user-icon.jpg') }} )">
-            {{-- <div class="image-holder" style="background-image: url('{{ asset('storage/user_images/' . $user->avatar) }}')"> --}}
               <a type="submit" class="btn-xs btn btn-default right-float delete-btn" href="{{ route('image.admin.delete',['userID' => $user->id]) }}">Remove</a>
 
             </div>
           </div>
-
-
 
           <div class="col-sm-6">
                 <div class="box box-primary">
