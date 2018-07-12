@@ -29,7 +29,7 @@
         <div class="row user-container">
 
           <div class="col-sm-6 avatar-container">
-            <div class="image-holder" style="background-image: url( {{ $user->avatar ? asset('storage/user_images/') .'/'. $user->avatar : asset('storage/user_images/user-icon.jpg') }} )">
+            <div class="image-holder" style="background-image: url( {{ $user->avatar ? asset('/storage/user_images/') .'/'. $user->avatar : asset('storage/user_images/user-icon.jpg') }} )">
               <a type="submit" class="btn-xs btn btn-default right-float delete-btn" href="{{ route('image.admin.delete',['userID' => $user->id]) }}">Remove</a>
 
             </div>
