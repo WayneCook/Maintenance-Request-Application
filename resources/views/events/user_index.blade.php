@@ -3,6 +3,7 @@
 @section('css')
   <link rel="stylesheet" type="text/css" href="{{asset('css/admin/admin-styles.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('css/events/events_styles.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('css/sweetalert.css')}}">
 @endsection
 
 @section('content')
@@ -37,7 +38,7 @@
             <h5 class="card-title">{{ $event->title }}</h5>
             <p class="card-text">{{ $event->description }}</p>
             <div class="button-group">
-            <a href="#" class="btn btn-primary">Sign up</a>
+            <a href="#" class="btn btn-primary signup-btn">Sign up</a>
             <a href="#" class="btn btn-default pull-right">Details</a>
             </div>
           </div>
@@ -50,4 +51,40 @@
   </div>
 </div>
 
+@endsection
+
+@section('scripts')
+<script type="text/javascript" src="{{ asset('js/sweetalert.js') }}">
+
+</script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+  $(document).on('click', '.signup-btn', function(){
+
+    console.log($(this).val());
+
+    swal({
+    title: "Sign up for event?",
+    text: "Leave a comment:",
+    type: "input",
+    showCancelButton: true,
+    closeOnConfirm: false,
+    confirmButtonText: "Sign up!",
+    confirmButtonColor: '#3085d6',
+    inputPlaceholder: "Comment"
+    }, function (inputValue) {
+      if (inputValue === false) return false;
+      if (inputValue === "") {
+        swal.showInputError("You need to write something!");
+        return false
+      }
+      swal("Nice!", "You wrote: " + inputValue, "success");
+    });
+  })
+})
+
+</script>
 @endsection

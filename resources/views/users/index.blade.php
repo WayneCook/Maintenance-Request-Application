@@ -48,11 +48,36 @@
 
   <script type="text/javascript">
 
+  //Use sweetalert for order delete confirmation
+  $(document).on('submit', '.delete-user', function(e){
+    var form = this;
+
+    e.preventDefault(); // <--- prevent form from submitting
+
+    swal({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete!'
+    },
+    function(isConfirm){
+      if (isConfirm) {
+          form.submit();
+        } else {
+          return;
+        }
+    });
+  });
+
+  //tooltip init
   $(document).ready(function(){
     $('html').tooltip({selector: '[data-toggle="tooltip"]'});
   });
 
-
+  //DataTable settings
   orderTable = $('#users-table').DataTable({
 
        rowReorder: {

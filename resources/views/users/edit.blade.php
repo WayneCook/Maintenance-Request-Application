@@ -2,7 +2,7 @@
 
 @section('css')
   <link rel="stylesheet" type="text/css" href="{{asset('css/work_order/work_order_content.css')}}">
-  
+
 @endsection
 
 @section('content')
@@ -11,13 +11,14 @@
         <ol class="breadcrumb breadcrumb-arrow">
 
         <li><a href="#">Admin</a></li>
-        <li class="active"><span>Work Orders</span></li>
+        <li class="active"><a href="{{ route('users.index') }}">Users</a></li>
+        <li class="active"><span>Edit User</span></li>
       </ol>
     </nav>
 
   </section>
    <div class="content">
-     <div class="panel panel-default">
+     <div class="panel panel-default" style="max-width: 800px; margin: auto">
        <div class="panel-heading"><h4 style="display: inline-block">Edit User info</h4></div>
        <div class="panel-body">
 

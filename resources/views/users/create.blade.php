@@ -1,21 +1,31 @@
 @extends('layouts.app')
 
+@section('css')
+  <link rel="stylesheet" type="text/css" href="{{asset('css/work_order/work_order_content.css')}}">
+
+@endsection
+
 @section('content')
   <section class="content-header">
     <nav>
         <ol class="breadcrumb breadcrumb-arrow">
         <li><a href="{{ route('admin') }}">Admin</a></li>
-        <li class="active"><span>Events</span></li>
+        <li class="active"><a href="{{ route('users.index') }}">Users</a></li>
+        <li class="active"><span>Register User</span></li>
       </ol>
     </nav>
   </section>
 
     <div class="content">
 
+      <div class="panel panel-default panel-custom" style="max-width: 450px; margin: auto">
+        <div class="panel-heading"><h4 style="display: inline-block">Register User</h4>
+        </div>
+        <div class="panel-body">
+
       <div class="register">
 
           <div class="register-box-body">
-              <p class="login-box-msg">REGISTRATION</p>
 
               <form method="post" action="{{ url('admin/register') }}">
 
@@ -78,19 +88,16 @@
 
 
                       <div class="col">
-                          <button type="submit" class="btn btn-primary btn-block btn-lg btn-flat btn-custom">Register</button>
+                          <button type="submit" class="btn btn-primary btn-block btn-lg btn-custom">Register</button>
                       </div>
-                      <!-- /.col -->
 
               </form>
 
 
           </div>
+        </div>
       </div>
-
-
-
-
+      </div>
 
     </div>
 @endsection

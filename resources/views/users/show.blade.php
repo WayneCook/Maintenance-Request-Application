@@ -4,13 +4,9 @@
   @include('layouts.datatables_css')
   <link rel="stylesheet" type="text/css" href="{{asset('css/work_order/work_order_content.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('css/user_profile/profile_styles.css')}}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
   <link href="{{asset('fileInput/fileinput.min.css')}}" media="all" rel="stylesheet" type="text/css" />
   <link href="{{asset('fileInput/fileinput-rtl.min.css')}}" media="all" rel="stylesheet" type="text/css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.5/js/plugins/piexif.min.js" type="text/javascript"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.5/js/plugins/sortable.min.js" type="text/javascript"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.5/js/plugins/purify.min.js" type="text/javascript"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+  <link rel="stylesheet" href="{{ asset('css/sweetalert.css') }}">
 @endsection
 
 @section('content')
@@ -19,13 +15,14 @@
     <nav>
         <ol class="breadcrumb breadcrumb-arrow">
         <li><a href="{{ route('admin') }}">Admin</a></li>
-        <li class="active"><span>User Profile</span></li>
+        <li><a href="{{ route('users.index') }}">Users</a></li>
+        <li class="active"><span>Profile</span></li>
       </ol>
     </nav>
   </section>
 
   <div class="content">
-    <div class="panel panel-default panel-custom profile-panel">
+    <div class="panel panel-default panel-custom profile-panel" style="margin: auto">
       <div class="panel-heading"><h4 style="display: inline-block">User Profile</h4></div>
       <div class="panel-body">
 
@@ -94,22 +91,26 @@
                 <div class="input-group file-button">
                   <input type="file" id="input-id" name="image">
                   <input type="hidden" name="userID" value="{{ $user->id }}">
-
                 </div>
-
+                <br>
                 {!! Form::close() !!}
+                <a href="{!! route('users.index') !!}" class="btn btn-default">Back</a>
                 </div>
                 </div>
 
-                <a href="{!! route('users.index') !!}" class="btn btn-default">Back</a>
   </div>
 
 
 @endsection
 
 @section('scripts')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script> --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.5/js/plugins/piexif.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.5/js/plugins/sortable.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.5/js/plugins/purify.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.5/js/fileinput.min.js"></script>
+<script src="{{ asset('js/sweetalert.js') }}"></script>
 
 <script type="text/javascript">
 
@@ -120,10 +121,11 @@
       e.preventDefault();
 
       swal({
-      		title : "",
-      		text : "Would you like to log out from the system?",
+      		title : "Delete Image",
+      		text : "Are you sure you want to delete this image?",
               type : "warning",
               showCancelButton: true,
+              confirmButtonColor: '#3085d6',
               confirmButtonText: "Yes",
          },
       function(isConfirm){

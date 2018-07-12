@@ -7,7 +7,6 @@
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
     <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Font-awesome -->
     <link rel="stylesheet" type="text/css" href="{{asset('css\font-awesome.css')}}">
     <!-- Ionicons -->
@@ -25,6 +24,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{asset('css\layout\custom-layout.css')}}">
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     @yield('css')
     <style>
@@ -108,9 +108,12 @@
         @include('layouts.sidebar')
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
+          <div class="custom-container" style="max-width: 1400px; margin: auto;">
+
 
             @yield('content')
             @yield('loader')
+          </div>
         </div>
 
         <!-- Main Footer -->

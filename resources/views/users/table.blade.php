@@ -27,16 +27,16 @@
                     @break
 
                 @default
-                    <td>Basic</td>
+                    <td>Resident</td>
             @endswitch
 
           <td>{!! $user->created_at !!}</td>
           <td>
-              {!! Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete']) !!}
+              {!! Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete', 'class' => 'delete-user']) !!}
 
                   <a data-toggle="tooltip" title="View" data-placement="top" href="{!! route('users.show', [$user->id]) !!}" class='btn btn-default btn-sm'><i class="glyphicon glyphicon-eye-open"></i></a>
                   <a data-toggle="tooltip" title="Edit" data-placement="top" href="{!! route('users.edit', [$user->id]) !!}" class='btn btn-default btn-sm'><i class="glyphicon glyphicon-edit"></i></a>
-                  {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-sm', 'onclick' => "return confirm('Are you sure?')", 'data-toggle' => 'tooltip', 'title' => 'Delete', 'data-placement' => 'top']) !!}
+                  {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-sm', 'data-toggle' => 'tooltip', 'title' => 'Delete', 'data-placement' => 'top']) !!}
 
               {!! Form::close() !!}
           </td>

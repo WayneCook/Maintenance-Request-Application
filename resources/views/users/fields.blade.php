@@ -19,7 +19,7 @@
 <!-- Role -->
 <div class="form-group col-sm-6">
     {!! Form::label('role_id', 'User Role:') !!}
-    {!! Form::select('role_id', array('3' => 'Basic', '2' => 'Maintanence', '1' => 'Admin'), null, ['class' => 'form-control']) !!}
+    {!! Form::select('role_id', array('3' => 'Resident', '2' => 'Maintanence', '1' => 'Admin'), null, ['class' => 'form-control']) !!}
     {{-- {!! Form::text('role_id', null, ['class' => 'form-control']) !!} --}}
 </div>
 

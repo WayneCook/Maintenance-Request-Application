@@ -9,6 +9,7 @@ use App\Http\Controllers\AppBaseController;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Flash;
+use App\User;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 
@@ -133,7 +134,8 @@ class UserController extends AppBaseController
      */
     public function destroy($id)
     {
-        $user = $this->userRepository->findWithoutFail($id);
+      $user = $this->userRepository->findWithoutFail($id);
+
 
 
         if (isset($user->avatar)) {
@@ -146,7 +148,7 @@ class UserController extends AppBaseController
             return redirect(route('users.index'));
         }
 
-        $this->userRepository->delete($id);
+        User::destroy($id);
 
         Flash::success('User deleted successfully.');
 
