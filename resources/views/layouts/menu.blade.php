@@ -9,7 +9,7 @@
   </li>
 
   <li class="{{ Request::is('events.index') ? 'active' : '' }}">
-      <a href="{!! route('events.index') !!}"><i class="fa fa-wrench section-icons"></i><span>Events</span></a>
+      <a href="{!! route('events.index') !!}"><i class="fa fa-calendar section-icons"></i><span>Events</span></a>
   </li>
 
 @elseif (Auth::user()->role_id === 3) {{-- Resident links --}}

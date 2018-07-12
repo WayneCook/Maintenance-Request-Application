@@ -39,12 +39,10 @@ article.section-details {
     font-family: 'Great Vibes', cursive;
 }
 
-
-
 .box-container {
   display: flex;
   position: relative;
-  background-color: hsla(0, 0%, 99%, 0.77);
+  background-color: white;
   flex-direction: column;
   justify-content: center;
   align-items: center;

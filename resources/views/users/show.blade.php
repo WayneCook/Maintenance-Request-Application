@@ -1,11 +1,16 @@
 @extends('layouts.app')
 
 @section('css')
-    @include('layouts.datatables_css')
-    <link rel="stylesheet" type="text/css" href="{{asset('css/work_order/work_order_content.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/user_profile/profile_styles.css')}}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
-
+  @include('layouts.datatables_css')
+  <link rel="stylesheet" type="text/css" href="{{asset('css/work_order/work_order_content.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('css/user_profile/profile_styles.css')}}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+  <link href="{{asset('fileInput/fileinput.min.css')}}" media="all" rel="stylesheet" type="text/css" />
+  <link href="{{asset('fileInput/fileinput-rtl.min.css')}}" media="all" rel="stylesheet" type="text/css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.5/js/plugins/piexif.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.5/js/plugins/sortable.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.5/js/plugins/purify.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
 @endsection
 
 @section('content')
@@ -81,93 +86,53 @@
                 @endif
 
 
-                  <label class="scheduler-border">Image upload</label>
                 {!! Form::open(array('route' => 'image.admin.post','files' => true)) !!}
-
+                <hr>
+                <label class="scheduler-border">Image upload</label>
 
 
                 <div class="input-group file-button">
-
-                    <label class="input-group-btn">
-                        <span class="btn btn-primary">
-                            Browse&hellip; <input type="file" name="image" style="display: none;">
-                        </span>
-                    </label>
-                    <input type="text" class="form-control" readonly>
-                </div>
-                <button type="submit" class="btn btn-success btn-block upload-btn">Upload</button>
-
-                    <input type="hidden" name="userID" value="{{ $user->id }}">
+                  <input type="file" id="input-id" name="image">
+                  <input type="hidden" name="userID" value="{{ $user->id }}">
 
                 </div>
-                </div>
+
                 {!! Form::close() !!}
+                </div>
+                </div>
 
                 <a href="{!! route('users.index') !!}" class="btn btn-default">Back</a>
   </div>
 
-</div>
-</div>
 
 @endsection
 
 @section('scripts')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.5/js/fileinput.min.js"></script>
 
-  <script type="text/javascript">
+<script type="text/javascript">
 
+    $("#input-id").fileinput();
 
-  $(function() {
+    $('.delete-btn').click(function(e) {
 
-    // We can attach the `fileselect` event to all file inputs on the page
-    $(document).on('change', ':file', function() {
-      var input = $(this),
-          numFiles = input.get(0).files ? input.get(0).files.length : 1,
-          label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
-      input.trigger('fileselect', [numFiles, label]);
-    });
+      e.preventDefault();
 
-    // We can watch for our custom `fileselect` event like this
-    $(document).ready( function() {
-        $(':file').on('fileselect', function(event, numFiles, label) {
+      swal({
+      		title : "",
+      		text : "Would you like to log out from the system?",
+              type : "warning",
+              showCancelButton: true,
+              confirmButtonText: "Yes",
+         },
+      function(isConfirm){
+        if (isConfirm) {
+            window.location="{{ route('image.admin.delete',['userID' => $user->id]) }}"; // if you need redirect page
 
-            var input = $(this).parents('.input-group').find(':text'),
-                log = numFiles > 1 ? numFiles + ' files selected' : label;
+        }
+      })
+    })
 
-            if( input.length ) {
-                input.val(log);
-            } else {
-                if( log ) alert(log);
-            }
-
-        });
-    });
-
-  });
-
-
-  $('.delete-btn').click(function(e) {
-    e.preventDefault();
-
-    swal({
-    		title : "",
-    		text : "Would you like to log out from the system?",
-            type : "warning",
-            showCancelButton: true,
-            confirmButtonText: "Yes",
-       },
-    function(isConfirm){
-      if (isConfirm) {
-          window.location="{{ route('image.admin.delete',['userID' => $user->id]) }}"; // if you need redirect page
-
-      } else {
-
-      }
-        })
-
-
-
-  })
-
-  </script>
+</script>
 @endsection

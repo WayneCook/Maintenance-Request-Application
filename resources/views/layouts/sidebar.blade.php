@@ -6,10 +6,7 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel">
 
-            <div class="user-avatar" style="background-image: url('{{ Auth::user()->avatar ? asset('storage/user_images') .'/'. Auth::user()->avatar : asset('storage/user_images/user-icon.jpg') }}')">
-                {{-- <img src="" class="img-circle"
-                     alt="User Image"/> --}}
-            </div>
+            <div class="user-avatar" style="background-image: url('{{ Auth::user()->avatar ? asset('storage/user_images') .'/'. Auth::user()->avatar : asset('storage/user_images/user-icon.jpg') }}')"></div>
 
             <div class="pull-left info">
                 @if (Auth::guest())
@@ -20,20 +17,9 @@
                 <!-- Status -->
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
+
         </div>
-
-        <!-- search form (Optional) -->
-        <form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-                <input type="text" name="q" class="form-control" placeholder="Search..."/>
-          <span class="input-group-btn">
-            <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i>
-            </button>
-          </span>
-            </div>
-        </form>
-        <!-- Sidebar Menu -->
-
+        <div class="divider"></div>
         <ul class="sidebar-menu">
             @include('layouts.menu')
         </ul>

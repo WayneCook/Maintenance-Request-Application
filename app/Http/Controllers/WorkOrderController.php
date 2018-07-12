@@ -1,34 +1,31 @@
 <?php
 
 namespace App\Http\Controllers;
+use Prettus\Repository\Criteria\RequestCriteria;
 use App\Http\Requests\CreateworkOrderRequest;
 use App\Http\Requests\UpdateworkOrderRequest;
-use App\Repositories\workOrderRepository;
 use App\Http\Controllers\AppBaseController;
+use App\Repositories\workOrderRepository;
 use Illuminate\Http\Request;
+use Response;
 use Alert;
 use Flash;
-use Prettus\Repository\Criteria\RequestCriteria;
-use Response;
 
 class workOrderController extends AppBaseController
 {
-    /** @var  workOrderRepository */
+
     private $workOrderRepository;
 
     private $storeNumbers = array('602','603','604','605','606','607','608','609');
 
     public function __construct(workOrderRepository $workOrderRepo)
     {
+
+        $this->middleware('auth');
         $this->workOrderRepository = $workOrderRepo;
     }
 
-    /**
-     * Display a listing of the workOrder.
-     *
-     * @param Request $request
-     * @return Response
-     */
+
     public function index(Request $request)
     {
         $this->workOrderRepository->pushCriteria(new RequestCriteria($request));
@@ -48,24 +45,12 @@ class workOrderController extends AppBaseController
     }
 
 
-
-    /**
-     * Show the form for creating a new workOrder.
-     *
-     * @return Response
-     */
     public function create()
     {
         return view('work_orders.create');
     }
 
-    /**
-     * Store a newly created workOrder in storage.
-     *
-     * @param CreateworkOrderRequest $request
-     *
-     * @return Response
-     */
+
     public function store(CreateworkOrderRequest $request)
     {
 
@@ -84,13 +69,7 @@ class workOrderController extends AppBaseController
         return redirect(route('workOrders.index'));
     }
 
-    /**
-     * Display the specified workOrder.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
+
     public function show($id)
     {
         $workOrder = $this->workOrderRepository->findWithoutFail($id);
@@ -104,13 +83,7 @@ class workOrderController extends AppBaseController
         return view('work_orders.show')->with('workOrder', $workOrder);
     }
 
-    /**
-     * Show the form for editing the specified workOrder.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
+
     public function edit($id)
     {
         $workOrder = $this->workOrderRepository->findWithoutFail($id);
@@ -124,14 +97,7 @@ class workOrderController extends AppBaseController
         return view('work_orders.edit')->with('workOrder', $workOrder);
     }
 
-    /**
-     * Update the specified workOrder in storage.
-     *
-     * @param  int              $id
-     * @param UpdateworkOrderRequest $request
-     *
-     * @return Response
-     */
+
     public function update($id, UpdateworkOrderRequest $request)
     {
 
@@ -150,13 +116,7 @@ class workOrderController extends AppBaseController
         return redirect(route('workOrders.index'));
     }
 
-    /**
-     * Remove the specified workOrder from storage.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
+
     public function destroy($id)
     {
 

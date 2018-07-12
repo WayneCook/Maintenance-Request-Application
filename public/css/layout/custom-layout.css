@@ -21,6 +21,20 @@
   float: left;
 }
 
+.divider {
+  width: 195px;
+  margin: auto;
+  margin-bottom: 15px;
+  height: 1px;
+  background-color: #000000b3;
+  border-radius: 5px;
+  box-shadow: 0px 1px 0px 0px #6e6e6e6b;
+}
+
+.user-panel {
+    padding: 20px 10px;
+}
+
 .dropdown-avatar {
   width: 90px;
   height: 90px;

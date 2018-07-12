@@ -12,7 +12,7 @@
 
     <div class="content">
 
-      <div class="register-box">
+      <div class="register">
 
           <div class="register-box-body">
               <p class="login-box-msg">REGISTRATION</p>
