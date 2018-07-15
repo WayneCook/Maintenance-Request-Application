@@ -13,7 +13,7 @@
       <ol class="breadcrumb breadcrumb-arrow">
         <li><a href="{{ route('admin') }}">Admin</a></li>
         <li><a href="{{ route('events.index') }}">Events</a></li>
-        <li class="active"><span>edit</span></li>
+        <li class="active"><span>View</span></li>
     </ol>
   </nav>
 </section>

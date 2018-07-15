@@ -191,8 +191,10 @@ class EventController extends AppBaseController
             return redirect(route('events.index'));
         }
 
+        if ($event->image != 'default_event_image.jpg') {
 
-        Storage::delete('public/event_images/' . $event->image);
+          Storage::delete('public/event_images/' . $event->image);
+        }
         $this->eventRepository->delete($id);
 
         Flash::success('Event deleted successfully.');

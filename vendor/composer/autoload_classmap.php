@@ -41,6 +41,7 @@ return array(
     'App\\Http\\Requests\\UpdateUserRequest' => $baseDir . '/app/Http/Requests/UpdateUserRequest.php',
     'App\\Http\\Requests\\UpdateworkOrderRequest' => $baseDir . '/app/Http/Requests/UpdateworkOrderRequest.php',
     'App\\Http\\Requests\\WorkOrderRequest' => $baseDir . '/app/Http/Requests/WorkOrderRequest.php',
+    'App\\Mail\\workOrderMail' => $baseDir . '/app/Mail/workOrderMail.php',
     'App\\Models\\Event' => $baseDir . '/app/Models/Event.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Models\\workOrder' => $baseDir . '/app/Models/workOrder.php',

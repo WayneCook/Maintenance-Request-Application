@@ -10,7 +10,6 @@ route::post('admin/register', 'Auth\adminRegisterController@registerUser');
 //Admin routes
 Route::group(['middleware' => ['admin']], function () {
 
-
     route::post('admin/workOrder/update/{id}', 'OrdersController@update');
     route::post('admin/workOrder/delete/{id}', 'OrdersController@destroy');
     route::get('admin/workOrder/{id}', 'OrdersController@show');
@@ -19,6 +18,8 @@ Route::group(['middleware' => ['admin']], function () {
   });
 
 
+
+route::get('profile/{id}', 'UserController@profile')->name('profile');
 
 route::post('admin/workOrder/store', 'OrdersController@store');
 Route::get('login/facebook', 'Auth\FacebookLoginController@redirectToProvider')->name('login.facebook');

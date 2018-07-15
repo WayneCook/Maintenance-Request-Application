@@ -11,14 +11,15 @@
     <nav>
         <ol class="breadcrumb breadcrumb-arrow">
         <li><a href="{{ route('admin') }}">Admin</a></li>
-        <li class="active"><span>Events</span></li>
+        <li class="active"><a href="{{ route('events.index') }}">Events</a></li>
+        <li class="active"><span>Edit Event</span></li>
       </ol>
     </nav>
   </section>
 
    <div class="content">
 
-     <div class="panel panel-default panel-custom">
+     <div class="panel panel-default panel-custom" style="max-width: 800px; margin: auto">
        <div class="panel-heading"><h4 class="panel-head" style="display: inline-block">Event</h4></div>
 
        <div class="panel-body">

@@ -30,7 +30,7 @@
                     <td>Resident</td>
             @endswitch
 
-          <td>{!! $user->created_at !!}</td>
+          <td>{!! $user->created_at->format('M d Y') !!}</td>
           <td>
               {!! Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete', 'class' => 'delete-user']) !!}
 

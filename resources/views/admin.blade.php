@@ -34,7 +34,7 @@
       <div class="content-box col-md-4">
         <div class="box-container">
             <i class="fa fa-calendar section-icons"></i>
-            <h2>Event Signup</h2>
+            <h2>Events</h2>
             <span class="bottom-line"></span>
         </div>
       </div>

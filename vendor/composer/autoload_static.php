@@ -514,6 +514,7 @@ class ComposerStaticInitecdaa8e088368d64b7c2160146829f9d
         'App\\Http\\Requests\\UpdateUserRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateUserRequest.php',
         'App\\Http\\Requests\\UpdateworkOrderRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateworkOrderRequest.php',
         'App\\Http\\Requests\\WorkOrderRequest' => __DIR__ . '/../..' . '/app/Http/Requests/WorkOrderRequest.php',
+        'App\\Mail\\workOrderMail' => __DIR__ . '/../..' . '/app/Mail/workOrderMail.php',
         'App\\Models\\Event' => __DIR__ . '/../..' . '/app/Models/Event.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Models\\workOrder' => __DIR__ . '/../..' . '/app/Models/workOrder.php',

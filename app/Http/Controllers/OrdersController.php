@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\workOrderMail;
 use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Support\Facades\Auth;
@@ -58,12 +60,13 @@ class OrdersController extends Controller
           $order->category = $request->category;
           $order->description = $request->description;
           $order->permission_to_enter = $request->permission_to_enter;
+          $order->comments = $request->comments;
           $order->created_at = NOW();
-
           $order->save();
 
-          return response()->json(['success'=>'Added new records.']);
+          Mail::to(['waynedemetra@gmail.com', 'wf-monrovia-mgr@rpkdevelopment.com'])->send(new workOrderMail($order));
 
+          return response()->json(['success'=>'Added new records.']);
       } else {
 
     	   return response()->json(['error' => $validator->getMessageBag()->toArray()]);
