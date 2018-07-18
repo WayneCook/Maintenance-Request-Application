@@ -252,7 +252,7 @@
 
                       <div class="form-group col-sm-6">
                         <label class="control-label" for="id">Permission to enter:</label>
-                        <select name="permission_to_enter" class="form-control show-order-data" id="permission_to_enter" autocomplete="off">
+                        <select name="permission_to_enter" class="form-control show-order-data change-permission" id="permission_to_enter" autocomplete="off">
                           <option value="1">Yes</option>
                           <option value="2">No</option>
                         </select>
