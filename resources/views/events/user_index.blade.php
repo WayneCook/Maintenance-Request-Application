@@ -121,17 +121,17 @@ $(document).on('submit', '.event-form', function(e){
                   data: formTransform,
                   success: function(data) {
 
-                      swal({
-                        type: 'success',
-                         title: "You are signed up!",
-                         text: "You successfully signed up for this event, see you soon!",
-                         icon: "success",
-                         button: "OK",
-                         confirmButtonColor: '#3085d6'
-                       });
-                       checkIfSignedUp();
-                    }
-              });
+                    swal({
+                      type: 'success',
+                       title: "You are signed up!",
+                       text: "You successfully signed up for this event, see you soon!",
+                       icon: "success",
+                       button: "OK",
+                       confirmButtonColor: '#3085d6'
+                     });
+                     checkIfSignedUp();
+                  }
+                });
 
              } else {
                return;

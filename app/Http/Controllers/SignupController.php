@@ -39,25 +39,12 @@ class SignupController extends Controller
     public function store(Request $request)
     {
 
-
-      $check = DB::table('signups')
-          ->where('username', '=', Auth::user()->username)
-          ->where('event_id', '=', $request->event_id)
-          ->exists();
-
-      if ($check) {
-
-        return 'isSignedUp';
-
-      } else {
-
         $signup = new Signup;
         $signup->event_id = $request->event_id;
         $signup->username = $request->username;
         $signup->save();
 
         return $request->username;
-      }
 
     }
 
