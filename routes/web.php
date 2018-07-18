@@ -5,6 +5,7 @@ Route::get('/', function () { return view('home'); });
 
 
 route::post('admin/register', 'Auth\adminRegisterController@registerUser');
+route::post('admin/workOrder/store', 'OrdersController@store');
 
 
 //Admin routes
@@ -19,7 +20,6 @@ Route::group(['middleware' => ['admin']], function () {
 
   });
 
-  route::post('admin/workOrder/store', 'OrdersController@store');
 
 
 
