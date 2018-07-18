@@ -69,7 +69,6 @@ $(document).ready(function(){
     var form = this;
     var title = $(this).attr("data-title").toLowerCase();
 
-    console.log(form);
 
     var formTransform = $(this).serialize();
     event.preventDefault();

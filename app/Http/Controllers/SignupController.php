@@ -44,7 +44,7 @@ class SignupController extends Controller
           ->where('username', '=', $request->username)
           ->where('event_id', '=', $request->event_id)
           ->exists();
-;
+          
       if ($check) {
 
         return 'isSignedUp';
