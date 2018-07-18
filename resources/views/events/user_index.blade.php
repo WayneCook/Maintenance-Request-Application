@@ -110,8 +110,6 @@ $(document).on('submit', '.event-form', function(e){
 
            setTimeout(function(){
 
-
-
            if (isConfirm) {
 
                $.ajaxSetup({
