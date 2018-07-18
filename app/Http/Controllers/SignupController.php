@@ -41,10 +41,10 @@ class SignupController extends Controller
 
 
       $check = DB::table('signups')
-          ->where('username', '=', $request->username)
+          ->where('username', '=', Auth::user()->username)
           ->where('event_id', '=', $request->event_id)
           ->exists();
-          
+
       if ($check) {
 
         return 'isSignedUp';
