@@ -104,6 +104,7 @@ $(document).on('submit', '.event-form', function(e){
            showCancelButton: true,
            confirmButtonColor: '#3085d6',
            cancelButtonColor: '#d33',
+           closeOnCancel: false,
            confirmButtonText: 'Sign Up!'
          },
          function(isConfirm){
