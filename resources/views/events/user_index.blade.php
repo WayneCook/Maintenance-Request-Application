@@ -101,6 +101,7 @@ $(document).ready(function(){
                  console.log('is signed up');
                  swal({
                     title: "Signed up!",
+                    type: 'success',
                     text: "You are already signed up for this event!",
                     icon: "success",
                     button: "OK",
