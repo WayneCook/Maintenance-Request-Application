@@ -70,6 +70,7 @@ Route::get('send_test_email', function(){
 });
 
 
+Route::get('signup/check', 'SignupController@check');
 route::get('user/events', 'EventController@userIndex')->name('showEvents');
 Route::resource('events', 'EventController');
 Route::resource('signup', 'SignupController');

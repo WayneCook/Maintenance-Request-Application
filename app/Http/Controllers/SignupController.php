@@ -61,6 +61,23 @@ class SignupController extends Controller
 
     }
 
+    public function check(Request $request)
+    {
+
+      $check = DB::table('signups')
+          ->where('username', '=', Auth::user()->username)
+          ->where('event_id', '=', $request->event_id)
+          ->exists();
+
+      if ($check) {
+
+        return 'isSignedUp';
+
+      }
+
+
+    }
+
     public function show(signup $signup)
     {
 

@@ -65,67 +65,85 @@ $(document).ready(function(){
   checkIfSignedUp();
 })
 
-  $(document).on('submit', '.event-form', function(e){
-    var form = this;
-    var title = $(this).attr("data-title").toLowerCase();
+$(document).on('submit', '.event-form', function(e){
+  var form = this;
+  var title = $(this).attr("data-title").toLowerCase();
 
-    var formTransform = $(this).serialize();
-    event.preventDefault();
+  var formTransform = $(this).serialize();
+  event.preventDefault();
 
-    swal({
-      title: 'Sign up for ' + title + '?',
-      text: "You will be signing up for this event!",
-      type: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Sign Up!'
-    },
-    function(isConfirm){
-      if (isConfirm) {
 
-          $.ajaxSetup({
-            headers: {
-              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
+  $.ajaxSetup({
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+  });
+
+  $.ajax({
+     type: 'get',
+     url: '/signup/check',
+     data: formTransform,
+     success: function(data) {
+
+       if (data == 'isSignedUp') {
+
+         swal({
+            title: "Signed up!",
+            type: 'success',
+            text: "You are already signed up for this event!",
+            icon: "success",
+            button: "OK",
+            confirmButtonColor: '#3085d6'
           });
+       } else {
 
-          $.ajax({
-             type: 'POST',
-             url: '/signup',
-             data: formTransform,
-             success: function(data) {
+         swal({
+           title: 'Sign up for ' + title + '?',
+           text: "You will be signing up for this event!",
+           type: 'warning',
+           showCancelButton: true,
+           confirmButtonColor: '#3085d6',
+           cancelButtonColor: '#d33',
+           confirmButtonText: 'Sign Up!'
+         },
+         function(isConfirm){
+           if (isConfirm) {
 
-               if (data == 'isSignedUp') {
+               $.ajaxSetup({
+                 headers: {
+                   'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                 }
+               });
 
-                 alert('you are signed up');
-                 swal({
-                    title: "Signed up!",
-                    type: 'success',
-                    text: "You are already signed up for this event!",
-                    icon: "success",
-                    button: "OK",
-                    confirmButtonColor: '#3085d6'
-                  });
-               } else {
-                 swal({
-                   type: 'success',
-                    title: "You are signed up!",
-                    text: "You successfully signed up for this event, see you soon!",
-                    icon: "success",
-                    button: "OK",
-                    confirmButtonColor: '#3085d6'
-                  });
-                 checkIfSignedUp();
-               }
+               $.ajax({
+                  type: 'POST',
+                  url: '/signup',
+                  data: formTransform,
+                  success: function(data) {
+
+                      swal({
+                        type: 'success',
+                         title: "You are signed up!",
+                         text: "You successfully signed up for this event, see you soon!",
+                         icon: "success",
+                         button: "OK",
+                         confirmButtonColor: '#3085d6'
+                       });
+                       checkIfSignedUp();
+                    }
+              });
+
+             } else {
+               return;
              }
          });
 
-        } else {
-          return;
-        }
-    });
-  })
+         checkIfSignedUp();
+       }
+     }
+  });
+
+});
 
 function checkIfSignedUp() {
 
