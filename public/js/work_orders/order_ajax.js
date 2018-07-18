@@ -316,7 +316,7 @@ $(document).on('click', '#add-modal', function() {
     });
 
     $.ajax({
-       type: 'POST',
+       type: 'post',
        url: 'admin/workOrder/store',
        data: formDataObj,
        success: function(data) {

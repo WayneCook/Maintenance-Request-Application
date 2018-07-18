@@ -16,8 +16,8 @@ $('.submit-button').on('click', '#create-order-btn', function(){
   });
 
   $.ajax({
-     type: 'POST',
-     url: '/admin/workOrder/store',
+     type: 'post',
+     url: 'admin/workOrder/store',
      data: formDataObj,
      success: function(data) {
        if ($.isEmptyObject(data.error)) {
