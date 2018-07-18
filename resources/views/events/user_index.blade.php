@@ -104,10 +104,14 @@ $(document).on('submit', '.event-form', function(e){
            showCancelButton: true,
            confirmButtonColor: '#3085d6',
            cancelButtonColor: '#d33',
-           closeOnCancel: false,
            confirmButtonText: 'Sign Up!'
          },
          function(isConfirm){
+
+           setTimeout(function(){
+
+
+
            if (isConfirm) {
 
                $.ajaxSetup({
@@ -137,6 +141,7 @@ $(document).on('submit', '.event-form', function(e){
              } else {
                return;
              }
+           }, 200);
          });
 
          checkIfSignedUp();
