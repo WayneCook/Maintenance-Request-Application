@@ -30,6 +30,16 @@ class EventController extends AppBaseController
         $this->eventRepository->pushCriteria(new RequestCriteria($request));
         $events = $this->eventRepository->all();
 
+        foreach ($events as $event) {
+
+        $signUps = DB::table('signups')
+              ->where('event_id', '=', $event->id)
+              ->count();
+
+
+              $event->signups = $signUps;
+            }
+
         return view('events.index')->with('events', $events);
     }
 

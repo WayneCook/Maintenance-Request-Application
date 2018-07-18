@@ -2,6 +2,7 @@
     <thead>
         <tr>
           <th>Title</th>
+          <th>Sign ups</th>
           <th>Start Date</th>
           <th>End Date</th>
           <th>Action</th>
@@ -11,6 +12,7 @@
     @foreach($events as $event)
         <tr>
             <td>{!! $event->title !!}</td>
+            <td>{!! $event->signups !!}</td>
             <td>{!! date("m/d/y g:i A", strtotime($event->start_date)) !!}</td>
             <td>{!! date("m/d/y g:i A", strtotime($event->end_date)) !!}</td>
             <td>
