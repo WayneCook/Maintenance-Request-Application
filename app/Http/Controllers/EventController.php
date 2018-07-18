@@ -124,6 +124,15 @@ class EventController extends AppBaseController
     {
         $event = $this->eventRepository->findWithoutFail($id);
 
+        $users = DB::table('signups')
+            ->where('event_id', '=', $event->id)
+            ->get();
+
+        if ($users->isNotEmpty()) {
+
+          $event->users = $users;
+        }
+
         if (empty($event)) {
             Flash::error('Event not found');
 

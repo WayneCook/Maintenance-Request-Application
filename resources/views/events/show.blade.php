@@ -27,6 +27,13 @@
       <div class="card-body">
         <h5 class="card-title">{{ $event->title }}</h5>
         <p class="card-text">{{ $event->description }}</p>
+        @if (!empty($event->users))
+        <hr>
+        <h3>Signup List</h3>
+        @foreach ($event->users as $value)
+          <p>{{$value->username}}</p>
+        @endforeach
+      @endif
       </div>
     </div>
   </div>
