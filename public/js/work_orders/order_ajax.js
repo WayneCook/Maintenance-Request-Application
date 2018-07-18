@@ -3,8 +3,6 @@ $('.content').hide();
 
 $(document).ready(function() {
 
-  statusFormat();
-
   orderTable = $('#workOrders-table').DataTable({
      ajax: "admin/workOrders",
      rowReorder: {

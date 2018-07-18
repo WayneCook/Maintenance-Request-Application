@@ -89,6 +89,9 @@ class EventController extends AppBaseController
 
         $input['image'] = $imageName;
 
+      } else {
+        $input['image'] = 'default_event_image.jpg';
+
       }
 
       //format date
@@ -98,7 +101,6 @@ class EventController extends AppBaseController
       $input['start_date'] = date("Y-m-d H:i:s", strtotime($start_date));
       $input['end_date'] = date("Y-m-d H:i:s", strtotime($end_date));
 
-      $input['image'] = 'default_event_image.jpg';
 
       $event = $this->eventRepository->create($input);
 
