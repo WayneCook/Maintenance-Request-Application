@@ -141,7 +141,7 @@ $(document).on('submit', '.event-form', function(e){
              } else {
                return;
              }
-           }, 200);
+           }, 400);
          });
 
          checkIfSignedUp();
