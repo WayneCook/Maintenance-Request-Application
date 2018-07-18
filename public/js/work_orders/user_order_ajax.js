@@ -1,6 +1,5 @@
 $('.submit-button').on('click', '#create-order-btn', function(){
 
-alert('clicked');
   var formData = $('#create-form').serializeArray();
   var formDataObj = {};
 
@@ -17,7 +16,7 @@ alert('clicked');
 
   $.ajax({
      type: 'post',
-     url: 'admin/workOrder/store',
+     url: '/admin/workOrder/store',
      data: formDataObj,
      success: function(data) {
        if ($.isEmptyObject(data.error)) {
