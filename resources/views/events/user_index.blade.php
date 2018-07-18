@@ -11,7 +11,7 @@
   <div class="container bread-custom">
     <nav>
       <ol class="breadcrumb breadcrumb-arrow">
-        <li><a href="{{ route('admin') }}">Admin</a></li>
+        <li><a href="{{ route('dash') }}">Dashboard</a></li>
         <li class="active"><span>Events</span></li>
       </ol>
     </nav>
