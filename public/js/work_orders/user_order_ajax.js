@@ -1,6 +1,6 @@
 $('.submit-button').on('click', '#create-order-btn', function(){
 
-
+ alert('clicked');
   var formData = $('#create-form').serializeArray();
   var formDataObj = {};
 

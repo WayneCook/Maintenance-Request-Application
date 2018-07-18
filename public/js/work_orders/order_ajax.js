@@ -202,7 +202,7 @@ $(document).on('click', '.show-modal', function() {
 
     $('#deleteModal').modal('show');
 
-    //on delete press
+    //On delete press
     $('.modal-footer').on('click', '.delete', function() {
 
       swal({
@@ -278,18 +278,6 @@ $(document).on('click', '.show-modal', function() {
 })
 
   }
-
-  // Change status text color
-  // $('.order-status').each(function() {
-  //
-  //     var text = $(this).text();
-  //
-  //     if (text == 'Open') {
-  //       $(this).css('color', 'red');
-  //     } else {
-  //       $(this).css('color', 'green');
-  //     }
-  // });
 
 $(document).on('click', '#add-modal', function() {
     clearForm();

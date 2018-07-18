@@ -11,11 +11,11 @@ route::post('admin/workOrder/store', 'OrdersController@store');
 //Admin routes
 Route::group(['middleware' => ['admin']], function () {
 
-    Route::resource('workOrders', 'workOrderController');
     route::post('admin/workOrder/update/{id}', 'OrdersController@update');
     route::post('admin/workOrder/delete/{id}', 'OrdersController@destroy');
     route::get('admin/workOrder/{id}', 'OrdersController@show');
     route::get('admin/workOrders', 'OrdersController@initial')->name('initial');
+    Route::resource('workOrders', 'workOrderController');
     Route::resource('users', 'UserController');
 
   });
