@@ -18,9 +18,9 @@ class CreateWorkOrdersTable extends Migration
             $table->string('name');
             $table->integer('unit_number')->nullable();
             $table->text('description');
-            $table->boolean('permission_to_enter')->default(false)->nullable();
+            $table->string('permission_to_enter')->default('No');
             $table->text('comments')->nullable();
-            $table->boolean('order_status')->default(true);
+            $table->string('order_status')->default('Open');
             $table->string('priority')->default('Normal');
             $table->string('category')->default('Other');
             $table->timestamps();

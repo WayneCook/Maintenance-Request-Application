@@ -8,24 +8,24 @@ $(document).ready(function() {
      rowReorder: {
          selector: 'td:nth-child(2)'
      },
-     columnDefs : [
-       { targets : [5],
-         render : function (data, type, row) {
-           switch(data) {
-              case '1' : return 'Closed'; break;
-              default  : return 'Open';
-           }
-         },
-       }
-      ],
+     // columnDefs : [
+     //   { targets : [5],
+     //     render : function (data, type, row) {
+     //       switch(data) {
+     //          case '1' : return 'Closed'; break;
+     //          default  : return 'Open';
+     //       }
+     //     },
+     //   }
+     //  ],
      responsive: true,
      columns: [
         {data: 'name'},
         {data: 'unit_number'},
+        {data: 'order_status'},
         {data: 'created_at'},
         {data: 'category'},
         {data: 'priority'},
-        {data: 'order_status'},
         {mRender: function ( data, type, row ) {
           return '<a data-toggle="tooltip" title="View" data-placement="top" class="show-modal btn btn-default btn-sm action-btns" data-id="' + row.id +
           '"><span class="glyphicon glyphicon-eye-open"></span></a><a data-toggle="tooltip" title="Edit" data-placement="top" class="edit-modal btn btn-default btn-sm action-btns" data-id="' + row.id +
@@ -255,27 +255,27 @@ $(document).on('click', '.show-modal', function() {
       $(this).val(data[id]);
     })
 
-    $('.change-status').each(function(){
+  //   $('.change-status').each(function(){
+  //
+  //     if ($(this).val() == 1) {
+  //
+  //       $(this).val('Open');
+  //     } else {
+  //       $(this).val('Closed');
+  //
+  //     }
+  // })
 
-      if ($(this).val() == 1) {
-
-        $(this).val('Closed');
-      } else {
-        $(this).val('Open');
-
-      }
-  })
-
-  $('.change-permission').each(function(){
-
-    if ($(this).val() == 1) {
-
-      $(this).val('Yes');
-    } else {
-      $(this).val('No');
-
-    }
-})
+//   $('.change-permission').each(function(){
+//
+//     if ($(this).val() == 1) {
+//
+//       $(this).val('Yes');
+//     } else {
+//       $(this).val('No');
+//
+//     }
+// })
 
   }
 

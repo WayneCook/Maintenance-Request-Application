@@ -58,11 +58,11 @@
 
                       <div class="col">
                         <div class="form-group col-sm-6">
-                          <input type="hidden" name="order_status" value="0" class="form-control show-order-data change-status" id="order_status">
+                          <input type="hidden" name="order_status" class="form-control show-order-data change-status" id="order_status">
                           <label class="control-label" for="id">Permission to enter:</label>
                           <select class="form-control show-order-data change-status" name="permission_to_enter" id="permission_to_enter" autocomplete="off">
-                            <option value="1" selected>Yes</option>
-                            <option value="0">No</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No" selected>No</option>
                           </select>
                           <small class="text-danger" name="permission_to_enter"></small>
                         </div>
@@ -70,11 +70,11 @@
 
                       <div class="col">
                         <div class="form-group col-sm-6">
-                          <input type="hidden" name="order_status" value="0" class="form-control show-order-data change-status" id="order_status">
+                          <input type="hidden" name="order_status" class="form-control show-order-data change-status" id="order_status">
                           <label class="control-label" for="id">Status:</label>
                           <select class="form-control show-order-data change-status" name="status" id="status" autocomplete="off">
-                            <option value="1">Closed</option>
-                            <option value="0" selected>Open</option>
+                            <option value="Closed">Closed</option>
+                            <option value="Open" selected>Open</option>
                           </select>
                           <small class="text-danger" name="permission_to_enter"></small>
                         </div>
@@ -154,8 +154,8 @@
                         </div>
 
                         <div class="form-group col-sm-6">
-                          <label class="control-label" for="id">Permission to enter:</label>
-                          <input type="text" name="permission_to_enter" class="form-control show-order-data change-permission" id="permission_to_enter" disabled>
+                          <label class="control-label" for="permission_to_enter">Permission to enter:</label>
+                          <input type="text" name="permission_to_enter" class="form-control show-order-data" id="permission_to_enter" disabled>
                         </div>
 
                         <div class="col">
@@ -208,8 +208,8 @@
                         <div class="form-group col-sm-6">
                             <label class="control-label" for="id">Status:</label>
                             <select name="order_status" class="form-control show-order-data" id="order_status" autocomplete="off">
-                              <option value="0">Open</option>
-                              <option value="1">Closed</option>
+                              <option value="Open">Open</option>
+                              <option value="Closed">Closed</option>
                             </select>
                             <small class="text-danger" name="order_status"></small>
                         </div>
@@ -253,8 +253,8 @@
                       <div class="form-group col-sm-6">
                         <label class="control-label" for="id">Permission to enter:</label>
                         <select name="permission_to_enter" class="form-control show-order-data change-permission" id="permission_to_enter" autocomplete="off">
-                          <option value="1">Yes</option>
-                          <option value="2">No</option>
+                          <option value="Yes">Yes</option>
+                          <option value="No">No</option>
                         </select>
                         <small class="text-danger" name="permission_to_enter"></small>
                       </div>
