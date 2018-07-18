@@ -95,10 +95,10 @@ $(document).ready(function(){
              url: '/signup',
              data: formTransform,
              success: function(data) {
+               console.log(data);
 
                if (data == 'isSignedUp') {
 
-                 console.log('is signed up');
                  swal({
                     title: "Signed up!",
                     type: 'success',
