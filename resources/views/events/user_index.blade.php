@@ -97,6 +97,8 @@ $(document).ready(function(){
              success: function(data) {
 
                if (data == 'isSignedUp') {
+
+                 console.log('is signed up');
                  swal({
                     title: "Signed up!",
                     text: "You are already signed up for this event!",
