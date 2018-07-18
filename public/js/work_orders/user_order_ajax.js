@@ -8,6 +8,7 @@ $('.submit-button').on('click', '#create-order-btn', function(){
     formDataObj[val.name] = val.value;
   })
 
+
   $.ajaxSetup({
     headers: {
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -16,10 +17,11 @@ $('.submit-button').on('click', '#create-order-btn', function(){
 
   $.ajax({
      type: 'POST',
-     url: '../admin/workOrder/store',
+     url: '/admin/workOrder/store',
      data: formDataObj,
      success: function(data) {
        if ($.isEmptyObject(data.error)) {
+
          clearForm();
          // orderTable.ajax.reload();
          swal({

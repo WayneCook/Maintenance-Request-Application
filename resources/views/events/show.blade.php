@@ -27,10 +27,6 @@
       <div class="card-body">
         <h5 class="card-title">{{ $event->title }}</h5>
         <p class="card-text">{{ $event->description }}</p>
-        <div class="button-group">
-        <a href="#" class="btn btn-primary">Sign up</a>
-        <a href="#" class="btn btn-default">Details</a>
-        </div>
       </div>
     </div>
   </div>

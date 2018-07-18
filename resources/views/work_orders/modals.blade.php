@@ -46,11 +46,35 @@
 
                       <div class="col">
                         <div class="form-group col-sm-6">
+                          <label class="control-label" for="title">Priority:</label>
+                          <select type="text" name="priority" class="form-control show-order-data" id="priority" autocomplete="off">
+                            <option value="High">High</option>
+                            <option value="Normal">Normal</option>
+                            <option value="Low">Low</option>
+                          </select>
+                          <small class="text-danger" name="priority"></small>
+                        </div>
+                      </div>
+
+                      <div class="col">
+                        <div class="form-group col-sm-6">
                           <input type="hidden" name="order_status" value="0" class="form-control show-order-data change-status" id="order_status">
                           <label class="control-label" for="id">Permission to enter:</label>
                           <select class="form-control show-order-data change-status" name="permission_to_enter" id="permission_to_enter" autocomplete="off">
-                            <option value="1">Yes</option>
+                            <option value="1" selected>Yes</option>
                             <option value="0">No</option>
+                          </select>
+                          <small class="text-danger" name="permission_to_enter"></small>
+                        </div>
+                      </div>
+
+                      <div class="col">
+                        <div class="form-group col-sm-6">
+                          <input type="hidden" name="order_status" value="0" class="form-control show-order-data change-status" id="order_status">
+                          <label class="control-label" for="id">Status:</label>
+                          <select class="form-control show-order-data change-status" name="status" id="status" autocomplete="off">
+                            <option value="1">Closed</option>
+                            <option value="0" selected>Open</option>
                           </select>
                           <small class="text-danger" name="permission_to_enter"></small>
                         </div>
@@ -128,6 +152,20 @@
                             <input type="text" name="category" class="form-control show-order-data" id="category" disabled>
                           </div>
                         </div>
+
+                        <div class="form-group col-sm-6">
+                          <label class="control-label" for="id">Permission to enter:</label>
+                          <input type="text" name="permission_to_enter" class="form-control show-order-data change-permission" id="permission_to_enter" disabled>
+                        </div>
+
+                        <div class="col">
+                          <div class="form-group col-sm-6">
+                            <label class="control-label" for="priority">Priority:</label>
+                            <input type="text" name="priority" class="form-control show-order-data" id="priority" disabled>
+                            <small class="text-danger" name="priority"></small>
+                          </div>
+                        </div>
+
                       </div> <!---End row---->
 
 
@@ -143,10 +181,7 @@
                         <textarea class="form-control show-order-data" name="comments" id="comments" cols="40" rows="4" disabled></textarea>
                       </div>
 
-                      <div class="form-group col-sm-4">
-                        <label class="control-label" for="id">Permission to enter:</label>
-                        <input type="text" name="permission_to_enter" class="form-control show-order-data change-permission" id="permission_to_enter" disabled>
-                      </div>
+
                     </form>
                   </div>
                     <div class="modal-footer">
@@ -214,6 +249,28 @@
                           <small class="text-danger" name="category"></small>
                         </div>
                       </div>
+
+                      <div class="form-group col-sm-6">
+                        <label class="control-label" for="id">Permission to enter:</label>
+                        <select name="permission_to_enter" class="form-control show-order-data" id="permission_to_enter" autocomplete="off">
+                          <option value="1">Yes</option>
+                          <option value="2">No</option>
+                        </select>
+                        <small class="text-danger" name="permission_to_enter"></small>
+                      </div>
+
+                      <div class="col">
+                        <div class="form-group col-sm-6">
+                          <label class="control-label" for="title">Priority:</label>
+                          <select type="text" name="priority" class="form-control show-order-data" id="priority" autocomplete="off">
+                            <option value="High">High</option>
+                            <option value="Normal">Normal</option>
+                            <option value="Low">Low</option>
+                          </select>
+                          <small class="text-danger" name="priority"></small>
+                        </div>
+                      </div>
+
                     </div> <!---End row---->
 
 
@@ -231,14 +288,7 @@
                       <small class="text-danger" name="comments"></small>
                     </div>
 
-                    <div class="form-group col-sm-4">
-                      <label class="control-label" for="id">Permission to enter:</label>
-                      <select name="permission_to_enter" class="form-control show-order-data" id="permission_to_enter" autocomplete="off">
-                        <option value="1">Yes</option>
-                        <option value="2">No</option>
-                      </select>
-                      <small class="text-danger" name="permission_to_enter"></small>
-                    </div>
+
                   </form>
                 </div>
                   <div class="modal-footer">

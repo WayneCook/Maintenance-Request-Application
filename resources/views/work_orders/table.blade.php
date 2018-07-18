@@ -4,6 +4,8 @@
           <th>Name</th>
           <th>Unit Number</th>
           <th>Submitted on</th>
+          <th>Category</th>
+          <th>Priority</th>
           <th>Status</th>
           <th>Action</th>
         </tr>

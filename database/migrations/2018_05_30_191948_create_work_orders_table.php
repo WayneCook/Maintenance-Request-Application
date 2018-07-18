@@ -21,6 +21,7 @@ class CreateWorkOrdersTable extends Migration
             $table->boolean('permission_to_enter')->default(false)->nullable();
             $table->text('comments')->nullable();
             $table->boolean('order_status')->default(true);
+            $table->string('priority')->default('Normal');
             $table->string('category')->default('Other');
             $table->timestamps();
             $table->softDeletes();

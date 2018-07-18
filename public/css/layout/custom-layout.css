@@ -8,6 +8,18 @@
   float: left;
 }
 
+.wrapper {
+  background-color: dimgray;
+}
+
+.swal2-popup {
+  font-size: 1.6rem !important;
+}
+
+body.stop-scrolling {
+        overflow: auto!important;
+}
+
 .right-avatar {
   width: 28px;
   height: 28px;
@@ -78,6 +90,7 @@
   font-size: 21px;
   position: absolute;
   bottom: -5px;
+  text-decoration: none;
 }
 
 @media screen and (min-width: 768px) {

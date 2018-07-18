@@ -7,7 +7,6 @@ body {
   padding-left: 15px;
 }
 
-
 span.card-img-cont {
   width: 100%;
   display: block;
@@ -15,6 +14,16 @@ span.card-img-cont {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.check-icon {
+  color: #FFEB3B;
+  position: absolute;
+  right: 0px;
+  margin: 0px 6px;
+  font-size: 42px;
+  z-index: 100;
+  display: none;
 }
 
 .jumbotron-custom {
@@ -77,20 +86,21 @@ span.date-banner {
   position: absolute;
   background-color: rgb(245, 245, 245);
   color: hsla(0, 0%, 38%, 0.83);
-  width: 116px;
+  width: 167px;
   top: 10px;
   left: 10px;
-  padding: 5px;
+  padding: 7px;
   line-height: 14px;
   border-radius: 14px;
-  font-size: 12px;
+  font-size: 16px;
   text-align: center;
   z-index: 5;
 }
 
 h5.card-title {
-  font-size: 20px;
-  color: hsla(0, 0%, 22%, 1);
+  font-size: 22px;
+  font-weight: bold;
+  color: hsla(0, 0%, 22%, 0.91);
 }
 
 p.card-text {

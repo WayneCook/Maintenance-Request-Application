@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Prettus\Repository\Criteria\RequestCriteria;
 use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\CreateEventRequest;
@@ -9,6 +9,7 @@ use App\Http\Requests\UpdateEventRequest;
 use Illuminate\Support\Facades\Storage;
 use App\Repositories\EventRepository;
 use Illuminate\Http\Request;
+use Auth;
 // use App\Event;
 use Response;
 use Flash;
@@ -36,6 +37,20 @@ class EventController extends AppBaseController
     public function userIndex() {
 
       $events = $this->eventRepository->all();
+
+      foreach ($events as $event) {
+
+        $check = DB::table('signups')
+            ->where('username', '=', Auth::user()->username)
+            ->where('event_id', '=', $event->id)
+            ->exists();
+
+        if ($check) {
+          $event->status = 'isSignedUp';
+        } else {
+          $event->status = 'notSignedUp';
+        }
+      }
 
       return view('events.user_index')
           ->with('events', $events);

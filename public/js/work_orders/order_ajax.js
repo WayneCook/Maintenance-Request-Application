@@ -11,7 +11,7 @@ $(document).ready(function() {
          selector: 'td:nth-child(2)'
      },
      columnDefs : [
-       { targets : [3],
+       { targets : [5],
          render : function (data, type, row) {
            switch(data) {
               case '1' : return 'Closed'; break;
@@ -25,6 +25,8 @@ $(document).ready(function() {
         {data: 'name'},
         {data: 'unit_number'},
         {data: 'created_at'},
+        {data: 'category'},
+        {data: 'priority'},
         {data: 'order_status'},
         {mRender: function ( data, type, row ) {
           return '<a data-toggle="tooltip" title="View" data-placement="top" class="show-modal btn btn-default btn-sm action-btns" data-id="' + row.id +
@@ -346,12 +348,6 @@ function clearForm() {
     $(this).text('');
 
   });
-}
-
-function statusFormat(){
-
-
-
 }
 
 //Show form errors on submit

@@ -11,8 +11,8 @@
     @foreach($events as $event)
         <tr>
             <td>{!! $event->title !!}</td>
-            <td>{!! $event->start_date !!}</td>
-            <td>{!! $event->end_date !!}</td>
+            <td>{!! date("m/d/y g:i A", strtotime($event->start_date)) !!}</td>
+            <td>{!! date("m/d/y g:i A", strtotime($event->end_date)) !!}</td>
             <td>
                 {!! Form::open(['route' => ['events.destroy', $event->id], 'method' => 'delete','class' => 'delete-event']) !!}
 

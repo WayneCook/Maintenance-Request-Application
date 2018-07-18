@@ -17,7 +17,7 @@ class CreateSignupsTable extends Migration
             $table->increments('id');
             $table->string('username');
             $table->integer('event_id');
-            $table->text('comment');
+            $table->text('comment')->nullable();
             $table->timestamps();
         });
     }

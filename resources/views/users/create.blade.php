@@ -86,6 +86,21 @@
                       @endif
                   </div>
 
+                  <div class="form-group has-feedback{{ $errors->has('role_id') ? ' has-error' : '' }}">
+                      <select class="form-control input-lg" name="role_id">
+                        <option value="3" selected>Resident</option>
+                        <option value="2">Maintanence</option>
+                        <option value="1">Admin</option>
+                      </select>
+                      <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+
+                      @if ($errors->has('role_id'))
+                          <span class="help-block">
+                              <strong>{{ $errors->first('role_id') }}</strong>
+                          </span>
+                      @endif
+                  </div>
+
 
                       <div class="col">
                           <button type="submit" class="btn btn-primary btn-block btn-lg btn-custom">Register</button>

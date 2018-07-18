@@ -37,7 +37,8 @@ class workOrder extends Model
         'permission_to_enter',
         'comments',
         'submitted_on',
-        'order_status'
+        'order_status',
+        'priority'
     ];
 
     /**
@@ -51,7 +52,8 @@ class workOrder extends Model
         'unit_number' => 'string',
         'description' => 'string',
         'permission_to_enter' => 'boolean',
-        'comments' => 'string'
+        'comments' => 'string',
+        'priority' => 'string'
     ];
 
     /**

@@ -88,7 +88,6 @@
               <div class="col">
                 <div class="form-group col-sm-6 submit-button">
                   <label class="control-label " style="display: block" for="">&nbsp&nbsp</label>
-                  {{-- <a href="#" class="btn btn-primary pull-right">Submit</a> --}}
                   <button type="button" class="btn btn-primary add pull-left" id="create-order-btn">
                     <span class='glyphicon glyphicon-check'></span> Submit
                   </button>

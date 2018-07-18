@@ -22,9 +22,11 @@
     <!-- Ionicons -->
     <link rel="stylesheet" type="text/css" href="{{asset('css\layout\ionicons.min.css')}}">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{asset('css\layout\custom-layout.css')}}">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/layout/custom-layout.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/sweetalert.css')}}">
+
 
     @yield('css')
     <style>
@@ -43,12 +45,12 @@
 
 <body class="skin-blue sidebar-mini">
 @if (!Auth::guest())
-    <div class="wrapper">
+    <div class="wrapper" style="background-color: hsla(213, 0%, 96%, 1)">
         <!-- Main Header -->
         <header class="main-header">
 
             <!-- Logo -->
-            <a href="#" class="logo">
+            <a href="{{ route('dash') }}" class="logo">
                 <b>Whispering Loop</b>
             </a>
 
@@ -182,6 +184,8 @@
 
     <!-- Toastr notifications -->
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/sweetalert.js') }}"></script>
+
 
     @yield('scripts')
 </body>

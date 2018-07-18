@@ -5,17 +5,7 @@ namespace App\Models;
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-/**
- * Class Event
- * @package App\Models
- * @version June 29, 2018, 5:42 pm UTC
- *
- * @property string title
- * @property string description
- * @property string details
- * @property string|\Carbon\Carbon start_date
- * @property string|\Carbon\Carbon end_date
- */
+
 class Event extends Model
 {
     use SoftDeletes;

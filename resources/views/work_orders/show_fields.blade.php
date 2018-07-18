@@ -28,10 +28,10 @@
     <p>{!! $workOrder->permission_to_enter !!}</p>
 </div>
 
-<!-- Ugent Field -->
+<!-- priority Field -->
 <div class="form-group">
-    {!! Form::label('ugent', 'Ugent:') !!}
-    <p>{!! $workOrder->ugent !!}</p>
+    {!! Form::label('priority', 'Priority:') !!}
+    <p>{!! $workOrder->priority !!}</p>
 </div>
 
 <!-- Comments Field -->
@@ -57,4 +57,3 @@
     {!! Form::label('deleted_at', 'Deleted At:') !!}
     <p>{!! $workOrder->deleted_at !!}</p>
 </div>
-

@@ -5,18 +5,7 @@ namespace App\Models;
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-/**
- * Class User
- * @package App\Models
- * @version May 30, 2018, 6:33 pm UTC
- *
- * @property string name
- * @property string email
- * @property string password
- * @property string facebook_id
- * @property string avatar
- * @property string remember_token
- */
+
 class User extends Model
 {
     use SoftDeletes;
