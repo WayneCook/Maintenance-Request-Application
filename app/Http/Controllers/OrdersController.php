@@ -65,7 +65,7 @@ class OrdersController extends Controller
           $order->save();
 
           // Mail::to(['waynedemetra@gmail.com', 'wf-monrovia-mgr@rpkdevelopment.com'])->send(new workOrderMail($order));
-          Mail::to(['waynedemetra@gmail.com'])->send(new workOrderMail($order));
+          // Mail::to(['waynedemetra@gmail.com'])->send(new workOrderMail($order));
 
           return response()->json(['success'=>'Added new records.']);
       } else {

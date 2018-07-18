@@ -108,9 +108,7 @@ class EventController extends AppBaseController
 
       return redirect(route('events.index'));
 
-
     }
-
 
     public function show($id)
     {
