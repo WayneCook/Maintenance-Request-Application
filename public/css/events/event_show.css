@@ -16,7 +16,9 @@ h4.panel-head {
   margin: 15px 0px;
 }
 
-
+hr {
+  border-top: 1px solid #cfcdcd;
+}
 
 .loader-wrapper {
   width: 100%;

@@ -40,6 +40,15 @@ class Kernel extends HttpKernel
         'admin' => [
           'admin' => \App\Http\Middleware\Admin::class
         ],
+        'maintenance' => [
+          'maintenance' => \App\Http\Middleware\maintenance::class
+        ],
+        'role_redirect' => [
+          'role_redirect' => \App\Http\Middleware\role_redirect::class
+        ],
+        'workorderAccess' => [
+          'workorderAccess' => \App\Http\Middleware\role_redirect::class
+        ],
 
 
         'api' => [
@@ -66,5 +75,8 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'checkUser' => \App\Http\Middleware\checkUser::class,
         'admin' => \App\Http\Middleware\Admin::class,
+        'maintenance' => \App\Http\Middleware\maintenance::class,
+        'role_redirect' => \App\Http\Middleware\role_redirect::class,
+        'workorderAccess' => \App\Http\Middleware\workorderAccess::class,
     ];
 }

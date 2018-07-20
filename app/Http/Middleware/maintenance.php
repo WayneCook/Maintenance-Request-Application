@@ -2,25 +2,20 @@
 
 namespace App\Http\Middleware;
 
+use Auth;
 use Closure;
 
 class maintenance
 {
+   public function handle($request, Closure $next)
+   {
 
+     if (Auth::user()->role_id <= 2) {
 
-     public function handle($request, Closure $next)
-     {
+          return $next($request);
+      }
 
+      return redirect('dashboard');
 
-         if (Auth::check() && Auth::user()->role_id == 2) {
-           return $next($request);
-           }
-           elseif (Auth::check() && Auth::user()->role_id == 1) {
-               return redirect('admin');
-           }
-           else {
-               return redirect('dashboard');
-           }
-
-         }
+   }
 }

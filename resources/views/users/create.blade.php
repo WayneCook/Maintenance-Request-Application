@@ -92,7 +92,7 @@
                         <option value="2">Maintanence</option>
                         <option value="1">Admin</option>
                       </select>
-                      <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                      <span class="glyphicon glyphicon-user form-control-feedback"></span>
 
                       @if ($errors->has('role_id'))
                           <span class="help-block">

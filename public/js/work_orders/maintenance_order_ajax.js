@@ -22,9 +22,8 @@ $(document).ready(function() {
         {data: 'priority'},
         {mRender: function ( data, type, row ) {
           return '<a data-toggle="tooltip" title="View" data-placement="top" class="show-modal btn btn-default btn-sm action-btns" data-id="' + row.id +
-          '"><span class="glyphicon glyphicon-eye-open"></span></a><a data-toggle="tooltip" title="Edit" data-placement="top" class="edit-modal btn btn-default btn-sm action-btns" data-id="' + row.id +
-          '"><span class="glyphicon glyphicon-edit"></span></a><a data-toggle="tooltip" title="Delete" data-placement="top" class="delete-modal btn btn-danger btn-sm action-btns" data-id="' + row.id +
-          '"><span class="glyphicon glyphicon-trash"></span></a>';}
+          '"><span class="glyphicon glyphicon-eye-open"></span></a><a data-toggle="tooltip" title="Edit" data-placement="top" class="edit_button btn btn-default btn-sm action-btns" data-status="' + row.order_status +'" data-id="' + row.id +
+          '"><span class="glyphicon glyphicon-edit"></span></a>';}
       }]
   });
 
@@ -33,17 +32,6 @@ $(document).ready(function() {
   $('.loader-wrapper').hide();
 
 
-  //Change status text color
-  $('.status-column').each(function() {
-
-      var text = $(this).text();
-
-      if (text == 'Open') {
-        $(this).css('color', 'red');
-      } else {
-        $(this).css('color', 'green');
-      }
-  });
 
   //Use sweetalert for order delete confirmation
   $(document).on('submit', '.delete-form', function(e){
@@ -71,20 +59,6 @@ $(document).ready(function() {
 });
 
 
-  $(document).on('click', '.paginate_button', function(){
-
-    $('.status-column').each(function() {
-
-        var text = $(this).text();
-
-        if (text == 'Open') {
-          $(this).css('color', 'red');
-        } else {
-          $(this).css('color', 'green');
-        }
-    });
-  })
-
   //Bootstrap tooltip
   $(document).ready(function(){
     $('html').tooltip({selector: '[data-toggle="tooltip"]'});
@@ -108,12 +82,16 @@ $(document).on('click', '.show-modal', function() {
  });
 
 
+//Edit modal                                                  ///////////////////////////////////////////
+ $(document).on('click', '.edit_button', function() {
 
-//Edit modal
- $(document).on('click', '.edit-modal', function() {
-    $('.modal-title').text('Edit Work Order');
+   var statusChangeObj = {};
 
-    var id = $(this).data('id');
+    statusChangeObj.id = $(this).data('id');
+    statusChangeObj.status = $(this).data('status');
+    statusChangeObj.username = $('#hidden_name').data('name');
+
+
 
     $.ajaxSetup({
       headers: {
@@ -122,11 +100,15 @@ $(document).on('click', '.show-modal', function() {
     });
 
     $.ajax({
-       type: 'GET',
-       url: 'admin/workOrder/' + id,
+       type: 'POST',
+       url: 'workOrder/updateStatus',
+       data: statusChangeObj,
        success: function(data) {
 
-         fillShowForm(data);
+         console.log(data);
+         return
+
+         // fillShowForm(data);
        }
    });
 
@@ -248,28 +230,6 @@ $(document).on('click', '.show-modal', function() {
       var id = $(this).attr('id');
       $(this).val(data[id]);
     })
-
-  //   $('.change-status').each(function(){
-  //
-  //     if ($(this).val() == 1) {
-  //
-  //       $(this).val('Open');
-  //     } else {
-  //       $(this).val('Closed');
-  //
-  //     }
-  // })
-
-//   $('.change-permission').each(function(){
-//
-//     if ($(this).val() == 1) {
-//
-//       $(this).val('Yes');
-//     } else {
-//       $(this).val('No');
-//
-//     }
-// })
 
   }
 

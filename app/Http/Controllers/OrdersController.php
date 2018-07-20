@@ -83,6 +83,16 @@ class OrdersController extends Controller
 
     }
 
+    public function updateStatus(Request $request) {
+
+      $id = $request->id;
+
+      $order = workOrder::findOrFail($id);
+
+      return $order;
+
+    }
+
     public function show($id)
     {
 

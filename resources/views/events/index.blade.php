@@ -77,11 +77,13 @@
   });
 
   orderTable = $('#events-table').DataTable({
-
-       rowReorder: {
+           order: [[ 2, "desc" ]],
+           rowReorder: {
            selector: 'td:nth-child(2)'
        },
-
+       columnDefs: [
+           { orderable: false, targets: 4 }
+         ],
        responsive: true,
     });
   </script>

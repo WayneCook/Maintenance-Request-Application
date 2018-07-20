@@ -79,11 +79,13 @@
 
   //DataTable settings
   orderTable = $('#users-table').DataTable({
-
+       order: [[ 4, "desc" ]],
+       columnDefs: [
+           { orderable: false, targets: 5 }
+         ],
        rowReorder: {
            selector: 'td:nth-child(2)'
        },
-
        responsive: true,
     });
   </script>

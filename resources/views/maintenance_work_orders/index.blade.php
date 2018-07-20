@@ -29,7 +29,7 @@
     </section>
 
     <div class="content">
-      <div class="panel panel-default panel-custom" id="hidden_name" data-name="{{Auth::user()->username}}">
+      <div class="panel panel-default panel-custom">
         <div class="panel-heading"><h4 style="display: inline-block">Work Orders</h4><a class="btn btn-primary pull-right create-btn" style="margin-top: -10px; margin-bottom: 5px" id="add-modal">Add New</a></div>
         <div class="panel-body">
         <div class="clearfix"></div>
@@ -52,12 +52,6 @@
 
 @section('scripts')
   @include('layouts.datatables_js')
-
-  @if (Auth::user()->role_id == 1)
-    <script type="text/javascript" src="{{asset('js/work_orders/order_ajax.js')}}"></script>
-    @else
-      <script type="text/javascript" src="{{asset('js/work_orders/maintenance_order_ajax.js')}}"></script>
-
-  @endif
+  <script type="text/javascript" src="{{asset('js/work_orders/order_ajax.js')}}"></script>
 
 @endsection

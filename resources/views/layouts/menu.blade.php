@@ -26,4 +26,8 @@
     <a href="{!! route('workOrders.index') !!}"><i class="fa fa-wrench section-icons"></i><span>Work Orders</span></a>
   </li>
 
+  <li class="{{ Request::is('showEvents') ? 'active' : '' }}">
+    <a href="{{route('showEvents')}}"><i class="fa fa-calendar section-icons"></i><span>Event Signup</span></a>
+  </li>
+
 @endif

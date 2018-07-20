@@ -16,7 +16,6 @@
   font-size: 1.25em;
   color: hsla(184, 7%, 41%, 1);
   transition:  all cubic-bezier(0.51, 0, 0, 1.01) 550ms;
-
 }
 
 .content-box i {
@@ -35,8 +34,8 @@ article.section-details {
 }
 
 .section-details p:first-letter {
-    font-size: 62px;
-    font-family: 'Great Vibes', cursive;
+  font-size: 62px;
+  font-family: 'Great Vibes', cursive;
 }
 
 .box-container {
@@ -72,13 +71,19 @@ article.section-details {
 
 .content-wrapper {
   background-color: hsla(213, 0%, 96%, 1);
-
 }
 
 .box-container:hover {
-  background-color: hsla(36, 62%, 91%, 1);
+    background-color: hsl(202, 52%, 49%);
 }
 
+.box-container:hover h2 {
+  color: white;
+}
+
+.box-container:hover i {
+  color: white;
+}
 
 .box-row {
   max-width: 1400px;
