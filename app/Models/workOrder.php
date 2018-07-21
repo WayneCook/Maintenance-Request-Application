@@ -38,6 +38,7 @@ class workOrder extends Model
         'comments',
         'submitted_on',
         'order_status',
+        'audit_log',
         'priority'
     ];
 
@@ -53,6 +54,7 @@ class workOrder extends Model
         'description' => 'string',
         'permission_to_enter' => 'boolean',
         'comments' => 'string',
+        'audit_log' => 'text',
         'priority' => 'string'
     ];
 

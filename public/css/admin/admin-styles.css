@@ -51,7 +51,7 @@ article.section-details {
   border-top: 4px solid #3c8dbc;
   box-shadow: 2px 2px 2px grey;
   box-shadow: 1px 3px 5px -1px hsla(0, 0%, 0%, 0.26);
-  transition: all cubic-bezier(0.51, 0, 0, 1.01) 550ms;
+  transition: all cubic-bezier(0.51, 0, 0, 1.01) 300ms;
 }
 
 .bottom-line {

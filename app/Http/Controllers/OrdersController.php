@@ -8,6 +8,7 @@ use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\workOrder;
+use Carbon\Carbon;
 
 class OrdersController extends Controller
 {
@@ -61,7 +62,8 @@ class OrdersController extends Controller
           $order->description = $request->description;
           $order->permission_to_enter = $request->permission_to_enter;
           $order->comments = $request->comments;
-          $order->created_at = NOW();
+          $order->audit_log = 'Created by: ' . Auth::user()->username . ', Date: ' . Carbon::now('America/Los_Angeles') . '|';
+          $order->created_at = Carbon::now('America/Los_Angeles');
           $order->save();
 
           // Mail::to(['waynedemetra@gmail.com', 'wf-monrovia-mgr@rpkdevelopment.com'])->send(new workOrderMail($order));
@@ -85,12 +87,23 @@ class OrdersController extends Controller
 
     public function updateStatus(Request $request) {
 
-      $id = $request->id;
+      try {
+        $id = $request->id;
+        $order = workOrder::findOrFail($id);
+        $order->order_status = $request->status;
+        $order->audit_log = $order->audit_log . 'Status: ' . $request->status . ', Name: ' . Auth::user()->username . ', Date: ' . Carbon::now('America/Los_Angeles') . '|';
 
-      $order = workOrder::findOrFail($id);
+        if ($order->save()) {
 
-      return $order;
+          return 'success';
+        }
 
+      }
+      //catching the exception
+      catch(Exception $e) {
+
+        return 'failed';
+      }
     }
 
     public function show($id)
@@ -121,6 +134,7 @@ class OrdersController extends Controller
         }
       }
 
+      $orderData->audit_log = $orderData->audit_log . 'Updated by: ' . Auth::user()->username . ', Date: ' . Carbon::now('America/Los_Angeles') . '|';
       $orderData->save();
 
       return workOrder::find($id);

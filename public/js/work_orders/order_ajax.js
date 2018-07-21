@@ -32,19 +32,6 @@ $(document).ready(function() {
   $('.content').show();
   $('.loader-wrapper').hide();
 
-
-  //Change status text color
-  $('.status-column').each(function() {
-
-      var text = $(this).text();
-
-      if (text == 'Open') {
-        $(this).css('color', 'red');
-      } else {
-        $(this).css('color', 'green');
-      }
-  });
-
   //Use sweetalert for order delete confirmation
   $(document).on('submit', '.delete-form', function(e){
     var form = this;
@@ -68,28 +55,11 @@ $(document).ready(function() {
         }
     });
   });
-});
 
-
-  $(document).on('click', '.paginate_button', function(){
-
-    $('.status-column').each(function() {
-
-        var text = $(this).text();
-
-        if (text == 'Open') {
-          $(this).css('color', 'red');
-        } else {
-          $(this).css('color', 'green');
-        }
-    });
-  })
 
   //Bootstrap tooltip
-  $(document).ready(function(){
-    $('html').tooltip({selector: '[data-toggle="tooltip"]'});
-  });
 
+    $('html').tooltip({selector: '[data-toggle="tooltip"]'});
 
 //Show modal
 $(document).on('click', '.show-modal', function() {
@@ -100,11 +70,12 @@ $(document).on('click', '.show-modal', function() {
           type: 'GET',
           url: 'admin/workOrder/' + id,
           success: function(data) {
+
             fillShowForm(data);
+            $('#showModal').modal('show');
           }
       });
 
-     $('#showModal').modal('show');
  });
 
 
@@ -241,37 +212,7 @@ $(document).on('click', '.show-modal', function() {
 
     });
 
- //fill the show order modal
-  function fillShowForm(data){
 
-    $('.show-order-data').each(function(order){
-      var id = $(this).attr('id');
-      $(this).val(data[id]);
-    })
-
-  //   $('.change-status').each(function(){
-  //
-  //     if ($(this).val() == 1) {
-  //
-  //       $(this).val('Open');
-  //     } else {
-  //       $(this).val('Closed');
-  //
-  //     }
-  // })
-
-//   $('.change-permission').each(function(){
-//
-//     if ($(this).val() == 1) {
-//
-//       $(this).val('Yes');
-//     } else {
-//       $(this).val('No');
-//
-//     }
-// })
-
-  }
 
 $(document).on('click', '#add-modal', function() {
     clearForm();
@@ -315,6 +256,26 @@ $(document).on('click', '#add-modal', function() {
     });
   })
 
+//fill the show order modal
+
+
+
+
+
+function fillShowForm(data){
+
+ $('.show-order-data').each(function(order){
+   var id = $(this).attr('id');
+   $(this).val(data[id]);
+ })
+
+var audit = data.audit_log;
+
+ $('#audit_log').text(audit);
+
+ console.log(audit);
+}
+
 //Clear the form data
 function clearForm() {
 
@@ -346,3 +307,5 @@ function showErrors(errors) {
       }
   });
 }
+
+});

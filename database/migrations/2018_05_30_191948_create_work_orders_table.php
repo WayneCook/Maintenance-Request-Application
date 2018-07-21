@@ -23,6 +23,7 @@ class CreateWorkOrdersTable extends Migration
             $table->string('order_status')->default('Open');
             $table->string('priority')->default('Normal');
             $table->string('category')->default('Other');
+            $table->text('audit_log');
             $table->timestamps();
             $table->softDeletes();
         });
