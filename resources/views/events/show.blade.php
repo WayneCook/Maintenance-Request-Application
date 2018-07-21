@@ -22,7 +22,7 @@
 <div class="content">
   <div class="card col-lg-4 col-md-4 col">
     <div class="card-content">
-      <span class="date-banner">{{ date("d/m/y g:i A", strtotime($event->start_date)) }}</span>
+      <span class="date-banner">{{ date("m/d/y g:i A", strtotime($event->start_date)) }}</span>
       <span class="card-img-cont" style="background-image: url('{{ asset('storage/event_images/' . $event->image) }}')" alt="Card image cap"></span>
       <div class="card-body">
         <h5 class="card-title">{{ $event->title }}</h5>

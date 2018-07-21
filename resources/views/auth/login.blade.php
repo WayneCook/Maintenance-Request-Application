@@ -79,8 +79,7 @@
             </div>
 
               <div class="col">
-                  {{-- <a href="{{ url('/register') }}" class="text-center register-link">Register a new membership</a> --}}
-                  <a href="#" class="text-center register-link">Register a new membership</a>
+                  <a href="{{ route('register') }}" class="text-center register-link">Register a new membership</a>
               </div>
 
               <div class="col">
