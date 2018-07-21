@@ -120,7 +120,7 @@
 
         <!-- Main Footer -->
         <footer class="main-footer" style="max-height: 100px;text-align: center">
-            Copyright © 2016 <a href="{{ route('home') }}">Whispering Loop</a>. All rights reserved.
+            Copyright © 2018 <a href="{{ route('home') }}">Whispering Loop</a>. All rights reserved.
         </footer>
 
     </div>
