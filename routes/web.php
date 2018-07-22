@@ -3,6 +3,7 @@
 
 Route::get('/', function () { return view('home'); });
 Route::post('admin/register', 'Auth/adminRegisterController@registerUser');
+// Route::get('user/workOrders', 'OrdersController@initial')->name('initial');
 
 
 
@@ -24,6 +25,10 @@ Route::post('admin/register', 'Auth/adminRegisterController@registerUser');
     Route::resource('workOrders', 'workOrderController');
 
   });
+
+
+
+
 
 
   // Route::get('login/facebook', 'Auth\FacebookLoginController@redirectToProvider')->name('login.facebook');
@@ -52,6 +57,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('user/events', 'EventController@userIndex')->name('showEvents');
     Route::resource('events', 'EventController');
     Route::resource('signup', 'SignupController');
+
+    Route::get('user/workOrders', 'OrdersController@initial')->name('initial');
 
     Route::post('admin/workOrder/store', 'OrdersController@store');
 });
