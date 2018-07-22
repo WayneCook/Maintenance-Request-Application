@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\workOrder;
 use Carbon\Carbon;
 
+
 class OrdersController extends Controller
 {
 
@@ -31,6 +32,15 @@ class OrdersController extends Controller
     {
 
       $orders = workOrder::all();
+
+      return Datatables::of($orders)->make();
+
+    }
+
+    public function user_initial()
+    {
+
+      $orders = workOrder::where('name', '=', Auth::user()->username);
 
       return Datatables::of($orders)->make();
 

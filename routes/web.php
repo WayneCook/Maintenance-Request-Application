@@ -58,7 +58,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('events', 'EventController');
     Route::resource('signup', 'SignupController');
 
-    Route::get('user/workOrders', 'OrdersController@initial')->name('initial');
+    Route::get('user/workOrders', 'OrdersController@user_initial');
 
     Route::post('admin/workOrder/store', 'OrdersController@store');
 });

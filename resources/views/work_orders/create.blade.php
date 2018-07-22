@@ -101,6 +101,9 @@
 
     {{-- user history section --}}
 
+    <div class="panel panel-default panel-custom">
+      <div class="panel-heading"><h4 style="display: inline-block">Create Work Order</h4></div>
+        <div class="panel-body">
     <table class="display nowrap table table-striped table-hover" id="workOrders-table" style="width: 100%">
         <thead>
             <tr>
@@ -111,6 +114,9 @@
             </tr>
         </thead>
     </table>
+  </div>
+</div>
+  </div>
 
 
 
