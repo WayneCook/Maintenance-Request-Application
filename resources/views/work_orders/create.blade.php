@@ -46,7 +46,7 @@
               <div class="col">
                 <div class="form-group col-sm-6">
                   <label class="control-label" for="title">Category:</label>
-                  <input type="text" name="category" class="form-control show-order-data" id="category" autocomplete="off">
+                  <input type="text" name="category" class="form-control show-order-data" id="category" autocomplete="off" style="max-width: 250px;">
                   <small class="text-danger" name="category"></small>
                 </div>
               </div>
@@ -55,7 +55,7 @@
               <div class="col">
                 <div class="form-group col-sm-6">
                   <label class="control-label" for="id">Permission to enter:</label>
-                  <select class="form-control show-order-data change-status" name="permission_to_enter" id="permission_to_enter" autocomplete="off">
+                  <select class="form-control show-order-data change-status" name="permission_to_enter" id="permission_to_enter" autocomplete="off" style="max-width: 250px;">
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                   </select>
@@ -87,7 +87,7 @@
                   <button type="button" class="btn btn-primary add pull-left" id="create-order-btn">
                     <span class='glyphicon glyphicon-check'></span> Submit
                   </button>
-                  <a href="{{ route('admin') }}" class="btn btn-default" style="margin-left: 5px">Back</a>
+                  {{-- <a href="{{ route('admin') }}" class="btn btn-default" style="margin-left: 5px">Back</a> --}}
                 </div>
               </div>
             </div>
