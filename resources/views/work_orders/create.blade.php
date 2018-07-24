@@ -20,24 +20,21 @@
 <div class="content">
   @include('adminlte-templates::common.errors')
     <div class="panel panel-default panel-custom">
-      <div class="panel-heading"><h4 style="display: inline-block">Create Work Order</h4></div>
+      <div class="panel-heading"><h4 style="display: inline-block">New Maintenance Request</h4></div>
         <div class="panel-body">
           <form class="form needs-validation" novalidate role="form" id="create-form">
                   {!! csrf_field() !!}
             <div class="form-row">
-                <div class="col">
-                <div class="form-group col-sm-6">
-
-                  <label class="control-label" for="id">Name:</label>
-                  <input type="name" value="{{ Auth::user()->username }}" name="name" class="form-control show-order-data" id="name" autocomplete="off" readonly>
+                <div class="">
+                <div class="form-group">
+                  <input type="hidden" value="{{ Auth::user()->username }}" name="name" class="form-control show-order-data" id="name" autocomplete="off" readonly>
                   <small class="text-danger" name="name"></small>
                 </div>
               </div>
 
-              <div class="col">
-                <div class="form-group col-sm-6">
-                  <label class="control-label" for="title">Apartment number:</label>
-                  <input type="text" name="unit_number" class="form-control show-order-data" value="{{ Auth::user()->unit_number }}" id="unit_number" autocomplete="off" readonly>
+              <div class="">
+                <div class="form-group">
+                  <input type="hidden" name="unit_number" class="form-control show-order-data" value="{{ Auth::user()->unit_number }}" id="unit_number" autocomplete="off" readonly>
                   <small class="text-danger" name="unit_number"></small>
                 </div>
               </div>
@@ -98,11 +95,10 @@
         </form>
       </div>
     </div>
-
     {{-- user history section --}}
 
     <div class="panel panel-default panel-custom">
-      <div class="panel-heading"><h4 style="display: inline-block">Create Work Order</h4></div>
+      <div class="panel-heading"><h4 style="display: inline-block">Request History</h4></div>
         <div class="panel-body">
     <table class="display nowrap table table-striped table-hover" id="workOrders-table" style="width: 100%">
         <thead>

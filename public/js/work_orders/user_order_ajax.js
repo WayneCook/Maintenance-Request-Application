@@ -1,7 +1,9 @@
 $(document).ready(function(){
 
   orderTable = $('#workOrders-table').DataTable({
-     order: [[ 3, "desc" ]],
+    searching: false,
+    bLengthChange: false,
+     order: [[ 2, "desc" ]],
      columnDefs: [
          { orderable: false, targets: 3 }
        ],
@@ -15,10 +17,8 @@ $(document).ready(function(){
         {data: 'order_status'},
         {data: 'created_at'},
         {mRender: function ( data, type, row ) {
-          return '<a data-toggle="tooltip" title="View" data-placement="top" class="show-modal btn btn-default btn-sm action-btns" data-id="' + row.id +
-          '"><span class="glyphicon glyphicon-eye-open"></span></a><a data-toggle="tooltip" title="Edit" data-placement="top" class="edit-modal btn btn-default btn-sm action-btns" data-id="' + row.id +
-          '"><span class="glyphicon glyphicon-edit"></span></a><a data-toggle="tooltip" title="Delete" data-placement="top" class="delete-modal btn btn-danger btn-sm action-btns" data-id="' + row.id +
-          '"><span class="glyphicon glyphicon-trash"></span></a>';}
+          return '<a data-toggle="tooltip" title="View" data-placement="top" class="show-modal btn btn-info btn-sm action-btns" data-id="' + row.id +
+          '">View</a>';}
       }]
   });
 
