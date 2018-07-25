@@ -107,25 +107,25 @@
 
             <div class="col">
               <div class="form-group col-md-6">
-                    <input type="text" class="form-control input input-lg" name="name" data-form-field="Name" placeholder="Your Name" required="" id="name-form4-2y">
+                    <input type="text" class="form-control input input-lg" name="name" data-form-field="Name" placeholder="Your Name" required="">
               </div>
             </div>
 
             <div class="col">
               <div class="form-group col-md-6">
-                    <input type="text" class="form-control input input-lg" name="phone" data-form-field="Phone" placeholder="Phone" required="" id="phone-form4-2y">
+                    <input type="text" class="form-control input input-lg" name="phone" data-form-field="Phone" placeholder="Phone" required="">
               </div>
             </div>
 
             <div class="col">
               <div class="form-group col-md-12">
-                  <input type="text" class="form-control input input-lg" name="email" data-form-field="Email" placeholder="Email" required="" id="email-form4-2y">
+                  <input type="text" class="form-control input input-lg" name="email" data-form-field="Email" placeholder="Email">
               </div>
             </div>
 
             <div class="col">
               <div class="form-group col-md-12" data-for="message">
-                  <textarea class="form-control input input-lg" name="message" rows="6" data-form-field="Message" placeholder="Message" style="resize:none" id="message-form4-2y"></textarea>
+                  <textarea class="form-control input input-lg" name="message" rows="6" data-form-field="Message" placeholder="Message" required="" style="resize:none"></textarea>
               </div>
             </div>
 
