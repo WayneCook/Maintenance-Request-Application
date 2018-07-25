@@ -17,6 +17,7 @@ Route::post('admin/register', 'Auth/adminRegisterController@registerUser');
   });
 
 
+//Maintenance routes
   Route::group(['middleware' => ['maintenance']], function () {
 
     Route::get('admin/workOrder/{id}', 'OrdersController@show');
@@ -27,16 +28,6 @@ Route::post('admin/register', 'Auth/adminRegisterController@registerUser');
   });
 
 
-
-
-
-
-  // Route::get('login/facebook', 'Auth\FacebookLoginController@redirectToProvider')->name('login.facebook');
-  // Route::get('login/facebook/callback', 'Auth\FacebookLoginController@handleProviderCallback');
-
-
-
-Auth::routes();
 
 //Basic user Route
 Route::group(['middleware' => ['auth']], function () {
@@ -62,3 +53,12 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::post('admin/workOrder/store', 'OrdersController@store');
 });
+
+Route::get('contact', function () { return view('contact'); })->name('contact_page');
+
+
+
+Auth::routes();
+
+// Route::get('login/facebook', 'Auth\FacebookLoginController@redirectToProvider')->name('login.facebook');
+// Route::get('login/facebook/callback', 'Auth\FacebookLoginController@handleProviderCallback');

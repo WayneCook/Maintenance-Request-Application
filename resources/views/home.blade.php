@@ -12,9 +12,11 @@
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="{{asset('css/font-awesome.css')}}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{asset('css/home/section-styles.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/home/home_styles.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/home/home-responsive.css')}}">
+
     {{-- <link rel="stylesheet" type="text/css" href="{{asset('css/home/login-styles.css')}}"> --}}
 
   </head>
@@ -89,6 +91,71 @@
     </a>
 
     </section>
+
+    {{-- //////////////////////////////////////// --}}
+
+    <div class="row contact-section">
+        <div class="col-md-6 map-wrapper">
+          <div class="innerWrapper">
+
+          <div class="map-responsive">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3302.1319261188323!2d-117.98518738428784!3d34.14296678058146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2d90558d508c9%3A0x569fb5cb0b175b6e!2s1024+Royal+Oaks+Dr%2C+Monrovia%2C+CA+91016!5e0!3m2!1sen!2sus!4v1532478950110" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
+        </div>
+        </div>
+        <div class="col-md-6 form-wrapper">
+          <div class="innerWrapper">
+
+            <div>
+              <div >
+                  <h1 class="form-heading">Send us a message!</h1>
+              </div>
+            </div>
+            <div data-form-type="formoid">
+                <div data-form-alert="" hidden="">
+                    Thanks for filling out the form!
+                </div>
+                <form class="block" action="#" method="post">
+                    <div class="form-row">
+
+                      <div class="col">
+                        <div class="form-group col-md-6">
+                              <input type="text" class="form-control input input-md" name="name" data-form-field="Name" placeholder="Your Name" required="" id="name-form4-2y">
+                        </div>
+                      </div>
+
+                    <div class="col">
+                      <div class="form-group col-md-6">
+                            <input type="text" class="form-control input input-md" name="phone" data-form-field="Phone" placeholder="Phone" required="" id="phone-form4-2y">
+                      </div>
+                    </div>
+
+                      <div class="col">
+                        <div class="form-group col-md-12">
+                            <input type="text" class="form-control input input-md" name="email" data-form-field="Email" placeholder="Email" required="" id="email-form4-2y">
+                        </div>
+                      </div>
+
+                      <div class="col">
+                        <div class="form-group col-md-12" data-for="message">
+                            <textarea class="form-control input input-md" name="message" rows="6" data-form-field="Message" placeholder="Message" style="resize:none" id="message-form4-2y"></textarea>
+                        </div>
+                      </div>
+
+                      <div class="col">
+                        <div class="form-group col-md-12" style="margin-top: 10px;">
+                            <button href="" type="submit" class="btn btn-md btn-primary msg-button">SEND MESSAGE</button>
+                        </div>
+                      </div>
+                    </div>
+                </form>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+
 
     <footer class="home-footer">
         <strong>Copyright © 2018. All rights reserved.

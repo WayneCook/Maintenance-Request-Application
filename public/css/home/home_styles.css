@@ -45,7 +45,7 @@ table {
 /* End CSS RESET */
 
 body {
-  background-color: black;
+  background-color: white;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -194,7 +194,7 @@ main:after {
 
 footer {
 	height: 174px;
-  background-color: hsla(0, 0%, 99%, 1);
+  background-color: hsl(0, 0%, 93%);
 	text-align: center;
 	padding-top: 79px;
 	color: hsla(185, 13%, 58%, 1);

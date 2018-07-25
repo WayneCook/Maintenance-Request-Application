@@ -71,7 +71,7 @@
 
             <div class="form-group has-feedback{{ $errors->has('unit_number') ? ' has-error' : '' }}">
                 <input type="text" class="form-control input-lg" name="unit_number" value="{{ old('unit_number') }}" placeholder="Apartment number">
-                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                <span class="fa fa-hashtag form-control-feedback"></span>
 
                 @if ($errors->has('unit_number'))
                     <span class="help-block">

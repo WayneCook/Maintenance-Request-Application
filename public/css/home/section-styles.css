@@ -15,7 +15,7 @@
 
 
 .content-box h2 {
-  font-size: 1.25em;
+  font-size: 1.15em;
   color: hsla(184, 7%, 41%, 1);
   /* transition: all ease-in-out 450ms; */
   transition:  all cubic-bezier(0.51, 0, 0, 1.01) 550ms;
@@ -23,7 +23,7 @@
 }
 
 .content-box i {
-  font-size: 40px;
+  font-size: 36px;
   color: hsl(184, 95%, 26%);
   margin-bottom: 18px;
   /* transition: all ease-in-out 450ms; */
@@ -34,7 +34,7 @@ article.section-details {
   max-width: 980px;
   margin: auto;
   font-size: 20px;
-  padding: 110px 22px;
+  padding: 80px 22px;
   color: hsla(184, 7%, 41%, 1);
   line-height: 1.50em;
 }
@@ -91,9 +91,57 @@ article.section-details {
 
 }
 
-
 .box-row {
   max-width: 1400px;
   margin: auto;
-  margin-bottom: 110px;
+  margin-bottom: 80px;
+}
+
+.form-heading {
+  font-size: 32px;
+  text-align: center;
+  padding-bottom: 20px;
+  color: hsla(184, 7%, 41%, 1);
+}
+
+.input {
+    border-radius: 0px;
+}
+
+.map-responsive {
+  /* box-shadow: 0px 3px 18px -6px hsla(180, 2%, 24%, 0.96); */
+  border: 3px solid #037981;
+}
+
+.map-wrapper {
+  padding: 15px;
+}
+
+.contact-section {
+  max-width: 1400px;
+  margin: auto;
+  background-color: white;
+  padding: 80px 0px;
+}
+
+iframe {
+    display: block;
+    height: 300px;
+}
+
+.msg-button {
+
+    text-decoration: none;
+    background-color: hsla(184, 96%, 26%, 1);
+    display: inline-block;
+    font-size: 14px;
+    color: hsla(0, 0%, 99%, 1);
+    cursor: pointer;
+    border-radius: 0px;
+}
+
+.msg-button:hover {
+    background-color: hsla(184, 96%, 20%, 1);
+    color: hsla(0, 0%, 99%, 1);
+    text-decoration: none;
 }

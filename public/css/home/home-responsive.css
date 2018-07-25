@@ -23,13 +23,13 @@
 
   article.section-details {
     font-size: 16px;
-    padding: 76px 0px;
+    padding: 50px 0px;
     line-height: 1.50em;
 }
 
   .content-box {
     height: 248px;
-    padding: 16px 12px;
+    padding: 16px 0px;
 
   }
 
@@ -37,6 +37,46 @@
   footer {
     padding-right: 10px;
     padding-left: 10px;
+  }
+
+
+    .contact-section {
+      max-width: 1400px;
+      margin: auto;
+      background-color: white;
+      padding: 50px 0px;
+  }
+
+
+  .box-row {
+
+    margin-bottom: 50px;
+  }
+
+  iframe {
+      display: block;
+      height: 225px;
+  }
+
+}
+
+@media screen and (min-width: 998px) {
+
+  .contact-section {
+    padding: 80px 20px;
+  }
+
+  .innerWrapper {
+    padding: 0px 50px;
+    margin: auto;
+  }
+
+}
+
+@media screen and (max-width: 992px) {
+
+  .form-wrapper {
+    margin-top: 50px;
   }
 
 }
