@@ -107,13 +107,13 @@
 
             <div class="col">
               <div class="form-group col-md-6">
-                    <input type="text" class="form-control input input-lg" name="name" data-form-field="Name" placeholder="Your Name" required="">
+                    <input type="text" class="form-control input input-lg" name="name" data-form-field="Name" placeholder="Your Name" required>
               </div>
             </div>
 
             <div class="col">
               <div class="form-group col-md-6">
-                    <input type="text" class="form-control input input-lg" name="phone" data-form-field="Phone" placeholder="Phone" required="">
+                    <input type="text" class="form-control input input-lg" name="phone" data-form-field="Phone" placeholder="Phone" required>
               </div>
             </div>
 
@@ -125,7 +125,7 @@
 
             <div class="col">
               <div class="form-group col-md-12" data-for="message">
-                  <textarea class="form-control input input-lg" name="message" rows="6" data-form-field="Message" placeholder="Message" required="" style="resize:none"></textarea>
+                  <textarea class="form-control input input-lg" name="message" rows="6" data-form-field="Message" placeholder="Message" required maxlength=500 style="resize:none"></textarea>
               </div>
             </div>
 
