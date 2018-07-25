@@ -5,7 +5,6 @@
     <title>Home</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
     <link rel="stylesheet" type="text/css" href="{{asset('css/grid/bootstrap.css')}}">
     <script src="{{ asset('js/app.js') }}"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -16,9 +15,6 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/home/section-styles.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/home/home_styles.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/home/home-responsive.css')}}">
-
-    {{-- <link rel="stylesheet" type="text/css" href="{{asset('css/home/login-styles.css')}}"> --}}
-
   </head>
   <body>
 
@@ -32,26 +28,24 @@
     </nav>
 
   <main>
+    <div class="image-slider">
+      <div class="image-one slide"></div>
+      <div class="image-two slide"></div>
+      <div class="image-three slide"></div>
+    </div>
 
-      <div class="image-slider">
-        <div class="image-one slide"></div>
-        <div class="image-two slide"></div>
-        <div class="image-three slide"></div>
+    <div class='headline-container'>
+      <h1>WHISPERING FOUNTIANS<br>APARTMENTS</h1>
+      <div class="button-container">
+        <a class='register-button nounderline' href="{{route('register')}}"><i class="fa fa-user-plus"></i> TENANT REGISTRATION</a>
       </div>
+    </div>
 
-      <div class='headline-container'>
-        <h1>WHISPERING FOUNTIANS<br>APARTMENTS</h1>
-        <div class="button-container">
+    <div class="arrow-container">
+      <i class="fa fa-angle-down" id="arrow"></i>
+    </div>
 
-          {{-- <a class='register-button nounderline' href='{{route('register')}}'><i class="fa fa-user-plus"></i> TENANT REGISTRATION</a> --}}
-          <a class='register-button nounderline' href="{{route('register')}}"><i class="fa fa-user-plus"></i> TENANT REGISTRATION</a>
-        </div>
-
-      </div>
-      <div class="arrow-container">
-        <i class="fa fa-angle-down" id="arrow"></i>
-      </div>
-    </main>
+  </main>
 
     <section class="container-fluid section-container" id="scroll-point">
       <article class="section-details">
@@ -60,110 +54,98 @@
       <div class="row box-row">
 
         <a href="{{route('login')}}">
-        <div class="content-box col-md-4">
-          <div class="box-container">
-              <i class="fa fa-calendar section-icons"></i>
-              <h2>Event Signup</h2>
-              <span class="bottom-line"></span>
+          <div class="content-box col-md-4">
+            <div class="box-container">
+                <i class="fa fa-calendar section-icons"></i>
+                <h2>Event Signup</h2>
+                <span class="bottom-line"></span>
+            </div>
           </div>
-        </div>
-      </a>
-
-      <a href="{{route('login')}}">
-        <div class="content-box col-md-4">
-          <div class="box-container">
-              <i class="fa fa-wrench section-icons"></i>
-              <h2>Maintanence Request</h2>
-              <span class="bottom-line"></span>
-          </div>
-        </div>
-      </a>
+        </a>
 
         <a href="{{route('login')}}">
-        <div class="content-box col-md-4">
-          <div class="box-container">
-              <i class="fa fa-envelope section-icons"></i>
-              <h2>Contact Us</h2>
-              <span class="bottom-line"></span>
+          <div class="content-box col-md-4">
+            <div class="box-container">
+                <i class="fa fa-wrench section-icons"></i>
+                <h2>Maintanence Request</h2>
+                <span class="bottom-line"></span>
+            </div>
           </div>
-        </div>
-      </div>
-    </a>
+        </a>
 
+        <a href="{{route('register')}}">
+          <div class="content-box col-md-4">
+            <div class="box-container">
+                <i class="fa fa-user-plus section-icons"></i>
+                <h2>Registration</h2>
+                <span class="bottom-line"></span>
+            </div>
+          </div>
+        </a>
+      </div>
     </section>
 
     <div class="row contact-section">
-        <div class="col-md-6 map-wrapper">
-          <div class="innerWrapper">
-
+      <div class="col-md-6 map-wrapper">
+        <div class="innerWrapper">
           <div class="map-responsive">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3302.1319261188323!2d-117.98518738428784!3d34.14296678058146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2d90558d508c9%3A0x569fb5cb0b175b6e!2s1024+Royal+Oaks+Dr%2C+Monrovia%2C+CA+91016!5e0!3m2!1sen!2sus!4v1532478950110" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3302.1319261188323!2d-117.98518738428784!3d34.14296678058146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2d90558d508c9%3A0x569fb5cb0b175b6e!2s1024+Royal+Oaks+Dr%2C+Monrovia%2C+CA+91016!5e0!3m2!1sen!2sus!4v1532478950110" width="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
           </div>
         </div>
-        </div>
-        <div class="col-md-6 form-wrapper">
-          <div class="innerWrapper">
+      </div>
 
-            <div>
-              <div >
-                  <h1 class="form-heading">Send us a message!</h1>
+      <div class="col-md-6 form-wrapper">
+        <div class="innerWrapper">
+          <div>
+            <div >
+              <h1 class="form-heading">Send us a message!</h1>
+            </div>
+          </div>
+
+          <form class="block" action="#" method="post">
+            <div class="form-row">
+
+            <div class="col">
+              <div class="form-group col-md-6">
+                    <input type="text" class="form-control input input-lg" name="name" data-form-field="Name" placeholder="Your Name" required="" id="name-form4-2y">
               </div>
             </div>
-            <div data-form-type="formoid">
-                <div data-form-alert="" hidden="">
-                    Thanks for filling out the form!
-                </div>
-                <form class="block" action="#" method="post">
-                    <div class="form-row">
 
-                      <div class="col">
-                        <div class="form-group col-md-6">
-                              <input type="text" class="form-control input input-lg" name="name" data-form-field="Name" placeholder="Your Name" required="" id="name-form4-2y">
-                        </div>
-                      </div>
+            <div class="col">
+              <div class="form-group col-md-6">
+                    <input type="text" class="form-control input input-lg" name="phone" data-form-field="Phone" placeholder="Phone" required="" id="phone-form4-2y">
+              </div>
+            </div>
 
-                    <div class="col">
-                      <div class="form-group col-md-6">
-                            <input type="text" class="form-control input input-lg" name="phone" data-form-field="Phone" placeholder="Phone" required="" id="phone-form4-2y">
-                      </div>
-                    </div>
+            <div class="col">
+              <div class="form-group col-md-12">
+                  <input type="text" class="form-control input input-lg" name="email" data-form-field="Email" placeholder="Email" required="" id="email-form4-2y">
+              </div>
+            </div>
 
-                      <div class="col">
-                        <div class="form-group col-md-12">
-                            <input type="text" class="form-control input input-lg" name="email" data-form-field="Email" placeholder="Email" required="" id="email-form4-2y">
-                        </div>
-                      </div>
+            <div class="col">
+              <div class="form-group col-md-12" data-for="message">
+                  <textarea class="form-control input input-lg" name="message" rows="6" data-form-field="Message" placeholder="Message" style="resize:none" id="message-form4-2y"></textarea>
+              </div>
+            </div>
 
-                      <div class="col">
-                        <div class="form-group col-md-12" data-for="message">
-                            <textarea class="form-control input input-lg" name="message" rows="6" data-form-field="Message" placeholder="Message" style="resize:none" id="message-form4-2y"></textarea>
-                        </div>
-                      </div>
-
-                      <div class="col">
-                        <div class="form-group col-md-12" style="margin-top: 10px;">
-                            <button href="" type="submit" class="btn btn-lg btn-primary msg-button">SEND MESSAGE</button>
-                        </div>
-                      </div>
-                    </div>
-                </form>
+            <div class="col">
+              <div class="form-group col-md-12" style="margin-top: 10px;">
+                <button href="" type="submit" class="btn btn-lg btn-primary msg-button">SEND MESSAGE</button>
+              </div>
             </div>
           </div>
-        </div>
+        </form>
+      </div>
     </div>
-
-
-
+  </div>
 
     <footer class="home-footer">
         <strong>Copyright © 2018. All rights reserved.
     </footer>
 
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
-
     <script type="text/javascript">
-
 
     $('.image-slider').slick({
 
@@ -174,8 +156,6 @@
       fade: true,
       speed: 2800
     });
-
-
 
     </script>
 
