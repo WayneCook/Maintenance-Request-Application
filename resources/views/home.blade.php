@@ -92,8 +92,6 @@
 
     </section>
 
-    {{-- //////////////////////////////////////// --}}
-
     <div class="row contact-section">
         <div class="col-md-6 map-wrapper">
           <div class="innerWrapper">
@@ -120,31 +118,31 @@
 
                       <div class="col">
                         <div class="form-group col-md-6">
-                              <input type="text" class="form-control input input-md" name="name" data-form-field="Name" placeholder="Your Name" required="" id="name-form4-2y">
+                              <input type="text" class="form-control input input-lg" name="name" data-form-field="Name" placeholder="Your Name" required="" id="name-form4-2y">
                         </div>
                       </div>
 
                     <div class="col">
                       <div class="form-group col-md-6">
-                            <input type="text" class="form-control input input-md" name="phone" data-form-field="Phone" placeholder="Phone" required="" id="phone-form4-2y">
+                            <input type="text" class="form-control input input-lg" name="phone" data-form-field="Phone" placeholder="Phone" required="" id="phone-form4-2y">
                       </div>
                     </div>
 
                       <div class="col">
                         <div class="form-group col-md-12">
-                            <input type="text" class="form-control input input-md" name="email" data-form-field="Email" placeholder="Email" required="" id="email-form4-2y">
+                            <input type="text" class="form-control input input-lg" name="email" data-form-field="Email" placeholder="Email" required="" id="email-form4-2y">
                         </div>
                       </div>
 
                       <div class="col">
                         <div class="form-group col-md-12" data-for="message">
-                            <textarea class="form-control input input-md" name="message" rows="6" data-form-field="Message" placeholder="Message" style="resize:none" id="message-form4-2y"></textarea>
+                            <textarea class="form-control input input-lg" name="message" rows="6" data-form-field="Message" placeholder="Message" style="resize:none" id="message-form4-2y"></textarea>
                         </div>
                       </div>
 
                       <div class="col">
                         <div class="form-group col-md-12" style="margin-top: 10px;">
-                            <button href="" type="submit" class="btn btn-md btn-primary msg-button">SEND MESSAGE</button>
+                            <button href="" type="submit" class="btn btn-lg btn-primary msg-button">SEND MESSAGE</button>
                         </div>
                       </div>
                     </div>

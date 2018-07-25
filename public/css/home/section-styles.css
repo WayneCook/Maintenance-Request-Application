@@ -137,7 +137,7 @@ iframe {
     font-size: 14px;
     color: hsla(0, 0%, 99%, 1);
     cursor: pointer;
-    border-radius: 0px;
+    border-radius: 0px;  
 }
 
 .msg-button:hover {
