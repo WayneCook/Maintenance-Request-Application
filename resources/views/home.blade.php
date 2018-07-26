@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/home/section-styles.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/home/home_styles.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/home/home-responsive.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/sweetalert.css')}}">
   </head>
   <body>
 
@@ -102,30 +103,30 @@
             </div>
           </div>
 
-          <form class="block" action="#" method="post">
+          <form class="message-form" action="#" method="post">
             <div class="form-row">
 
             <div class="col">
               <div class="form-group col-md-6">
-                    <input type="text" class="form-control input input-lg" name="name" data-form-field="Name" placeholder="Your Name" required>
+                    <input type="text" class="form-control input input-lg" name="name" placeholder="Your Name" required id="name">
               </div>
             </div>
 
             <div class="col">
               <div class="form-group col-md-6">
-                    <input type="text" class="form-control input input-lg" name="phone" data-form-field="Phone" placeholder="Phone" required>
+                    <input type="text" class="form-control input input-lg" name="phone" placeholder="Phone" id="phone">
               </div>
             </div>
 
             <div class="col">
               <div class="form-group col-md-12">
-                  <input type="text" class="form-control input input-lg" name="email" data-form-field="Email" placeholder="Email">
+                  <input type="text" class="form-control input input-lg" name="email" placeholder="Email" id="email">
               </div>
             </div>
 
             <div class="col">
               <div class="form-group col-md-12" data-for="message">
-                  <textarea class="form-control input input-lg" name="message" rows="6" data-form-field="Message" placeholder="Message" required maxlength=500 style="resize:none"></textarea>
+                  <textarea class="form-control input input-lg" name="message" rows="6" placeholder="Message" required maxlength=500 style="resize:none" id="message"></textarea>
               </div>
             </div>
 
@@ -145,6 +146,7 @@
     </footer>
 
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/sweetalert.js') }}"></script>
     <script type="text/javascript">
 
     $('.image-slider').slick({
@@ -156,6 +158,61 @@
       fade: true,
       speed: 2800
     });
+
+    $('.message-form').on('submit', function(event) {
+
+      event.preventDefault();
+      formData = $(this).serializeArray();
+
+      var formDataObj = {};
+
+      $.each(formData, function(key, val){
+        formDataObj[val.name] = val.value;
+      })
+
+      //Ajax request to send messager
+      $.ajaxSetup({
+        headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+      });
+
+      $.ajax({
+         type: 'post',
+         url: 'messager',
+         data: formDataObj,
+         success: function(data) {
+           if (data == 'success') {
+
+             swal({
+              type: 'success',
+              title: 'Message sent!',
+              text: 'Thank you, your message has been successfully sent.',
+              confirmButtonColor: '#337ab7'
+            })
+            clearForm();
+          } else {
+            swal({
+             type: 'warning',
+             title: 'Oops something went wrong!',
+             text: 'Your message was not sent, please try again later. Thank you',
+             confirmButtonColor: '#337ab7'
+           })
+           clearForm();
+          }
+       }
+    })
+  })
+
+  function clearForm() {
+
+    $('#name').val('');
+    $('#email').val('');
+    $('#phone').val('');
+    $('#message').val('');
+
+  }
+
 
     </script>
 

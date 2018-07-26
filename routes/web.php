@@ -3,6 +3,9 @@
 
 Route::get('/', function () { return view('home'); });
 Route::post('admin/register', 'Auth/adminRegisterController@registerUser');
+Route::post('messager', 'HomeController@messager');
+
+
 // Route::get('user/workOrders', 'OrdersController@initial')->name('initial');
 
 

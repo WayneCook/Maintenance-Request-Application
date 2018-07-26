@@ -47,7 +47,6 @@ $(document).ready(function(){
          if ($.isEmptyObject(data.error)) {
 
            clearForm();
-           // orderTable.ajax.reload();
            swal({
             type: 'success',
             title: 'Thank you!',
@@ -55,9 +54,7 @@ $(document).ready(function(){
             confirmButtonColor: '#337ab7'
           },
           function(isConfirm){
-
-            window.location.replace("../dashboard");
-
+            orderTable.ajax.reload();
           })
 
          } else {

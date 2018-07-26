@@ -9,8 +9,9 @@ use App\Http\Requests\UpdateEventRequest;
 use Illuminate\Support\Facades\Storage;
 use App\Repositories\EventRepository;
 use Illuminate\Http\Request;
+use App\Models\Event;
+use Carbon\Carbon;
 use Auth;
-// use App\Event;
 use Response;
 use Flash;
 
@@ -46,7 +47,9 @@ class EventController extends AppBaseController
 
     public function userIndex() {
 
-      $events = $this->eventRepository->all();
+      // $events = $this->eventRepository->all();
+      $current_date = Carbon::now('America/Los_Angeles');
+      $events = Event::where('start_date', '>', $current_date)->get();
 
       foreach ($events as $event) {
 

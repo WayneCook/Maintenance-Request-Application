@@ -76,10 +76,8 @@ class OrdersController extends Controller
           $order->created_at = Carbon::now('America/Los_Angeles');
           $order->save();
 
-          // Mail::to(['waynedemetra@gmail.com', 'wf-monrovia-mgr@rpkdevelopment.com'])->send(new workOrderMail($order));
-
           try {
-            // Mail::to(['waynedemetra@gmail.com'])->send(new workOrderMail($order));
+            Mail::to(['waynedemetra@gmail.com', 'wf-monrovia-mgr@rpkdevelopment.com'])->send(new workOrderMail($order));
 
           } catch (\Exception $e) {
 

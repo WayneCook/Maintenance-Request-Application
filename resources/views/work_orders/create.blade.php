@@ -19,103 +19,98 @@
 
 <div class="content">
   @include('adminlte-templates::common.errors')
-    <div class="panel panel-default panel-custom">
-      <div class="panel-heading"><h4 style="display: inline-block">New Maintenance Request</h4></div>
-        <div class="panel-body">
-          <form class="form needs-validation" novalidate role="form" id="create-form">
-                  {!! csrf_field() !!}
-            <div class="form-row">
-                <div class="">
-                <div class="form-group">
-                  <input type="hidden" value="{{ Auth::user()->username }}" name="name" class="form-control show-order-data" id="name" autocomplete="off" readonly>
-                  <small class="text-danger" name="name"></small>
-                </div>
-              </div>
-
+  <div class="panel panel-default panel-custom">
+    <div class="panel-heading"><h4 style="display: inline-block">New Maintenance Request</h4></div>
+      <div class="panel-body">
+        <form class="form needs-validation" novalidate role="form" id="create-form">
+                {!! csrf_field() !!}
+          <div class="form-row">
               <div class="">
-                <div class="form-group">
-                  <input type="hidden" name="unit_number" class="form-control show-order-data" value="{{ Auth::user()->unit_number }}" id="unit_number" autocomplete="off" readonly>
-                  <small class="text-danger" name="unit_number"></small>
-                </div>
-              </div>
-
-
-            </div> <!---End row---->
-
-            <div class="form-row">
-              <div class="col">
-                <div class="form-group col-sm-6">
-                  <label class="control-label" for="title">Category:</label>
-                  <input type="text" name="category" class="form-control show-order-data" id="category" autocomplete="off" style="max-width: 250px;">
-                  <small class="text-danger" name="category"></small>
-                </div>
-              </div>
-
-
-              <div class="col">
-                <div class="form-group col-sm-6">
-                  <label class="control-label" for="id">Permission to enter:</label>
-                  <select class="form-control show-order-data change-status" name="permission_to_enter" id="permission_to_enter" autocomplete="off" style="max-width: 250px;">
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                  </select>
-                  <small class="text-danger" name="permission_to_enter"></small>
-                </div>
-              </div>
-
-            </div> <!---End row---->
-
-            <div class="form-row">
-              <div class="form-group col-sm-12">
-                <label class="control-label" for="content">Description:</label>
-                <textarea class="form-control show-order-data" name="description" id="description" cols="40" rows="6"></textarea>
-                <small class="text-danger" name="description"></small>
+              <div class="form-group">
+                <input type="hidden" value="{{ Auth::user()->username }}" name="name" class="form-control show-order-data" id="name" autocomplete="off" readonly>
+                <small class="text-danger" name="name"></small>
               </div>
             </div>
 
+            <div class="">
+              <div class="form-group">
+                <input type="hidden" name="unit_number" class="form-control show-order-data" value="{{ Auth::user()->unit_number }}" id="unit_number" autocomplete="off" readonly>
+                <small class="text-danger" name="unit_number"></small>
+              </div>
+            </div>
+
+          </div> <!---End row---->
+
+          <div class="form-row">
+            <div class="col">
+              <div class="form-group col-sm-6">
+                <label class="control-label" for="title">Category:</label>
+                <input type="text" name="category" class="form-control show-order-data" id="category" autocomplete="off" style="max-width: 250px;">
+                <small class="text-danger" name="category"></small>
+              </div>
+            </div>
+
+
+            <div class="col">
+              <div class="form-group col-sm-6">
+                <label class="control-label" for="id">Permission to enter:</label>
+                <select class="form-control show-order-data change-status" name="permission_to_enter" id="permission_to_enter" autocomplete="off" style="max-width: 250px;">
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+                <small class="text-danger" name="permission_to_enter"></small>
+              </div>
+            </div>
+
+          </div> <!---End row---->
+
+          <div class="form-row">
             <div class="form-group col-sm-12">
-              <label class="control-label" for="content">Comments:</label>
-              <textarea class="form-control show-order-data" name="comments" id="comments" cols="40" rows="4"></textarea>
-              <small class="text-danger" name="comments"></small>
+              <label class="control-label" for="content">Description:</label>
+              <textarea class="form-control show-order-data" name="description" id="description" cols="40" rows="6"></textarea>
+              <small class="text-danger" name="description"></small>
             </div>
+          </div>
 
-            <div class="form-row">
+          <div class="form-group col-sm-12">
+            <label class="control-label" for="content">Comments:</label>
+            <textarea class="form-control show-order-data" name="comments" id="comments" cols="40" rows="4"></textarea>
+            <small class="text-danger" name="comments"></small>
+          </div>
 
-              <div class="col">
-                <div class="form-group col-sm-6 submit-button">
-                  <label class="control-label " style="display: block" for="">&nbsp&nbsp</label>
-                  <button type="button" class="btn btn-primary add pull-left" id="create-order-btn">
-                    <span class='glyphicon glyphicon-check'></span> Submit
-                  </button>
-                  {{-- <a href="{{ route('admin') }}" class="btn btn-default" style="margin-left: 5px">Back</a> --}}
-                </div>
+          <div class="form-row">
+
+            <div class="col">
+              <div class="form-group col-sm-6 submit-button">
+                <label class="control-label " style="display: block" for="">&nbsp&nbsp</label>
+                <button type="button" class="btn btn-primary add pull-left" id="create-order-btn">
+                  <span class='glyphicon glyphicon-check'></span> Submit
+                </button>
               </div>
             </div>
-            {!! csrf_field() !!}
-        </form>
-      </div>
+          </div>
+          {!! csrf_field() !!}
+      </form>
     </div>
-    {{-- user history section --}}
+  </div>
+  {{-- user history section --}}
 
-    <div class="panel panel-default panel-custom">
-      <div class="panel-heading"><h4 style="display: inline-block">Request History</h4></div>
-        <div class="panel-body">
-    <table class="display nowrap table table-striped table-hover" id="workOrders-table" style="width: 100%">
+  <div class="panel panel-default panel-custom">
+    <div class="panel-heading"><h4 style="display: inline-block">Request History</h4></div>
+      <div class="panel-body">
+        <table class="display nowrap table table-striped table-hover" id="workOrders-table" style="width: 100%">
         <thead>
-            <tr>
-              <th>Category</th>
-              <th>Status</th>
-              <th>Submitted on</th>
-              <th>Action</th>
-            </tr>
+          <tr>
+            <th>Category</th>
+            <th>Status</th>
+            <th>Submitted on</th>
+            <th>Action</th>
+          </tr>
         </thead>
-    </table>
+      </table>
+    </div>
   </div>
 </div>
-  </div>
-
-
-
 
 </div>
 @endsection
