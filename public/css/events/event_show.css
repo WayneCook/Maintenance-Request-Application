@@ -256,9 +256,10 @@ body {
 display: flex;
 }
 
-
-
-
+.del-button {
+  color: white;
+  text-decoration: none;
+}
 
 .action-btns {
   margin-left: 5px;

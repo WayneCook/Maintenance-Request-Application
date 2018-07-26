@@ -21,7 +21,7 @@
       <div class="panel-heading">
         <h4 style="display: inline-block">Event Management</h4>
         <h1 class="pull-right">
-           <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('events.create') !!}">Add New</a>
+           <a class="btn btn-primary pull-right" style="margin-top: -10px; margin-bottom: 5px" href="{!! route('events.create') !!}">Add New</a>
         </h1>
       </div>
         <div class="panel-body">
