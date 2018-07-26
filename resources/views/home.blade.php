@@ -170,7 +170,7 @@
         formDataObj[val.name] = val.value;
       })
 
-      //Ajax request to send messager
+      //Ajax request to send message
       $.ajaxSetup({
         headers: {
           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -182,6 +182,9 @@
          url: 'messager',
          data: formDataObj,
          success: function(data) {
+
+           console.log(data);
+
            if (data == 'success') {
 
              swal({

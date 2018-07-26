@@ -21,7 +21,7 @@
     <div class="row box-row">
 
       <a href="{{route('workOrders.index')}}">
-        <div class="content-box col-md-4">
+        <div class="content-box col-md-6">
           <div class="box-container">
               <i class="fa fa-wrench section-icons"></i>
               <h2>Work Orders</h2>
@@ -31,7 +31,7 @@
       </a>
 
       <a href="{{route('showEvents')}}">
-      <div class="content-box col-md-4">
+      <div class="content-box col-md-6">
         <div class="box-container">
             <i class="fa fa-calendar section-icons"></i>
             <h2>Events</h2>
@@ -40,15 +40,6 @@
       </div>
     </a>
 
-      <a href="{{ route('users.index') }}">
-      <div class="content-box col-md-4">
-        <div class="box-container">
-            <i class="fa fa-envelope section-icons"></i>
-            <h2>User Management</h2>
-            <span class="bottom-line"></span>
-        </div>
-      </div>
     </div>
-  </a>
 </div>
 @endsection

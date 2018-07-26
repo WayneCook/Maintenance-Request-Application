@@ -21,11 +21,15 @@
     <div class="container">
       <h1 class="display-3">Event Signups</h1>
       <p class="lead">Want to attend an up coming event? Sign up and lets have some fun!</p>
+
     </div>
   </div>
-
   <div class="container box-row-container">
     <div class="row box-row">
+
+      @if(!$events->isEmpty())
+
+
 
     @foreach ($events as $event)
 
@@ -49,6 +53,13 @@
         </div>
       </div>
     @endforeach
+  @else
+    <div class="event-alert">
+      <h3 style="text-align: center">No events found.</h3>
+      <p style="text-align: center">Please check again at a later date.</p>
+    </div>
+
+  @endif
     </div>
   </div>
 </div>

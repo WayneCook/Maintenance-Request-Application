@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\workOrderMail;
 use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\Facades\DataTables;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Exception;
 use Illuminate\Http\Request;
+use App\Mail\workOrderMail;
 use App\workOrder;
 use Carbon\Carbon;
 

@@ -1,18 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Prettus\Repository\Criteria\RequestCriteria;
+use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Repositories\UserRepository;
-use App\Http\Controllers\AppBaseController;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
-use Auth;
-use Flash;
-use App\User;
-use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use App\User;
+use Flash;
+use Auth;
 
 class UserController extends AppBaseController
 {

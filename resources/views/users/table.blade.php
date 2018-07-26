@@ -34,9 +34,9 @@
           <td>
               {!! Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete', 'class' => 'delete-user']) !!}
 
-                  <a data-toggle="tooltip" title="View" data-placement="top" href="{!! route('users.show', [$user->id]) !!}" class='btn btn-default btn-sm'><i class="glyphicon glyphicon-eye-open"></i></a>
-                  <a data-toggle="tooltip" title="Edit" data-placement="top" href="{!! route('users.edit', [$user->id]) !!}" class='btn btn-default btn-sm'><i class="glyphicon glyphicon-edit"></i></a>
-                  {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-sm', 'data-toggle' => 'tooltip', 'title' => 'Delete', 'data-placement' => 'top']) !!}
+                  <a data-toggle="tooltip" title="View" data-placement="top" href="{!! route('users.show', [$user->id]) !!}" class='btn btn-info btn-sm'>View</a>
+                  <a data-toggle="tooltip" title="Edit" data-placement="top" href="{!! route('users.edit', [$user->id]) !!}" class='btn btn-warning btn-sm'>Edit</a>
+                  {!! Form::button('<a class="del-button">Delete</a>', ['type' => 'submit', 'class' => 'btn btn-danger btn-sm del-button', 'data-toggle' => 'tooltip', 'title' => 'Delete', 'data-placement' => 'top']) !!}
 
               {!! Form::close() !!}
           </td>

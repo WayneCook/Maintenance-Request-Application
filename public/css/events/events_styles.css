@@ -205,3 +205,12 @@ span.card-img-cont:after {
       font-size: 14px;
   }
 }
+
+.event-alert {
+  background-color: #FF9800;
+  display: block;
+  max-width: 337px;
+  padding: 3px 0px;
+  color: white;
+  margin: auto;
+}

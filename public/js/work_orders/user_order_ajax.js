@@ -100,3 +100,34 @@ $(document).ready(function(){
 
   })
 })
+
+
+//Show modal
+$(document).on('click', '.show-modal', function() {
+     $('.modal-title').text('Work Order Details');
+     var id = $(this).data('id');
+
+     $.ajax({
+          type: 'GET',
+          url: '../admin/workOrder/' + id,
+          success: function(data) {
+
+            fillShowForm(data);
+            $('#showModal').modal('show');
+          }
+      });
+
+ });
+
+ function fillShowForm(data){
+
+  $('.show-order-data').each(function(order){
+    var id = $(this).attr('id');
+    $(this).val(data[id]);
+  })
+
+ var audit = data.audit_log;
+
+  $('#audit_log').text(audit);
+
+ }

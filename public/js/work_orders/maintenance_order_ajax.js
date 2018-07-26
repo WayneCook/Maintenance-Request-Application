@@ -22,7 +22,7 @@ $(document).ready(function() {
         {data: 'priority'},
         {mRender: function ( data, type, row ) {
           return '<a data-toggle="tooltip" title="View" data-placement="top" class="show-modal action-btns" data-id="' + row.id +
-          '"><span class="btn btn-default btn-sm">View</span></a><a data-toggle="tooltip" title="Change status" data-placement="top" class="edit_button action-btns" data-username="' + row.name +'" data-status="' + row.order_status +'" data-id="' + row.id +
+          '"><span class="btn btn-info btn-sm">View</span></a><a data-toggle="tooltip" title="Change status" data-placement="top" class="edit_button action-btns" data-username="' + row.name +'" data-status="' + row.order_status +'" data-id="' + row.id +
           '"><span class="btn btn-warning btn-sm">Status</span></a>';}
       }]
   });
@@ -188,7 +188,7 @@ $(document).on('click', '.show-modal', function() {
       $(this).val(data[id]);
     })
 
-    
+
   }
 
 $(document).on('click', '#add-modal', function() {

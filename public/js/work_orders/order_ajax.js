@@ -273,7 +273,6 @@ var audit = data.audit_log;
 
  $('#audit_log').text(audit);
 
- console.log(audit);
 }
 
 //Clear the form data

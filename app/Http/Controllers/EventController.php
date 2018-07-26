@@ -47,7 +47,6 @@ class EventController extends AppBaseController
 
     public function userIndex() {
 
-      // $events = $this->eventRepository->all();
       $current_date = Carbon::now('America/Los_Angeles');
       $events = Event::where('start_date', '>', $current_date)->get();
 

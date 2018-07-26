@@ -23,7 +23,6 @@ Route::post('messager', 'HomeController@messager');
 //Maintenance routes
   Route::group(['middleware' => ['maintenance']], function () {
 
-    Route::get('admin/workOrder/{id}', 'OrdersController@show');
     Route::post('workOrder/updateStatus', 'OrdersController@updateStatus');
     Route::get('admin/workOrders', 'OrdersController@initial')->name('initial');
     Route::resource('workOrders', 'workOrderController');
@@ -55,6 +54,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('user/workOrders', 'OrdersController@user_initial');
 
     Route::post('admin/workOrder/store', 'OrdersController@store');
+    Route::get('admin/workOrder/{id}', 'OrdersController@show');
+    
 });
 
 Route::get('contact', function () { return view('contact'); })->name('contact_page');
