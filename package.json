@@ -23,6 +23,7 @@
         "vue": "^2.5.7"
     },
     "dependencies": {
+        "bootstrap-select": "^1.13.1",
         "font-awesome": "^4.7.0",
         "sweetalert2": "^7.25.4"
     }

@@ -71,6 +71,7 @@ article.section-details {
 
 .content-wrapper {
   background-color: hsla(213, 0%, 96%, 1);
+  overflow: auto;
 }
 
 .box-container:hover {

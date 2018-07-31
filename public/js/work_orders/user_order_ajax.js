@@ -1,6 +1,9 @@
 $(document).ready(function(){
 
   orderTable = $('#workOrders-table').DataTable({
+    language: {
+      emptyTable: "No maintenance request history found."
+    },
     searching: false,
     bLengthChange: false,
      order: [[ 2, "desc" ]],

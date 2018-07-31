@@ -1,4 +1,4 @@
-<!-- Modal form to add a post -->
+<!-- Modal form to add a maintanence request -->
     <div id="addModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -12,26 +12,16 @@
                     <div class="form-row">
                       <div class="col">
                         <div class="form-group col-sm-6">
-
                           <label class="control-label" for="id">Name:</label>
                           <input type="name" name="name" class="form-control show-order-data" id="name" autocomplete="off">
                           <small class="text-danger" name="name"></small>
-
                         </div>
                       </div>
 
                       <div class="col">
                         <div class="form-group col-sm-6">
                           <label class="control-label" for="title">Apartment number:</label>
-                          <select type="text" name="unit_number" class="form-control show-order-data" id="unit_number" autocomplete="off">
-
-                          @foreach ($storeNumbers as $store)
-
-                            <option value="{{$store}}">{{$store}}</option>
-
-                          @endforeach
-
-                          </select>
+                          <input type="text" name="unit_number" class="form-control show-order-data" id="unit_number">
                           <small class="text-danger" name="unit_number"></small>
                         </div>
                       </div>
@@ -39,7 +29,13 @@
                       <div class="col">
                         <div class="form-group col-sm-6">
                           <label class="control-label" for="title">Category:</label>
-                          <input type="text" name="category" class="form-control show-order-data" id="category" autocomplete="off">
+                          <select name="category" class="selectpicker form-control show-order-data" id="category">
+                            <option value="Light bulb">Light bulb</option>
+                            <option value="Plumbing">Plumbing</option>
+                            <option value="AC/Heating">AC/Heating</option>
+                            <option value="Plumbing">Electric</option>
+                            <option value="Plumbing">Other</option>
+                          </select>
                           <small class="text-danger" name="category"></small>
                         </div>
                       </div>
@@ -47,7 +43,7 @@
                       <div class="col">
                         <div class="form-group col-sm-6">
                           <label class="control-label" for="title">Priority:</label>
-                          <select type="text" name="priority" class="form-control show-order-data" id="priority" autocomplete="off">
+                          <select name="priority" class="selectpicker form-control show-order-data" id="priority">
                             <option value="High">High</option>
                             <option value="Normal">Normal</option>
                             <option value="Low">Low</option>
@@ -60,7 +56,7 @@
                         <div class="form-group col-sm-6">
                           <input type="hidden" name="order_status" class="form-control show-order-data change-status" id="order_status">
                           <label class="control-label" for="id">Permission to enter:</label>
-                          <select class="form-control show-order-data change-status" name="permission_to_enter" id="permission_to_enter" autocomplete="off">
+                          <select class="selectpicker form-control show-order-data change-status" name="permission_to_enter" id="permission_to_enter" autocomplete="off">
                             <option value="Yes">Yes</option>
                             <option value="No" selected>No</option>
                           </select>
@@ -72,7 +68,7 @@
                         <div class="form-group col-sm-6">
                           <input type="hidden" name="order_status" class="form-control show-order-data change-status" id="order_status">
                           <label class="control-label" for="id">Status:</label>
-                          <select class="form-control show-order-data change-status" name="status" id="status" autocomplete="off">
+                          <select class="selectpicker form-control show-order-data change-status" name="status" id="status" autocomplete="off">
                             <option value="Closed">Closed</option>
                             <option value="Open" selected>Open</option>
                           </select>
@@ -80,7 +76,6 @@
                         </div>
                       </div>
                     </div> <!---End row---->
-
 
                     <div class="form-row">
                       <div class="form-group col-sm-12">
@@ -216,7 +211,7 @@
                       <div class="col">
                         <div class="form-group col-sm-6">
                             <label class="control-label" for="id">Status:</label>
-                            <select name="order_status" class="form-control show-order-data" id="order_status" autocomplete="off">
+                            <select name="order_status" class="selectpicker form-control show-order-data" id="order_status" autocomplete="off">
                               <option value="Open">Open</option>
                               <option value="Closed">Closed</option>
                             </select>
@@ -237,16 +232,7 @@
                       <div class="col">
                         <div class="form-group col-sm-6">
                           <label class="control-label" for="title">Apartment number:</label>
-                          <select type="text" name="unit_number" class="form-control show-order-data" id="unit_number" autocomplete="off">
-
-                          @foreach ($storeNumbers as $store)
-
-                            <option value="{{$store}}">{{$store}}</option>
-
-                          @endforeach
-
-                          </select>
-
+                          <input type="text" name="unit_number" class="form-control show-order-data" id="unit_number" autocomplete="off">
                           <small class="text-danger" name="unit_number"></small>
                         </div>
                       </div>
@@ -254,14 +240,20 @@
                       <div class="col">
                         <div class="form-group col-sm-6">
                           <label class="control-label" for="title">Category:</label>
-                          <input type="text" name="category" class="form-control show-order-data" id="category" autocomplete="off">
+                          <select name="category" class="selectpicker form-control show-order-data" id="category">
+                            <option value="Light bulb">Light bulb</option>
+                            <option value="Plumbing">Plumbing</option>
+                            <option value="AC/Heating">AC/Heating</option>
+                            <option value="Plumbing">Electric</option>
+                            <option value="Plumbing">Other</option>
+                          </select>
                           <small class="text-danger" name="category"></small>
                         </div>
                       </div>
 
                       <div class="form-group col-sm-6">
                         <label class="control-label" for="id">Permission to enter:</label>
-                        <select name="permission_to_enter" class="form-control show-order-data change-permission" id="permission_to_enter" autocomplete="off">
+                        <select name="permission_to_enter" class="selectpicker form-control show-order-data change-permission" id="permission_to_enter" autocomplete="off">
                           <option value="Yes">Yes</option>
                           <option value="No">No</option>
                         </select>
@@ -271,7 +263,7 @@
                       <div class="col">
                         <div class="form-group col-sm-6">
                           <label class="control-label" for="title">Priority:</label>
-                          <select type="text" name="priority" class="form-control show-order-data" id="priority" autocomplete="off">
+                          <select type="text" name="priority" class="selectpicker form-control show-order-data" id="priority" autocomplete="off">
                             <option value="High">High</option>
                             <option value="Normal">Normal</option>
                             <option value="Low">Low</option>
@@ -296,8 +288,6 @@
                       <textarea class="form-control show-order-data" name="comments" id="comments" cols="40" rows="4"></textarea>
                       <small class="text-danger" name="comments"></small>
                     </div>
-
-
                   </form>
                 </div>
                   <div class="modal-footer">

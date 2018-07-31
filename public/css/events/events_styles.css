@@ -210,7 +210,7 @@ span.card-img-cont:after {
   background-color: #FF9800;
   display: block;
   max-width: 337px;
-  padding: 3px 0px;
+  padding: 3px 0px 14px 0px;
   color: white;
   margin: auto;
 }

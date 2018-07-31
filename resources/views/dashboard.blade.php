@@ -38,7 +38,7 @@
 
     @if ( Auth::user()->role_id !== 1 )
 
-      <a href="{{ route('users.index') }}">
+      <a href="{{ route('contact_page') }}">
       <div class="content-box col-md-4">
         <div class="box-container">
             <i class="fa fa-envelope section-icons"></i>
@@ -59,11 +59,9 @@
             <span class="bottom-line"></span>
           </div>
         </div>
+      </a>
       </div>
-    </a>
 
     @endif
-
-
 </div>
 @endsection

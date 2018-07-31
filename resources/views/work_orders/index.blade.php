@@ -4,7 +4,7 @@
 
   @include('layouts.datatables_css')
     <link rel="stylesheet" type="text/css" href="{{asset('css/work_order/work_order_content.css')}}">
-
+    <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap_select/select.min.css')}}">
 @endsection
 
 @section('loader')
@@ -60,10 +60,12 @@
   @include('layouts.datatables_js')
 
   @if (Auth::user()->role_id == 1)
-    <script type="text/javascript" src="{{asset('js/work_orders/order_ajax.js')}}"></script>
+    <script src="{{asset('js/work_orders/order_ajax.js')}}"></script>
+    <script src="{{asset('js/bootstrap_select/select.min.js')}}"></script>
+    
     @else
-      <script type="text/javascript" src="{{asset('js/work_orders/maintenance_order_ajax.js')}}"></script>
-
+      <script src="{{asset('js/work_orders/maintenance_order_ajax.js')}}"></script>
+      <script src="{{asset('js/bootstrap_select/select.min.js')}}"></script>
   @endif
 
 @endsection

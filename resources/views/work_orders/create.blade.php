@@ -1,9 +1,9 @@
 @extends('layouts.app')
-@section('css')
 
+@section('css')
   @include('layouts.datatables_css')
     <link rel="stylesheet" type="text/css" href="{{asset('css/work_order/user_workorder_styles.css')}}">
-
+    <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap_select/select.min.css')}}">
 @endsection
 
 @section('content')
@@ -38,30 +38,33 @@
                 <small class="text-danger" name="unit_number"></small>
               </div>
             </div>
-
           </div> <!---End row---->
 
           <div class="form-row">
             <div class="col">
               <div class="form-group col-sm-6">
                 <label class="control-label" for="title">Category:</label>
-                <input type="text" name="category" class="form-control show-order-data" id="category" autocomplete="off" style="max-width: 250px;">
+                <select name="category" class="selectpicker form-control show-order-data" id="category" style="max-width: 250px;">
+                  <option value="Light bulb">Light bulb</option>
+                  <option value="Plumbing">Plumbing</option>
+                  <option value="AC/Heating">AC/Heating</option>
+                  <option value="Plumbing">Electric</option>
+                  <option value="Plumbing">Other</option>
+                </select>
                 <small class="text-danger" name="category"></small>
               </div>
             </div>
 
-
             <div class="col">
               <div class="form-group col-sm-6">
                 <label class="control-label" for="id">Permission to enter:</label>
-                <select class="form-control show-order-data change-status" name="permission_to_enter" id="permission_to_enter" autocomplete="off" style="max-width: 250px;">
+                <select class="selectpicker form-control show-order-data change-status" name="permission_to_enter" id="permission_to_enter" autocomplete="off">
                   <option value="Yes">Yes</option>
                   <option value="No">No</option>
                 </select>
                 <small class="text-danger" name="permission_to_enter"></small>
               </div>
             </div>
-
           </div> <!---End row---->
 
           <div class="form-row">
@@ -79,7 +82,6 @@
           </div>
 
           <div class="form-row">
-
             <div class="col">
               <div class="form-group col-sm-6 submit-button">
                 <label class="control-label " style="display: block" for="">&nbsp&nbsp</label>
@@ -93,8 +95,8 @@
       </form>
     </div>
   </div>
-  {{-- user history section --}}
 
+  {{-- user history section --}}
   <div class="panel panel-default panel-custom">
     <div class="panel-heading"><h4 style="display: inline-block">Request History</h4></div>
       <div class="panel-body">
@@ -167,7 +169,6 @@
                     </div>
                   </div> <!---End row---->
 
-
                   <div class="form-row">
                     <div class="form-group col-sm-12">
                       <label class="control-label" for="content">Description:</label>
@@ -189,11 +190,11 @@
             </div>
         </div>
     </div>
-
 @endsection
 
 @section('scripts')
   @include('layouts.datatables_js')
-  <script type="text/javascript" src="{{asset('js/work_orders/user_order_ajax.js')}}"></script>
+  <script src="{{asset('js/work_orders/user_order_ajax.js')}}"></script>
+  <script src="{{asset('js/bootstrap_select/select.min.js')}}"></script>
 
 @endsection
