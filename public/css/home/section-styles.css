@@ -100,8 +100,8 @@ article.section-details {
 .form-heading {
   font-size: 34px;
   text-align: center;
-  padding-bottom: 20px;
-  color: hsla(184, 7%, 41%, 1);
+  padding-bottom: 28px;
+  color: hsla(184, 7%, 41%, 0.91);
 }
 
 .input {
@@ -109,7 +109,7 @@ article.section-details {
 }
 
 .map-responsive {
-  border: 3px solid #037981;
+  border: 7px solid #037982;
 }
 
 .map-wrapper {

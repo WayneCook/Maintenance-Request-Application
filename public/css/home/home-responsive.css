@@ -1,5 +1,13 @@
 @media screen and (max-width: 420px) {
 
+  .form-heading {
+    font-size: 26px
+  }
+
+  .input-lg {
+    font-size: 14px;
+  }
+
   .nav-content h1 span {
     font-size: 24px;
   }
