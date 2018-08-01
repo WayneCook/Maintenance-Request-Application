@@ -1,7 +1,6 @@
 <?php
 
 Route::get('/', function () { return view('home'); });
-Route::post('admin/register', 'Auth/adminRegisterController@registerUser');
 Route::post('messager', 'HomeController@messager');
 
 //Admin routes
@@ -41,6 +40,7 @@ Route::group(['middleware' => ['auth']], function () {
 });
 
 Auth::routes();
+Route::post('admin/register', 'Auth\adminRegisterController@registerUser');
 
 //Facebook login routes if needed
 // Route::get('login/facebook', 'Auth\FacebookLoginController@redirectToProvider')->name('login.facebook');

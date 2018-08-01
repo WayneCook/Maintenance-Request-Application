@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
+use Flash;
 
 class adminRegisterController extends Controller
 {
@@ -40,6 +41,7 @@ class adminRegisterController extends Controller
         $user->password = Hash::make($request->password);
         $user->save();
 
+        Flash::success('User created successfully.');
         return redirect()->route('users.index');
     }
 }

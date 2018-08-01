@@ -173,6 +173,8 @@ function checkIfSignedUp() {
      url: '/signup',
      success: function(data) {
 
+       console.log(data);
+
        $('.check-icon').each(function(index, val){
 
          if (data[index] == true) {
