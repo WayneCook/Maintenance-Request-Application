@@ -21,8 +21,6 @@ class adminRegisterController extends Controller
 
     }
 
-
-
     public function registerUser(Request $request){
 
       request()->validate([
