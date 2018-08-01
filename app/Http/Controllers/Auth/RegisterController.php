@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
-use App\User;
+use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Foundation\Auth\RegistersUsers;
+use App\User;
 
 class RegisterController extends Controller
 {
@@ -43,5 +43,6 @@ class RegisterController extends Controller
             'unit_number' => $data['unit_number'],
             'password' => Hash::make($data['password']),
         ]);
+
     }
 }
