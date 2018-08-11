@@ -7,7 +7,6 @@
 
 @section('content')
 
-
 <section class="content-header">
   <nav>
       <ol class="breadcrumb breadcrumb-arrow">
@@ -17,7 +16,6 @@
     </ol>
   </nav>
 </section>
-
 
 <div class="content">
   <div class="card col-lg-4 col-md-4 col">

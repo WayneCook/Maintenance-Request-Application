@@ -59,7 +59,6 @@ table.dataTable tbody td {
 }
 
 .action-btns {
-
   margin-left: 5px;
 }
 
@@ -88,7 +87,6 @@ table.dataTable tbody td {
 
 .main-header .sidebar-toggle:hover, .main-header .sidebar-toggle:focus  {
   text-decoration: none;
-
 }
 
 .container {
@@ -126,13 +124,11 @@ span.card-img-cont {
 .jumbotron-custom .container h1, p  {
   z-index: 999;
   position: relative;
-  /* color: hsla(0, 0%, 22%, 1); */
 }
 
 .card {
   padding: 13px;
   margin-top: 0px;
-
 }
 
 h1.display-3 {
@@ -210,7 +206,6 @@ span.card-img-cont:after {
   border-radius: 4px;
   padding: 15px;
   position: relative;
-
 }
 
 .box-row-container {
@@ -268,25 +263,23 @@ display: flex;
   box-shadow: 0px 1px 7px -1px hsla(0, 0%, 0%, 0.33);
 }
 
-
 .main-header .sidebar-toggle:hover, .main-header .sidebar-toggle:focus  {
   text-decoration: none;
 }
 
 .panel-default>.panel-heading {
-    color: #333;
-    background-color: #f5f5f5;
-    border-color: #ddd;
-    border-top: 4px solid #3c8dbc;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px 15px;
+  color: #333;
+  background-color: #f5f5f5;
+  border-color: #ddd;
+  border-top: 4px solid #3c8dbc;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 15px;
 }
-
 
 @media screen and (min-width: 768px) {
 
@@ -307,7 +300,6 @@ display: flex;
 }
 
 @media (min-width: 1400px) {
-
 
     .bread-custom, box-row-container, .container {
         width: 1170px;

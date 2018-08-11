@@ -29,68 +29,64 @@ $(document).ready(function() {
   });
 
   //Show and hide table loader icon
-  $('.content').show();
-  $('.loader-wrapper').hide();
+    $('.content').show();
+    $('.loader-wrapper').hide();
 
-  //Use sweetalert for order delete confirmation
-  $(document).on('submit', '.delete-form', function(e){
-    var form = this;
+    //Use sweetalert for order delete confirmation
+    $(document).on('submit', '.delete-form', function(e){
+      var form = this;
 
-    e.preventDefault(); // <--- prevent form from submitting
+      e.preventDefault(); // <--- prevent form from submitting
 
-    swal({
-      title: 'Are you sure?',
-      text: "You won't be able to revert this!",
-      type: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!'
-    },
-    function(isConfirm){
-      if (isConfirm) {
-          form.submit();
-        } else {
-          return;
-        }
+      swal({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      },
+      function(isConfirm){
+        if (isConfirm) {
+            form.submit();
+          } else {
+            return;
+          }
+      });
     });
-  });
 
 
   //Bootstrap tooltip
+  $('html').tooltip({selector: '[data-toggle="tooltip"]'});
 
-    $('html').tooltip({selector: '[data-toggle="tooltip"]'});
-
-//Show modal
-$(document).on('click', '.show-modal', function() {
-     $('.modal-title').text('Work Order Details');
-     var id = $(this).data('id');
+  //Show modal
+  $(document).on('click', '.show-modal', function() {
+       $('.modal-title').text('Work Order Details');
+       var id = $(this).data('id');
 
      $.ajax({
-          type: 'GET',
-          url: 'admin/workOrder/' + id,
-          success: function(data) {
+        type: 'GET',
+        url: 'admin/workOrder/' + id,
+        success: function(data) {
 
-            fillShowForm(data);
-            $('#showModal').modal('show');
-          }
+          fillShowForm(data);
+          $('#showModal').modal('show');
+        }
       });
+   });
 
- });
+   //Edit modal
+   $(document).on('click', '.edit-modal', function() {
+      $('.modal-title').text('Edit Work Order');
 
+      var id = $(this).data('id');
 
-
-//Edit modal
- $(document).on('click', '.edit-modal', function() {
-    $('.modal-title').text('Edit Work Order');
-
-    var id = $(this).data('id');
-
-    $.ajaxSetup({
-      headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-      }
-    });
+      $.ajaxSetup({
+        headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+      });
 
     $.ajax({
        type: 'GET',
@@ -99,7 +95,7 @@ $(document).on('click', '.show-modal', function() {
 
          fillShowForm(data);
        }
-   });
+     });
 
     $('#editModal').modal('show');
 
@@ -149,7 +145,7 @@ $(document).on('click', '.show-modal', function() {
            }
         });
       }
-  });
+    });
 
  // delete a work order
  $(document).on('click', '.delete-modal', function() {
@@ -209,17 +205,15 @@ $(document).on('click', '.show-modal', function() {
             }
         });
       });
-
     });
 
 
-
-$(document).on('click', '#add-modal', function() {
-    clearForm();
-    $('.modal-title').text('Create Work Order');
-    $('#addModal').modal('show');
-
-});
+  //Show add modal
+  $(document).on('click', '#add-modal', function() {
+      clearForm();
+      $('.modal-title').text('Create Work Order');
+      $('#addModal').modal('show');
+  });
 
     //Add new work order to database
     $('.modal-footer').on('click', '#create-order-btn', function(){
@@ -256,55 +250,48 @@ $(document).on('click', '#add-modal', function() {
     });
   })
 
-//fill the show order modal
+  //fill the show order modal
+  function fillShowForm(data){
 
+    $('.show-order-data').each(function(order){
+     var id = $(this).attr('id');
+     $(this).val(data[id]);
+    })
 
+    var audit = data.audit_log;
+    $('#audit_log').text(audit);
 
+  }
 
+  //Clear the form data
+  function clearForm() {
 
-function fillShowForm(data){
+    $('.show-order-data').each(function(order){
 
- $('.show-order-data').each(function(order){
-   var id = $(this).attr('id');
-   $(this).val(data[id]);
- })
+      $(this).val('');
+      $('.change-status').val('0');
+    })
 
-var audit = data.audit_log;
+    $(".text-danger").each(function() {
+      $(this).text('');
 
- $('#audit_log').text(audit);
+    });
+  }
 
-}
+  //Show form errors on submit
+  function showErrors(errors) {
 
-//Clear the form data
-function clearForm() {
-
-  $('.show-order-data').each(function(order){
-
-    $(this).val('');
-    $('.change-status').val('0');
-  })
-
-  $(".text-danger").each(function() {
-    $(this).text('');
-
-  });
-}
-
-//Show form errors on submit
-function showErrors(errors) {
-
-  $(".text-danger").each(function() {
+    $(".text-danger").each(function() {
       var elem = $(this);
       $(this).text('');
 
       var name = $(this).attr('name');
 
       if (errors.error[name]) {
-
         elem.append('<span class="glyphicon glyphicon-remove-circle"></span>');
         elem.after('<span>').append('<span>  ' + errors.error[name] + '</span>');
       }
-  });
-}
+    });
+  }
 
 });

@@ -120,6 +120,7 @@
                       <div class="form-row">
                         <div class="col">
                           <div class="form-group col-sm-6">
+                
                               <label class="control-label" for="id">Status:</label>
                               <input type="text" name="order_status" class="form-control show-order-data change-status" id="order_status" disabled>
                           </div>
