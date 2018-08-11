@@ -207,17 +207,15 @@
     })
   })
 
+  //Clear the message form
   function clearForm() {
 
     $('#name').val('');
     $('#email').val('');
     $('#phone').val('');
     $('#message').val('');
-
   }
-
-
-    </script>
+  </script>
 
   </body>
 </html>

@@ -61,6 +61,7 @@ class OrdersController extends Controller
         'unit_number' => 'required',
         'category' => 'required',
         'description' => 'required',
+        'priority' => 'required',
         'permission_to_enter' => 'required',
       ]);
 

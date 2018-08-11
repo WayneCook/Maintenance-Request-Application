@@ -100,3 +100,9 @@ body.stop-scrolling {
   }
 
 }
+
+.text-danger {
+  color: #dc0505!important;
+  font-size: 12px;
+  font-weight: bold;
+}

@@ -29,7 +29,7 @@
                       <div class="col">
                         <div class="form-group col-sm-6">
                           <label class="control-label" for="title">Category:</label>
-                          <select name="category" class="selectpicker form-control show-order-data" id="category">
+                          <select name="category" class="selectpicker form-control show-order-data" id="category" title="Select category">
                             <option value="Light bulb">Light bulb</option>
                             <option value="Plumbing">Plumbing</option>
                             <option value="AC/Heating">AC/Heating</option>
@@ -43,7 +43,7 @@
                       <div class="col">
                         <div class="form-group col-sm-6">
                           <label class="control-label" for="title">Priority:</label>
-                          <select name="priority" class="selectpicker form-control show-order-data" id="priority">
+                          <select name="priority" class="selectpicker form-control show-order-data" id="priority" title="Select priority">
                             <option value="High">High</option>
                             <option value="Normal">Normal</option>
                             <option value="Low">Low</option>
@@ -56,9 +56,9 @@
                         <div class="form-group col-sm-6">
                           <input type="hidden" name="order_status" class="form-control show-order-data change-status" id="order_status">
                           <label class="control-label" for="id">Permission to enter:</label>
-                          <select class="selectpicker form-control show-order-data change-status" name="permission_to_enter" id="permission_to_enter" autocomplete="off">
+                          <select class="selectpicker form-control show-order-data change-status" name="permission_to_enter" id="permission_to_enter" autocomplete="off" title="Select permission">
                             <option value="Yes">Yes</option>
-                            <option value="No" selected>No</option>
+                            <option value="No">No</option>
                           </select>
                           <small class="text-danger" name="permission_to_enter"></small>
                         </div>
@@ -68,9 +68,9 @@
                         <div class="form-group col-sm-6">
                           <input type="hidden" name="order_status" class="form-control show-order-data change-status" id="order_status">
                           <label class="control-label" for="id">Status:</label>
-                          <select class="selectpicker form-control show-order-data change-status" name="status" id="status" autocomplete="off">
+                          <select class="selectpicker form-control show-order-data change-status" name="status" id="status" autocomplete="off" title="Select status">
                             <option value="Closed">Closed</option>
-                            <option value="Open" selected>Open</option>
+                            <option value="Open">Open</option>
                           </select>
                           <small class="text-danger" name="permission_to_enter"></small>
                         </div>
@@ -120,7 +120,7 @@
                       <div class="form-row">
                         <div class="col">
                           <div class="form-group col-sm-6">
-                
+
                               <label class="control-label" for="id">Status:</label>
                               <input type="text" name="order_status" class="form-control show-order-data change-status" id="order_status" disabled>
                           </div>

@@ -27,27 +27,27 @@
       </a>
 
       <a href="{{ route('showEvents') }}">
-      <div class="content-box col-md-4">
-        <div class="box-container">
-            <i class="fa fa-calendar section-icons"></i>
-            <h2>Event Signup</h2>
-            <span class="bottom-line"></span>
+        <div class="content-box col-md-4">
+          <div class="box-container">
+              <i class="fa fa-calendar section-icons"></i>
+              <h2>Event Signup</h2>
+              <span class="bottom-line"></span>
+          </div>
         </div>
-      </div>
-    </a>
+      </a>
 
     @if ( Auth::user()->role_id !== 1 )
 
       <a href="{{ route('contact_page') }}">
-      <div class="content-box col-md-4">
-        <div class="box-container">
-            <i class="fa fa-envelope section-icons"></i>
-            <h2>Contact Us</h2>
-            <span class="bottom-line"></span>
+        <div class="content-box col-md-4">
+          <div class="box-container">
+              <i class="fa fa-envelope section-icons"></i>
+              <h2>Contact Us</h2>
+              <span class="bottom-line"></span>
+          </div>
         </div>
-      </div>
+      </a>
     </div>
-  </a>
 
     @else
 
@@ -60,7 +60,7 @@
           </div>
         </div>
       </a>
-      </div>
+    </div>
 
     @endif
 </div>

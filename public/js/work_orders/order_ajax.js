@@ -288,7 +288,6 @@ $(document).ready(function() {
       var name = $(this).attr('name');
 
       if (errors.error[name]) {
-        elem.append('<span class="glyphicon glyphicon-remove-circle"></span>');
         elem.after('<span>').append('<span>  ' + errors.error[name] + '</span>');
       }
     });

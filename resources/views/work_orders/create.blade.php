@@ -44,7 +44,7 @@
             <div class="col">
               <div class="form-group col-sm-6">
                 <label class="control-label" for="title">Category:</label>
-                <select name="category" class="selectpicker form-control show-order-data" id="category" style="max-width: 250px;">
+                <select name="category" class="selectpicker form-control show-order-data" id="category" style="max-width: 250px;" title="Select category">
                   <option value="Light bulb">Light bulb</option>
                   <option value="Plumbing">Plumbing</option>
                   <option value="AC/Heating">AC/Heating</option>
@@ -58,7 +58,7 @@
             <div class="col">
               <div class="form-group col-sm-6">
                 <label class="control-label" for="id">Permission to enter:</label>
-                <select class="selectpicker form-control show-order-data change-status" name="permission_to_enter" id="permission_to_enter" autocomplete="off">
+                <select class="selectpicker form-control show-order-data change-status" name="permission_to_enter" id="permission_to_enter" autocomplete="off" title="Select permission">
                   <option value="Yes">Yes</option>
                   <option value="No">No</option>
                 </select>
