@@ -93,7 +93,7 @@ $(document).ready(function() {
        url: 'admin/workOrder/' + id,
        success: function(data) {
 
-         fillShowForm(data);
+         fillEditForm(data);
        }
      });
 
@@ -157,6 +157,8 @@ $(document).ready(function() {
         type: 'GET',
         url: 'admin/workOrder/' + id,
         success: function(data) {
+
+
           fillShowForm(data);
         }
     });
@@ -211,6 +213,7 @@ $(document).ready(function() {
   //Show add modal
   $(document).on('click', '#add-modal', function() {
       clearForm();
+
       $('.modal-title').text('Create Work Order');
       $('#addModal').modal('show');
   });
@@ -240,7 +243,7 @@ $(document).ready(function() {
          if ($.isEmptyObject(data.error)) {
            $('#addModal').modal('toggle');
            orderTable.ajax.reload();
-           toastr.success('Successfully updated order!', 'Success Alert', {timeOut: 5000});
+           toastr.success('Successfully created work order!', 'Success Alert', {timeOut: 5000});
          } else {
            toastr.error('Order was not created!', 'Error Alert', {timeOut: 5000});
            showErrors(data);
@@ -253,10 +256,35 @@ $(document).ready(function() {
   //fill the show order modal
   function fillShowForm(data){
 
+    clearForm();
+
     $('.show-order-data').each(function(order){
      var id = $(this).attr('id');
      $(this).val(data[id]);
+
     })
+
+    var audit = data.audit_log;
+    $('#audit_log').text(audit);
+
+  }
+
+  //fill edit form data
+  function fillEditForm(data){
+
+    clearForm();
+
+    $('.show-order-data').each(function(order){
+     var id = $(this).attr('id');
+     $(this).val(data[id]);
+
+    })
+
+    //Change selectpicker values
+    $('.add-category').selectpicker('val', data.category);
+    $('.add-permission').selectpicker('val', data.permission_to_enter);
+    $('.add-priority').selectpicker('val', data.priority);
+    $('.add-status').selectpicker('val', data.order_status);
 
     var audit = data.audit_log;
     $('#audit_log').text(audit);
@@ -269,7 +297,7 @@ $(document).ready(function() {
     $('.show-order-data').each(function(order){
 
       $(this).val('');
-      $('.change-status').val('0');
+      $('.change-status').val('');
     })
 
     $(".text-danger").each(function() {

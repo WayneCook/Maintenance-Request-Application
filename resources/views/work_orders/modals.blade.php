@@ -33,7 +33,7 @@
                             <option value="Light bulb">Light bulb</option>
                             <option value="Plumbing">Plumbing</option>
                             <option value="AC/Heating">AC/Heating</option>
-                            <option value="Plumbing">Electric</option>
+                            <option value="Electric">Electric</option>
                             <option value="Plumbing">Other</option>
                           </select>
                           <small class="text-danger" name="category"></small>
@@ -212,7 +212,7 @@
                       <div class="col">
                         <div class="form-group col-sm-6">
                             <label class="control-label" for="id">Status:</label>
-                            <select name="order_status" class="selectpicker form-control show-order-data" id="order_status" autocomplete="off">
+                            <select name="order_status" class="selectpicker form-control show-order-data add-status" id="order_status" autocomplete="off">
                               <option value="Open">Open</option>
                               <option value="Closed">Closed</option>
                             </select>
@@ -241,7 +241,7 @@
                       <div class="col">
                         <div class="form-group col-sm-6">
                           <label class="control-label" for="title">Category:</label>
-                          <select name="category" class="selectpicker form-control show-order-data" id="category">
+                          <select name="category" class="selectpicker form-control show-order-data add-category" id="category">
                             <option value="Light bulb">Light bulb</option>
                             <option value="Plumbing">Plumbing</option>
                             <option value="AC/Heating">AC/Heating</option>
@@ -254,7 +254,7 @@
 
                       <div class="form-group col-sm-6">
                         <label class="control-label" for="id">Permission to enter:</label>
-                        <select name="permission_to_enter" class="selectpicker form-control show-order-data change-permission" id="permission_to_enter" autocomplete="off">
+                        <select name="permission_to_enter" class="selectpicker form-control show-order-data add-permission" id="permission_to_enter" autocomplete="off">
                           <option value="Yes">Yes</option>
                           <option value="No">No</option>
                         </select>
@@ -264,7 +264,7 @@
                       <div class="col">
                         <div class="form-group col-sm-6">
                           <label class="control-label" for="title">Priority:</label>
-                          <select type="text" name="priority" class="selectpicker form-control show-order-data" id="priority" autocomplete="off">
+                          <select type="text" name="priority" class="selectpicker form-control show-order-data add-priority" id="priority" autocomplete="off">
                             <option value="High">High</option>
                             <option value="Normal">Normal</option>
                             <option value="Low">Low</option>
