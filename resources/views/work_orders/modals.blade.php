@@ -34,7 +34,7 @@
                             <option value="Plumbing">Plumbing</option>
                             <option value="AC/Heating">AC/Heating</option>
                             <option value="Electric">Electric</option>
-                            <option value="Plumbing">Other</option>
+                            <option value="Other">Other</option>
                           </select>
                           <small class="text-danger" name="category"></small>
                         </div>
@@ -245,8 +245,8 @@
                             <option value="Light bulb">Light bulb</option>
                             <option value="Plumbing">Plumbing</option>
                             <option value="AC/Heating">AC/Heating</option>
-                            <option value="Plumbing">Electric</option>
-                            <option value="Plumbing">Other</option>
+                            <option value="Electric">Electric</option>
+                            <option value="Other">Other</option>
                           </select>
                           <small class="text-danger" name="category"></small>
                         </div>
