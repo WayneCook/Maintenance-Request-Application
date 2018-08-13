@@ -195,9 +195,9 @@ $(document).ready(function() {
                if (data) {
 
                  orderTable.ajax.reload();
-                 toastr.success('Successfully updated order!', 'Success Alert', {timeOut: 5000});
+                 toastr.success('Successfully deleted work order!', 'Success Alert', {timeOut: 5000});
                } else {
-                 toastr.error('Order was not updated!', 'Error Alert', {timeOut: 5000});
+                 toastr.error('Order was not deleted!', 'Error Alert', {timeOut: 5000});
                }
              }
           });

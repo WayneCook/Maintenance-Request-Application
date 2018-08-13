@@ -275,7 +275,6 @@
 
                     </div> <!---End row---->
 
-
                     <div class="form-row">
                       <div class="form-group col-sm-12">
                         <label class="control-label" for="content">Description:</label>
